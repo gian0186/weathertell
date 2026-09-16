@@ -1,0 +1,135 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="icon" type="image/png" href="favicon.png">
+  <link rel="apple-touch-icon" href="apple-touch-icon.png">
+  <meta name="description" content="WeatherTell gives you a clear weather forecast for any city in the world, today and up to 14 days ahead.">
+  <meta name="theme-color" content="#0a2a5c">
+  <meta property="og:type" content="website">
+  <meta property="og:locale" content="en_GB">
+  <meta property="og:site_name" content="WeatherTell.com">
+  <meta property="og:title" content="WeatherTell.com | The weather ahead, clearly">
+  <meta property="og:description" content="Check the weather for today and the next 14 days, for any city in the world.">
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="WeatherTell.com | The weather ahead, clearly">
+  <meta name="twitter:description" content="Check the weather for today and the next 14 days, for any city in the world.">
+  <title>WeatherTell.com | The weather ahead, clearly</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;500;600;700;800&family=Plus+Jakarta+Sans:wght@500;600;700;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <div class="page-shell">
+    <header class="site-header">
+      <a class="brand" href="/" aria-label="WeatherTell.com home">
+        <img class="brand-logo" src="logo.png" alt="">
+        <span>weather<span class="brand-dot">tell</span></span>
+      </a>
+      <nav class="top-nav" aria-label="Main navigation">
+        <a class="active" href="#forecast">Forecast</a>
+        <a href="#14-day">14-Day</a>
+      </nav>
+      <button class="location-button" id="locationButton" type="button" title="Use my location" aria-label="Use my location">
+        <span class="location-icon" aria-hidden="true"><svg viewBox="0 0 24 24" width="15" height="15" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><circle cx="12" cy="12" r="7"></circle><line x1="12" y1="1" x2="12" y2="4"></line><line x1="12" y1="20" x2="12" y2="23"></line><line x1="1" y1="12" x2="4" y2="12"></line><line x1="20" y1="12" x2="23" y2="12"></line></svg></span>
+        <span>My location</span>
+      </button>
+      <details class="mobile-menu">
+        <summary aria-label="Open navigation"><span class="menu-icon" aria-hidden="true">☰</span><span>Menu</span></summary>
+        <div><a href="#forecast">Forecast</a><a href="#14-day">14-Day</a></div>
+      </details>
+    </header>
+
+    <main>
+      <section class="hero" id="forecast">
+        <div class="hero-copy">
+          <p class="eyebrow"><span class="eyebrow-line"></span> clear weather, no noise</p>
+          <h1>The weather <em>for the next 14 days</em></h1>
+          <p class="hero-intro">See at a glance what to expect today and in the days ahead, for any city in the world.</p>
+          <form class="search-form" id="searchForm" role="search">
+            <label class="sr-only" for="locationSearch">Search for a place</label>
+            <span class="search-icon" aria-hidden="true">⌕</span>
+            <input id="locationSearch" name="location" type="search" autocomplete="off" placeholder="Search city or postcode" value="London">
+            <button type="submit">Check weather <span aria-hidden="true">→</span></button>
+            <div class="suggestions" id="suggestions" hidden></div>
+          </form>
+          <p class="search-hint">Try for example: Paris, New York or Tokyo</p>
+        </div>
+        <div class="hero-art" aria-hidden="true">
+          <div class="sun-disc"></div>
+          <div class="cloud cloud-back"></div>
+          <div class="cloud cloud-front"></div>
+          <div class="rain rain-one"></div>
+          <div class="rain rain-two"></div>
+          <div class="rain rain-three"></div>
+          <div class="art-label">today<br><strong>look ahead</strong></div>
+        </div>
+      </section>
+
+      <section class="weather-panel" id="overzicht" aria-live="polite">
+        <div class="panel-heading">
+          <div>
+            <p class="section-kicker">your forecast</p>
+            <h2 id="locationName">London, England</h2>
+          </div>
+          <div class="updated"><span class="status-dot"></span><span id="updatedText">Just updated</span></div>
+        </div>
+        <div class="current-weather">
+          <div class="temperature-block">
+            <span class="weather-symbol" id="currentSymbol">◒</span>
+            <div><strong id="currentTemp">18°</strong><span class="degrees">C</span></div>
+            <p id="currentSummary">Light cloud</p>
+          </div>
+          <div class="weather-stats">
+            <div><span>Feels like</span><strong id="feelsLike">17°</strong></div>
+            <div><span>Wind</span><strong id="windSpeed">SW 3 bft</strong></div>
+            <div><span>Precipitation</span><strong id="rainChance">20%</strong></div>
+          </div>
+          <div class="daylight"><span class="daylight-icon">◐</span><div><span>Daylight</span><strong id="daylightText">07:12 — 20:44</strong></div></div>
+        </div>
+        <div class="hourly-strip" id="hourlyStrip" aria-label="Hour-by-hour forecast"></div>
+      </section>
+
+      <section class="rain-section" aria-labelledby="rainTitle">
+        <div class="section-heading-row">
+          <div><p class="section-kicker">next 24 hours</p><h2 id="rainTitle">Rain forecast</h2></div>
+        </div>
+        <div class="rain-chart-wrap">
+          <div class="rain-chart" id="rainChart"></div>
+          <div class="rain-tooltip" id="rainTooltip" hidden></div>
+        </div>
+        <p class="rain-hint">Hover over the chart to see rainfall per hour.</p>
+      </section>
+
+      <section class="forecast-section" id="14-day">
+        <div class="section-heading-row">
+          <div><p class="section-kicker">looking ahead</p><h2>The next 14 days</h2></div>
+          <div class="legend"><span class="legend-high"></span> maximum <span class="legend-low"></span> minimum</div>
+        </div>
+        <div class="forecast-grid" id="forecastGrid"></div>
+      </section>
+
+      <section class="insight-band">
+        <div class="insight-copy"><p class="section-kicker">today's tip</p><h2>Plan your day<br><em>around the weather.</em></h2></div>
+        <div class="insight-note"><span class="note-mark">✦</span><p id="insightText">Today's outlook is loading.</p></div>
+      </section>
+    </main>
+
+    <footer class="site-footer">
+      <div class="footer-top">
+        <div class="footer-brand">
+          <a class="footer-logo" href="/"><img src="logo.png" alt=""><span>weather<span class="brand-dot">tell</span></span></a>
+          <p>Clear weather forecasts for any place in the world, up to 14 days ahead.</p>
+        </div>
+      </div>
+      <div class="footer-bottom">
+        <span>© 2026 WeatherTell.com</span>
+        <span>Data from <a href="https://open-meteo.com" rel="noopener" target="_blank">Open-Meteo</a></span>
+      </div>
+    </footer>
+  </div>
+  <script src="app.js"></script>
+</body>
+</html>
