@@ -1,0 +1,139 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="icon" type="image/png" href="../favicon.png">
+  <link rel="apple-touch-icon" href="../apple-touch-icon.png">
+  <link rel="manifest" href="/manifest.json"><meta name="apple-mobile-web-app-capable" content="yes"><meta name="apple-mobile-web-app-title" content="WeatherTell"><script defer src="/pwa.js"></script><script defer src="../analytics.js"></script>
+  <meta name="theme-color" content="#0a2a5c">
+  <title>Sunrise and Sunset Times | WeatherTell.com</title>
+  <meta name="description" content="Check exact sunrise, sunset and daylight times for any city in the world: today, the next 14 days, and month by month through the year.">
+  <link rel="canonical" href="https://www.weathertell.com/sunrise-sunset/">
+  <meta property="og:type" content="website"><meta property="og:locale" content="en_GB"><meta property="og:site_name" content="WeatherTell.com">
+  <meta property="og:title" content="Sunrise and Sunset Times | WeatherTell.com">
+  <meta property="og:description" content="Check exact sunrise, sunset and daylight times for any city in the world: today, the next 14 days, and month by month through the year.">
+  <meta property="og:url" content="https://www.weathertell.com/sunrise-sunset/">
+  <meta property="og:image" content="https://www.weathertell.com/og-image.png">
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="Sunrise and Sunset Times | WeatherTell.com">
+  <meta name="twitter:description" content="Check exact sunrise, sunset and daylight times for any city in the world.">
+  <meta name="twitter:image" content="https://www.weathertell.com/og-image.png">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;500;600;700;800&family=Plus+Jakarta+Sans:wght@500;600;700;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="../styles.css">
+  <script type="application/ld+json">{"@context":"https://schema.org","@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"Forecast","item":"https://www.weathertell.com/"},{"@type":"ListItem","position":2,"name":"Sunrise & Sunset","item":"https://www.weathertell.com/sunrise-sunset/"}]}</script>
+  <script type="application/ld+json">{"@context":"https://schema.org","@type":"FAQPage","mainEntity":[{"@type":"Question","name":"What time does it actually get dark, not just sunset?","acceptedAnswer":{"@type":"Answer","text":"After sunset it stays dim for a while longer. It's only at the end of civil twilight, roughly 20 to 40 minutes after sunset depending on latitude and season, that the sky is dark enough for the first stars to appear and artificial light becomes necessary."}},{"@type":"Question","name":"Why do sunrise and sunset times vary so much by location?","acceptedAnswer":{"@type":"Answer","text":"Latitude has the biggest effect: places closer to the poles see far more seasonal daylight swing than places near the equator. Longitude also shifts the clock time of sunrise and sunset within the same timezone."}},{"@type":"Question","name":"How much shorter do the days get in autumn?","acceptedAnswer":{"@type":"Answer","text":"Around the equinoxes daylight changes fastest, often by 3 to 4 minutes a day at mid-latitudes. Near the solstices, daylight barely changes from one day to the next."}}]}</script>
+</head>
+<body>
+  <div class="page-shell">
+    <header class="site-header">
+      <a class="brand" href="../" aria-label="WeatherTell.com home">
+        <img class="brand-logo" src="../logo.png" alt="">
+        <span>weather<span class="brand-dot">tell</span></span>
+      </a>
+      <nav class="top-nav" aria-label="Main navigation">
+        <a href="../">Forecast</a>
+        <a href="../blog/">Weather Explained</a>
+        <a class="active" href="./">Sunrise &amp; Sunset</a>
+        <a href="../locations/">Locations</a>
+      </nav>
+      <button class="location-button" id="locationButton" type="button" title="Use my location" aria-label="Use my location">
+        <span class="location-icon" aria-hidden="true"><svg viewBox="0 0 24 24" width="15" height="15" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><circle cx="12" cy="12" r="7"></circle><line x1="12" y1="1" x2="12" y2="4"></line><line x1="12" y1="20" x2="12" y2="23"></line><line x1="1" y1="12" x2="4" y2="12"></line><line x1="20" y1="12" x2="23" y2="12"></line></svg></span>
+        <span>My location</span>
+      </button>
+      <details class="mobile-menu">
+        <summary aria-label="Open navigation"><span class="menu-icon" aria-hidden="true">☰</span><span>Menu</span></summary>
+        <div><a href="../">Forecast</a><a href="../blog/">Weather Explained</a><a href="./">Sunrise &amp; Sunset</a><a href="../locations/">Locations</a></div>
+      </details>
+    </header>
+    <nav class="breadcrumbs" aria-label="Breadcrumb"><a href="../">Forecast</a><span class="sep">/</span><span class="crumb-current" aria-current="page">Sunrise &amp; Sunset</span></nav>
+
+    <main>
+      <section class="hero" id="sun-today">
+        <div class="hero-copy">
+          <p class="eyebrow"><span class="eyebrow-line"></span> sunrise &amp; sunset</p>
+          <h1>What time does it get <em>light and dark</em>?</h1>
+          <p class="hero-intro">See exact sunrise, sunset and daylight times for any city in the world, from today through the whole year ahead.</p>
+          <form class="search-form" id="sunSearchForm" role="search">
+            <label class="sr-only" for="sunLocationSearch">Search for a place</label>
+            <span class="search-icon" aria-hidden="true">⌕</span>
+            <input id="sunLocationSearch" name="location" type="search" autocomplete="off" placeholder="Search city or postcode" value="London">
+            <button type="submit">Check <span aria-hidden="true">→</span></button>
+            <div class="suggestions" id="sunSuggestions" hidden></div>
+          </form>
+          <p class="search-hint">Try for example: Paris, New York or Tokyo</p>
+        </div>
+        <div class="hero-art" aria-hidden="true">
+          <div class="sun-disc"></div>
+          <div class="cloud cloud-back"></div>
+          <div class="cloud cloud-front"></div>
+          <div class="art-label">today<br><strong id="sunArtLabel">loading…</strong></div>
+        </div>
+      </section>
+
+      <section class="weather-panel" id="sunToday" aria-live="polite">
+        <div class="panel-heading">
+          <div><p class="section-kicker">today in <span id="sunLocationName">London</span></p><h2 id="sunDateLabel">–</h2></div>
+          <div class="updated"><span class="status-dot"></span><span id="sunUpdatedText">Loading data...</span></div>
+        </div>
+        <div class="sun-stats">
+          <div class="daylight"><span class="daylight-icon">☀</span><div><span>Sunrise</span><strong id="sunRiseValue">--:--</strong></div></div>
+          <div class="daylight"><span class="daylight-icon">☾</span><div><span>Sunset</span><strong id="sunSetValue">--:--</strong></div></div>
+          <div class="daylight"><span class="daylight-icon">◐</span><div><span>Daylight</span><strong id="sunDaylightValue">--h --m</strong></div></div>
+          <div class="daylight"><span class="daylight-icon">✦</span><div><span>Fully dark by</span><strong id="sunDuskValue">--:--</strong></div></div>
+        </div>
+      </section>
+
+      <section class="rain-section" aria-labelledby="sunTableTitle">
+        <div class="section-heading-row">
+          <div><p class="section-kicker">looking ahead</p><h2 id="sunTableTitle">The next 14 days</h2></div>
+        </div>
+        <div class="sun-table-wrap">
+          <table class="sun-table">
+            <thead><tr><th>Date</th><th>Sunrise</th><th>Sunset</th><th>Daylight</th></tr></thead>
+            <tbody id="sunDaysTable"><tr><td colspan="4">Loading data...</td></tr></tbody>
+          </table>
+        </div>
+        <p class="rain-hint">Times are based on live weather model data from Open-Meteo for the selected place.</p>
+      </section>
+
+      <section class="rain-section sun-year-section" aria-labelledby="sunYearTitle">
+        <div class="section-heading-row">
+          <div><p class="section-kicker">the whole year</p><h2 id="sunYearTitle">Sunrise and sunset by month</h2></div>
+        </div>
+        <div class="sun-table-wrap">
+          <table class="sun-table">
+            <thead><tr><th>Month</th><th>Sunrise (15th)</th><th>Sunset (15th)</th><th>Daylight</th></tr></thead>
+            <tbody id="sunMonthsTable"><tr><td colspan="4">Loading data...</td></tr></tbody>
+          </table>
+        </div>
+        <p class="rain-hint">Calculated with an astronomical model based on the selected location. May differ by a few minutes from exact weather model data.</p>
+      </section>
+
+      <section class="location-copy">
+        <p class="section-kicker">explained</p>
+        <h2>What do "light" and "dark" actually mean?</h2>
+        <p>Sunrise and sunset mark the moment the sun appears above or drops below the horizon. But it doesn't turn pitch dark right away: there's a period of twilight afterwards during which the light gradually fades.</p>
+        <h3>Civil twilight: when it actually gets dark</h3>
+        <p>The "fully dark by" figure above shows the end of civil twilight — the moment the sun is roughly 6 degrees below the horizon. Before that point there's usually enough light to read or cycle outside without lights; after it, you'll want a bike light or street lighting.</p>
+        <h3>Why do days shorten fastest in autumn?</h3>
+        <p>Around the equinoxes the earth's tilt relative to the sun means daylight changes fastest: often 3 to 4 minutes shorter each day at mid-latitudes. Around the solstices, in contrast, daylight barely shifts for days at a time. Read more about <a href="../blog/">how weather changes through the seasons</a>.</p>
+        <h3>Frequently asked questions</h3>
+        <p><strong>What time does it actually get dark, not just sunset?</strong><br>After sunset it stays dim for a while longer. It's only at the end of civil twilight, roughly 20 to 40 minutes after sunset depending on latitude and season, that the sky is dark enough for the first stars to appear and artificial light becomes necessary.</p>
+        <p><strong>Why do sunrise and sunset times vary so much by location?</strong><br>Latitude has the biggest effect: places closer to the poles see far more seasonal daylight swing than places near the equator. Longitude also shifts the clock time of sunrise and sunset within the same timezone.</p>
+        <p><strong>How much shorter do the days get in autumn?</strong><br>Around the equinoxes daylight changes fastest, often by 3 to 4 minutes a day at mid-latitudes. Near the solstices, daylight barely changes from one day to the next.</p>
+      </section>
+    </main>
+
+    <footer class="site-footer">
+      <div class="footer-top">
+        <div class="footer-brand"><a class="footer-logo" href="../"><img src="../logo.png" alt=""><span>weather<span class="brand-dot">tell</span></span></a><p>Clear weather forecasts for any place in the world, up to 14 days ahead.</p></div>
+        <nav class="footer-col" aria-label="Navigation"><h3>Navigation</h3><a href="../">Forecast</a><a href="../locations/">Locations</a><a href="../blog/">Weather Explained</a><a href="./">Sunrise &amp; Sunset</a></nav>
+      </div>
+      <div class="footer-bottom"><span>© 2026 WeatherTell.com</span><span>Data from <a href="https://open-meteo.com" rel="noopener" target="_blank">Open-Meteo</a></span><a href="#" class="cookie-settings-link">Cookie settings</a><a href="../privacy/">Privacy Policy</a><a href="../terms/">Terms of Use</a></div>
+    </footer>
+  </div>
+  <script src="../sun.js"></script>
+</body>
+</html>
