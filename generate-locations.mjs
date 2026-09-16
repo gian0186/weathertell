@@ -1,0 +1,197 @@
+import fs from 'node:fs';
+import path from 'node:path';
+
+const root = process.cwd();
+
+// [slug, city, region/country, latitude, longitude, activity phrase, weather note, season note]
+const locations = [
+  ['london', 'London', 'England', 51.5074, -0.1278, 'a walk along the Thames or a day exploring the city',
+    'London sits inland from the open sea but close enough to the Atlantic that weather systems roll through quickly. Rain rarely lasts all day here — it is far more common to get short spells of drizzle between longer dry stretches, so checking the hour-by-hour forecast pays off more than the daily summary.',
+    'Winters are mild and grey rather than cold, and summers rarely turn extreme, but a warm, sunny afternoon can still be followed by a much cooler evening. Layering is the safest approach whatever the season.'],
+  ['paris', 'Paris', 'Île-de-France', 48.8566, 2.3522, 'a walk along the Seine or an afternoon in one of the city parks',
+    'Paris has a fairly moderate inland climate, but summer afternoons can heat up noticeably in the stone-paved centre, where heat lingers longer than in the surrounding suburbs. On hot days, the riverbanks and parks stay noticeably cooler than the streets around the main boulevards.',
+    'Spring and autumn are usually the most comfortable seasons for sightseeing, with mild days and cool but rarely freezing nights. Winters are damp more often than they are icy.'],
+  ['berlin', 'Berlin', 'Berlin', 52.5200, 13.4050, 'a bike ride through Tiergarten or an afternoon by one of the lakes',
+    "Berlin's inland, flat position means it heats up more decisively in summer and cools down harder in winter than coastal cities at a similar latitude. Its many lakes make a real difference on hot days, staying several degrees cooler than the built-up city centre.",
+    'Summers can bring short, intense heatwaves, while winters are cold enough for regular frost and occasional snow. The shoulder seasons tend to be crisp and dry rather than wet.'],
+  ['madrid', 'Madrid', 'Madrid', 40.4168, -3.7038, 'an evening stroll through Retiro Park or a day in the old town',
+    "Madrid sits on a high, dry plateau far from the coast, which gives it one of Europe's most extreme day-to-night temperature swings. A scorching afternoon can drop ten degrees or more by nightfall, so an evening plan needs different clothing than the midday one.",
+    'Summers are long, hot and dry, while winters are colder than most visitors expect for a Spanish capital, with sharp, clear nights. Spring and early autumn are generally the most pleasant stretches.'],
+  ['rome', 'Rome', 'Lazio', 41.9028, 12.4964, 'a walk through the historic centre or an evening near the Tiber',
+    'Rome has a classic Mediterranean climate: hot, dry summers and mild, wetter winters. Summer heat is felt more strongly in the packed stone streets of the centre than in the greener areas near the Villa Borghese, so timing sightseeing for the morning or early evening makes a real difference.',
+    'Rain is rare in summer but common between autumn and early spring, often arriving as short, heavy downpours rather than long grey days. Spring and autumn are the most reliable seasons for comfortable walking weather.'],
+  ['amsterdam', 'Amsterdam', 'North Holland', 52.3676, 4.9041, 'a bike ride along the canals or a day exploring the city centre',
+    "Amsterdam's flat, open position close to the North Sea means wind is almost always part of the picture, and it can make a mild-looking temperature feel noticeably colder. Rain tends to arrive in short, fast-moving showers rather than settling in for the whole day.",
+    'Winters are mild for the latitude but often grey and damp, while summers are rarely very hot. Whatever the season, a layer that blocks wind is usually more useful here than one that blocks cold.'],
+  ['vienna', 'Vienna', 'Vienna', 48.2082, 16.3738, 'a walk through the Prater or an afternoon in one of the inner-city parks',
+    "Vienna's inland central-European position gives it a fairly continental climate, with warmer summers and colder winters than western European capitals at a similar latitude. The Danube and the surrounding Vienna Woods take the edge off summer heat in the outer districts.",
+    'Snow is a regular winter feature rather than a rare event, and summer thunderstorms can build quickly on hot, humid afternoons. Spring and autumn tend to be calmer and easier to plan around.'],
+  ['dublin', 'Dublin', 'Leinster', 53.3498, -6.2603, 'a walk around St Stephen\'s Green or along the River Liffey',
+    "Dublin's position on an island in the Atlantic means the weather can change within the same afternoon. Rain showers tend to be short and pass quickly, so it's often worth waiting ten minutes rather than cancelling a plan outright.",
+    'Temperatures stay fairly mild year-round, without the extremes of continental cities, but wind and rain are a near-constant possibility in every season. A waterproof layer earns its place in any bag, any time of year.'],
+  ['lisbon', 'Lisbon', 'Lisbon', 38.7223, -9.1393, 'a walk along the waterfront or a day exploring the hilly old town',
+    "Lisbon's Atlantic coastal position keeps summers less extreme than inland Iberian cities, with a cooling sea breeze that often picks up in the afternoon. The steep, narrow streets of the old town can feel noticeably warmer than the breezy riverfront just below.",
+    'Winters are among the mildest of any European capital, with rain rather than cold being the main thing to plan around. Summers are warm, dry and reliably sunny.'],
+  ['stockholm', 'Stockholm', 'Stockholm County', 59.3293, 18.0686, 'a walk through Gamla Stan or a boat trip around the archipelago',
+    "Stockholm's northern position means daylight swings dramatically between seasons, which shapes the weather as much as temperature does. The many lakes and the nearby Baltic archipelago moderate temperatures slightly compared with inland Sweden.",
+    'Winters are cold with regular snow, while summers are mild rather than hot, with long daylight hours that make even average temperatures feel pleasant outdoors. Layering for changeable wind is useful in every season.'],
+  ['zurich', 'Zurich', 'Zurich', 47.3769, 8.5417, 'a walk along Lake Zurich or a day exploring the old town',
+    "Zurich's inland, elevated position near the Alps gives it a more continental climate than lowland European cities, with warm summers and cold, often snowy winters. Proximity to the mountains means weather can change faster here than the wider regional forecast suggests.",
+    'Summer afternoons can bring sudden thunderstorms after a sunny start, while winter regularly brings both fog in the valley and clear, cold days. Spring and autumn are usually the most stable seasons to plan around.'],
+  ['athens', 'Athens', 'Attica', 37.9838, 23.7275, 'an evening walk near the Acropolis or a day along the coast',
+    "Athens has one of Europe's hottest and driest summer climates, with the closely built city centre trapping heat more than the coastal suburbs nearby. Afternoon heat is intense enough that most outdoor plans work better in the morning or after sunset.",
+    'Winters are mild and wetter than summer, though still far gentler than most of continental Europe. Spring and autumn offer the most comfortable balance of warmth and lower humidity.'],
+  ['new-york', 'New York', 'New York', 40.7128, -74.0060, 'a walk through Central Park or an afternoon exploring the city',
+    "New York's position on the eastern seaboard means it can be affected by both cold continental air from the north and warm, humid air from the Atlantic, which is part of why the weather here can shift quickly. Summer humidity often makes the temperature feel several degrees higher than the number on the forecast.",
+    'Winters bring genuine cold and regular snow, while summers can turn hot and sticky for days at a time. Spring and autumn tend to be the most changeable seasons, worth checking hour-by-hour before heading out.'],
+  ['los-angeles', 'Los Angeles', 'California', 34.0522, -118.2437, 'a walk along the beach or a day exploring the city',
+    'Los Angeles has a dry, mild climate for most of the year, but conditions can vary sharply between the coast and the inland valleys on the same day. A cool, overcast morning near the beach — locally known as "May gray" or "June gloom" in early summer — often burns off into a warm, sunny afternoon further inland.',
+    'Rain is rare and concentrated in the winter months, while summer and autumn are reliably dry. Temperature swings between day and night are often larger than visitors expect for a coastal city.'],
+  ['chicago', 'Chicago', 'Illinois', 41.8781, -87.6298, 'a walk along the lakefront or a day exploring downtown',
+    'Chicago sits on the shore of Lake Michigan, which noticeably cools the lakefront on hot summer days and can add a sharper wind chill in winter — part of why it has earned the nickname "the Windy City". Weather can shift quickly here as fronts move through the open Midwest.',
+    'Winters are cold with regular snow and biting lake winds, while summers can turn hot and humid. Spring and autumn are typically brief, changeable transitions between the two extremes.'],
+  ['toronto', 'Toronto', 'Ontario', 43.6532, -79.3832, 'a walk along the waterfront or a day exploring downtown',
+    "Toronto's position on Lake Ontario moderates temperatures somewhat compared with inland Canadian cities, but winters are still cold with regular snow and occasional ice. Lake-effect weather can bring sudden bursts of snow or cloud that a wider regional forecast might not fully capture.",
+    'Summers are warm and can turn humid for short stretches, while winters bring consistent sub-zero temperatures. Spring and autumn shift quickly between the two, often within the same week.'],
+  ['vancouver', 'Vancouver', 'British Columbia', 49.2827, -123.1207, 'a walk around Stanley Park or a day near the waterfront',
+    "Vancouver's mild, wet coastal climate is shaped by the Pacific Ocean and the mountains that surround the city, which trap rain-bearing clouds coming in from the sea. Persistent grey, drizzly stretches are more common than heavy downpours.",
+    'Winters are mild for Canada, with rain rather than snow being the main feature at low elevation, while summers are dry, mild and considered some of the most pleasant weather in the country. Rain gear is more useful here than heavy winter clothing for most of the year.'],
+  ['mexico-city', 'Mexico City', 'Mexico City', 19.4326, -99.1332, 'a walk through Chapultepec Park or a day exploring the historic centre',
+    "Mexico City's high altitude keeps temperatures milder year-round than its latitude would suggest, with warm days and notably cool nights. Afternoon thunderstorms are common in the wet season and can build quickly even on a sunny morning.",
+    'The rainy season runs roughly from May to October, bringing short, intense afternoon downpours, while the rest of the year is drier and sunnier with cooler nights. Temperatures change more with altitude and time of day than with the calendar.'],
+  ['miami', 'Miami', 'Florida', 25.7617, -80.1918, 'a walk along the beach or an evening in South Beach',
+    'Miami has a tropical climate with high humidity for most of the year, which often makes the air feel hotter than the actual temperature. Afternoon thunderstorms are a near-daily feature in summer, usually arriving suddenly and clearing within an hour or two.',
+    'Hurricane season runs from June to November, so it is worth checking the forecast regularly during those months. Winters are warm and comparatively dry, making them the most popular time to visit.'],
+  ['sao-paulo', 'São Paulo', 'São Paulo', -23.5505, -46.6333, 'a walk through Ibirapuera Park or a day exploring the city',
+    "São Paulo's elevated inland position keeps it cooler than the tropical latitude suggests, and its size means the weather can vary noticeably between neighbourhoods. Afternoon thunderstorms are common in summer and can bring sudden, heavy rainfall with little warning.",
+    'Remember the seasons run opposite to the Northern Hemisphere here: December to February is summer and hot, while June to August is the cooler, drier winter. Spring and autumn are generally mild and comfortable.'],
+  ['buenos-aires', 'Buenos Aires', 'Buenos Aires', -34.6037, -58.3816, 'a walk along Puerto Madero or an afternoon in one of the city parks',
+    "Buenos Aires has a humid climate shaped by its position near the wide Río de la Plata estuary, which can make summer heat feel heavier than the temperature alone suggests. Sudden, strong thunderstorms known locally as sudestadas can roll in from the southeast with little notice.",
+    'As in the rest of the Southern Hemisphere, December to February is summer and often hot and humid, while June to August is the mild, damp winter. Spring and autumn tend to bring the most changeable, unpredictable weather.'],
+  ['rio-de-janeiro', 'Rio de Janeiro', 'Rio de Janeiro', -22.9068, -43.1729, 'a walk along Copacabana beach or a day near Sugarloaf Mountain',
+    "Rio de Janeiro's mountains and coastline create noticeable local variation, with the city centre often warmer and more humid than the breezier beach neighbourhoods. Short, heavy downpours are common, especially in the summer wet season.",
+    'Summer, from December to February, is hot and humid with frequent afternoon showers, while winter (June to August) is milder and drier. Even in winter, daytime temperatures rarely feel cold.'],
+  ['lima', 'Lima', 'Lima', -12.0464, -77.0428, 'a walk along the Malecón or a day exploring the historic centre',
+    'Lima has an unusually mild, dry desert climate for a city so close to the equator, kept cool by a cold ocean current offshore. A persistent grey coastal cloud cover, known locally as garúa, is common for much of the year even without any rain reaching the ground.',
+    'Winter (June to September) brings the greyest, dampest stretch of overcast skies, while summer (December to March) is warmer and noticeably sunnier. Rain itself is rare in either season.'],
+  ['bogota', 'Bogotá', 'Bogotá', 4.7110, -74.0721, 'a walk through the historic La Candelaria district or an afternoon in one of the city parks',
+    "Bogotá's high altitude gives it a cool climate year-round despite its near-equatorial location, with daytime temperatures rarely swinging far in either direction. Afternoon rain and thunderstorms are common and can arrive quickly, even after a clear morning.",
+    "There isn't a strong hot-and-cold seasonal cycle here; instead the year splits into wetter and drier stretches, with April–May and October–November usually the rainiest. Mornings tend to be the most reliably dry part of the day."],
+  ['tokyo', 'Tokyo', 'Tokyo', 35.6762, 139.6503, 'a walk through Ueno Park or an afternoon exploring the city',
+    'Tokyo has a humid climate with four distinct seasons, and the early-summer rainy season (tsuyu), typically June into July, brings extended stretches of grey, wet weather. Summer heat afterwards can feel intense because of the high humidity.',
+    'Typhoon season runs roughly from August to October and is worth watching the forecast for, while winters are cool, dry and often clear. Spring and autumn are generally considered the most comfortable times to be outdoors.'],
+  ['singapore', 'Singapore', 'Singapore', 1.3521, 103.8198, 'a walk through the Botanic Gardens or an evening along Marina Bay',
+    "Singapore's position near the equator means temperature stays warm and humid all year, with very little seasonal variation. Short, heavy downpours can arrive suddenly even on an otherwise sunny day, so it's worth checking the hour-by-hour forecast more than the daily one.",
+    'There is no traditional summer or winter here — instead the year is shaped by two monsoon seasons, roughly November to March and June to September, which bring somewhat more frequent rain than the drier months between them.'],
+  ['bangkok', 'Bangkok', 'Bangkok', 13.7563, 100.5018, 'a walk along the river or an evening exploring one of the markets',
+    "Bangkok's tropical climate means heat and humidity are a near-constant backdrop, with the feels-like temperature often well above the actual reading. Afternoon and evening thunderstorms are common in the rainy season and can flood streets quickly.",
+    'The rainy season runs roughly from June to October, the cooler dry season from November to February, and the hottest stretch from March to May. Even the "cool" season stays warm by most standards.'],
+  ['dubai', 'Dubai', 'Dubai', 25.2048, 55.2708, 'a walk along the marina or an evening on the beach',
+    "Dubai's desert climate means summers are extremely hot, often too hot for comfortable outdoor activity in the middle of the day, while winters are warm and pleasant by most standards. Humidity near the coast can make summer heat feel even more intense than the temperature alone suggests.",
+    'Rain is rare in any season and, when it happens, is usually confined to a few days in winter. Late autumn through early spring is generally considered the most comfortable stretch for being outdoors.'],
+  ['mumbai', 'Mumbai', 'Maharashtra', 19.0760, 72.8777, 'a walk along Marine Drive or an evening near the Gateway of India',
+    "Mumbai's coastal position on the Arabian Sea means the monsoon, roughly June to September, brings some of the heaviest rainfall of any major city in the world, often disrupting daily life. Outside the monsoon, humidity stays high but rain is far less frequent.",
+    'The hot season before the monsoon (March to May) is the most intense for heat, while the post-monsoon and winter months (November to February) are milder and considered the most comfortable time to visit.'],
+  ['hong-kong', 'Hong Kong', 'Hong Kong', 22.3193, 114.1694, 'a walk along the waterfront or a hike on one of the outlying trails',
+    'Hong Kong has a humid subtropical climate, with hot, sticky summers and mild, drier winters. Typhoon season, roughly June to September, is worth watching the forecast for, as the city can see sudden severe weather warnings during that stretch.',
+    'Spring brings noticeable fog and dampness, while autumn is generally considered the most comfortable season, with lower humidity and warm, clear days. Winters are mild but can still feel chilly with the damp coastal air.'],
+  ['seoul', 'Seoul', 'Seoul', 37.5665, 126.9780, 'a walk along the Han River or a day exploring one of the old palaces',
+    "Seoul's inland position gives it a fairly continental climate with a distinct rainy season, jangma, in July, bringing extended humid, wet stretches. Winters are cold and dry, a sharp contrast to the humid summer months.",
+    'Spring and autumn are short but popular seasons, known for mild temperatures, cherry blossoms and autumn foliage respectively. Summers are hot and humid, winters cold enough for regular snow.'],
+  ['sydney', 'Sydney', 'New South Wales', -33.8688, 151.2093, 'a walk around the harbour or a day at one of the beaches',
+    "Sydney's coastal position brings a sea breeze that regularly cools hot summer afternoons, especially near the harbour and beaches, while inland suburbs can run noticeably hotter. Sudden summer thunderstorms, sometimes severe, can build quickly on humid afternoons.",
+    'Remember the seasons run opposite to the Northern Hemisphere: December to February is summer and warm, while June to August is the mild, wetter winter. Spring and autumn are generally mild and pleasant for being outdoors.'],
+  ['melbourne', 'Melbourne', 'Victoria', -37.8136, 144.9631, 'a walk along the Yarra River or an afternoon in one of the city gardens',
+    "Melbourne is well known for weather that can shift within a single day, as it sits where warm inland air and cooler air from the Southern Ocean regularly meet. It's not unusual to experience sunshine, wind, rain and a sharp temperature drop all within a few hours.",
+    'As in the rest of the Southern Hemisphere, December to February is summer, though rarely as hot as further north, and June to August is the cool, wet winter. Checking the hour-by-hour forecast is especially worthwhile here, in any season.'],
+  ['auckland', 'Auckland', 'Auckland', -36.8485, 174.7633, 'a walk along the waterfront or a day exploring one of the volcanic parks',
+    "Auckland sits between two harbours, and its maritime climate means the weather can change quickly, with sunshine, cloud and short showers sometimes all in the same afternoon. Wind is a near-constant feature given the city's exposed, hilly geography.",
+    'Southern Hemisphere seasons apply here too: December to February is summer and warm, June to August is the cooler, wetter winter. Rain is possible in any month, so it is rarely a bad idea to keep a light layer handy.'],
+  ['cape-town', 'Cape Town', 'Western Cape', -33.9249, 18.4241, 'a walk along the waterfront or a day on Table Mountain',
+    "Cape Town's weather is heavily shaped by Table Mountain and the surrounding coastline, and the famous 'tablecloth' of cloud that forms over the mountain often signals strong wind even when the city below stays clear. The strong summer south-easterly wind, locally called the Cape Doctor, is worth checking for before any outdoor plans.",
+    "Southern Hemisphere seasons apply: December to February is warm, dry summer, while June to August is the cooler, wetter winter — the reverse of most of Europe's rainfall pattern. Spring and autumn tend to be calmer, more comfortable transition seasons."],
+  ['cairo', 'Cairo', 'Cairo', 30.0444, 31.2357, 'a walk along the Nile Corniche or an evening exploring the old city',
+    "Cairo has a desert climate with very low rainfall year-round, and the sharp contrast between hot days and much cooler nights is often more noticeable than any day-to-day variation. In spring, the khamsin wind can bring dust storms and a sudden jump in temperature over a day or two.",
+    'Summers are long, hot and almost entirely dry, while winters are mild during the day but can feel cool after sunset. Rain, when it happens at all, is mostly limited to a handful of days in winter.'],
+  ['nairobi', 'Nairobi', 'Nairobi', -1.2921, 36.8219, 'a walk through one of the city parks or a day trip to Nairobi National Park',
+    "Nairobi's high elevation keeps temperatures mild year-round despite its near-equatorial position, with warm days and notably cool nights. Rain tends to arrive in short, heavy afternoon downpours rather than settling in for the whole day.",
+    'There are two rainy seasons: the long rains from March to May and the short rains from October to December, separated by drier, sunnier stretches. Temperature varies far more with time of day than with the season here.']
+];
+
+const page = ([slug, city, region, latitude, longitude, activity, weatherAdvice, seasonNote]) => {
+  const breadcrumbSchema = JSON.stringify({
+    '@context': 'https://schema.org',
+    '@type': 'BreadcrumbList',
+    itemListElement: [
+      { '@type': 'ListItem', position: 1, name: 'Forecast', item: 'https://www.weathertell.com/' },
+      { '@type': 'ListItem', position: 2, name: 'Locations', item: 'https://www.weathertell.com/locations/' },
+      { '@type': 'ListItem', position: 3, name: city, item: `https://www.weathertell.com/weather/${slug}/` }
+    ]
+  });
+  return `<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="icon" type="image/png" href="../../favicon.png">
+  <link rel="apple-touch-icon" href="../../apple-touch-icon.png">
+  <meta name="theme-color" content="#0a2a5c">
+  <title>Weather in ${city} | WeatherTell.com</title>
+  <meta name="description" content="Check the current weather and 14-day forecast for ${city}, ${region}: temperature, rain and wind, updated daily.">
+  <link rel="canonical" href="https://www.weathertell.com/weather/${slug}/">
+  <meta property="og:type" content="website"><meta property="og:locale" content="en_GB"><meta property="og:site_name" content="WeatherTell.com">
+  <meta property="og:title" content="Weather in ${city} | WeatherTell.com">
+  <meta property="og:description" content="Check the current weather and 14-day forecast for ${city}, ${region}.">
+  <meta property="og:url" content="https://www.weathertell.com/weather/${slug}/">
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="Weather in ${city} | WeatherTell.com">
+  <meta name="twitter:description" content="Check the current weather and 14-day forecast for ${city}, ${region}.">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;500;600;700;800&family=Plus+Jakarta+Sans:wght@500;600;700;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="../../styles.css">
+  <script type="application/ld+json">${breadcrumbSchema}</script>
+</head>
+<body data-location-name="${city}" data-location-region="${region}" data-latitude="${latitude}" data-longitude="${longitude}">
+  <div class="page-shell"><header class="site-header"><a class="brand" href="../../" aria-label="WeatherTell.com home"><img class="brand-logo" src="../../logo.png" alt=""><span>weather<span class="brand-dot">tell</span></span></a><nav class="top-nav" aria-label="Main navigation"><a class="active" href="#forecast">Forecast</a><a href="#14-day">14-Day</a><a href="../../blog/">Weather Explained</a><a href="../../locations/">Locations</a></nav><button class="location-button" id="locationButton" type="button" title="Use my location" aria-label="Use my location"><span class="location-icon" aria-hidden="true"><svg viewBox="0 0 24 24" width="15" height="15" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><circle cx="12" cy="12" r="7"></circle><line x1="12" y1="1" x2="12" y2="4"></line><line x1="12" y1="20" x2="12" y2="23"></line><line x1="1" y1="12" x2="4" y2="12"></line><line x1="20" y1="12" x2="23" y2="12"></line></svg></span><span>My location</span></button><details class="mobile-menu"><summary aria-label="Open navigation"><span class="menu-icon" aria-hidden="true">☰</span><span>Menu</span></summary><div><a href="#forecast">Forecast</a><a href="#14-day">14-Day</a><a href="../../blog/">Weather Explained</a><a href="../../locations/">Locations</a></div></details></header><nav class="breadcrumbs" aria-label="Breadcrumb"><a href="../../">Forecast</a><span class="sep">/</span><a href="../../locations/">Locations</a><span class="sep">/</span><span class="crumb-current" aria-current="page">${city}</span></nav><main>
+    <section class="hero location-hero" id="forecast"><div class="hero-copy"><p class="eyebrow"><span class="eyebrow-line"></span> weather forecast by location</p><h1>The weather in<br><em>${city}</em></h1><p class="hero-intro">See today's weather and the 14-day forecast for ${city}. Search another place to look ahead instantly.</p><form class="search-form" id="searchForm" role="search"><label class="sr-only" for="locationSearch">Search for a place</label><span class="search-icon">⌕</span><input id="locationSearch" type="search" autocomplete="off" placeholder="Search another place" value="${city}"><button type="submit">Check weather <span>→</span></button><div class="suggestions" id="suggestions" hidden></div></form></div><div class="hero-art" aria-hidden="true"><div class="sun-disc"></div><div class="cloud cloud-back"></div><div class="cloud cloud-front"></div><div class="rain rain-one"></div><div class="rain rain-two"></div><div class="rain rain-three"></div></div></section>
+    <section class="weather-panel" id="overzicht" aria-live="polite"><div class="panel-heading"><div><p class="section-kicker">your forecast</p><h2 id="locationName">${city}, ${region}</h2></div><div class="updated"><span class="status-dot"></span><span id="updatedText">Loading weather data...</span></div></div><div class="current-weather"><div class="temperature-block"><span class="weather-symbol" id="currentSymbol">◒</span><div><strong id="currentTemp">--°</strong><span class="degrees">C</span></div><p id="currentSummary">Loading...</p></div><div class="weather-stats"><div><span>Feels like</span><strong id="feelsLike">--°</strong></div><div><span>Wind</span><strong id="windSpeed">--</strong></div><div><span>Precipitation</span><strong id="rainChance">--%</strong></div></div><div class="daylight"><span class="daylight-icon">◐</span><div><span>Daylight</span><strong>07:12 — 20:44</strong></div></div></div><div class="hourly-strip" id="hourlyStrip" aria-label="Hour-by-hour forecast"></div></section>
+    <section class="rain-section" aria-labelledby="rainTitle"><div class="section-heading-row"><div><p class="section-kicker">next 24 hours</p><h2 id="rainTitle">Rain forecast for ${city}</h2></div></div><div class="rain-chart-wrap"><div class="rain-chart" id="rainChart"></div><div class="rain-tooltip" id="rainTooltip" hidden></div></div><p class="rain-hint">Hover over the chart to see rainfall per hour.</p></section>
+    <section class="forecast-section" id="14-day"><div class="section-heading-row"><div><p class="section-kicker">looking ahead in ${city}</p><h2>The next 14 days</h2></div><div class="legend"><span class="legend-high"></span> maximum <span class="legend-low"></span> minimum</div></div><div class="forecast-grid" id="forecastGrid"></div></section>
+    <section class="location-copy"><p class="section-kicker">${city} weather</p><h2>Weather in ${city}</h2><p>See the forecast for ${city} in one clear overview. From temperature and wind to the chance of rain: plan ${activity} with up-to-date information.</p><h3>Today and the next 14 days</h3><p>The forecast for ${city} is updated daily. Check the temperature, wind and chance of rain hour by hour, and use the 14-day outlook to plan ahead and spot which days look best for being outside.</p><h3>Practical weather notes for ${city}</h3><p>${weatherAdvice}</p><h3>Seasons in ${city}</h3><p>${seasonNote}</p><h3>Frequently asked questions</h3><p><strong>How often is the forecast updated?</strong><br>The live weather data refreshes several times a day, so you're always seeing the latest forecast for ${city}.</p><p><strong>Is the 14-day forecast reliable?</strong><br>The first few days are usually the most accurate. Further ahead, the forecast mainly shows a trend rather than the exact weather at a specific hour.</p><p><strong>What should I check before heading outside?</strong><br>Look at the combination of rain, wind and feels-like temperature. A short trip can handle a passing shower, but a longer walk or bike ride benefits from a more stable stretch of weather.</p></section>
+    <section class="insight-band"><div class="insight-copy"><p class="section-kicker">today's tip</p><h2>Plan your day<br><em>around the weather.</em></h2></div><div class="insight-note"><span class="note-mark">✦</span><p id="insightText">The current forecast for ${city} is loading.</p></div></section>
+  </main><footer class="site-footer"><div class="footer-top"><div class="footer-brand"><a class="footer-logo" href="../../"><img src="../../logo.png" alt=""><span>weather<span class="brand-dot">tell</span></span></a><p>Clear weather forecasts for any place in the world, up to 14 days ahead.</p></div><nav class="footer-col" aria-label="Navigation"><h3>Navigation</h3><a href="../../">Forecast</a><a href="../../locations/">Locations</a><a href="../../blog/">Weather Explained</a></nav></div><div class="footer-bottom"><span>© 2026 WeatherTell.com</span><span>Data from <a href="https://open-meteo.com" rel="noopener" target="_blank">Open-Meteo</a></span></div></footer></div><script src="../../app.js"></script>
+</body></html>`;
+};
+
+for (const location of locations) {
+  const directory = path.join(root, 'weather', location[0]);
+  fs.mkdirSync(directory, { recursive: true });
+  fs.writeFileSync(path.join(directory, 'index.html'), page(location), 'utf8');
+}
+
+const allLocations = locations.map(([slug, city]) => [slug, city]);
+const links = allLocations.map(([slug, city]) => `<a href="weather/${slug}/" data-city="${city.toLowerCase()}" data-letter="${city[0].toLowerCase()}">${city} <span>→</span></a>`).join('');
+const directoryLetters = [...new Set(allLocations.map(([, city]) => city[0].toUpperCase()))].sort();
+const letterChips = directoryLetters.map(letter => `<button type="button" class="letter-chip" data-letter="${letter.toLowerCase()}">${letter}</button>`).join('');
+const directoryScript = `<script>(function(){var search=document.getElementById('directorySearch');var letterFilter=document.getElementById('letterFilter');var links=Array.prototype.slice.call(document.querySelectorAll('#directoryLinks a'));var empty=document.getElementById('directoryEmpty');var activeLetter='';function applyFilter(){var term=search.value.trim().toLowerCase();var visible=0;links.forEach(function(a){var show=a.dataset.city.indexOf(term)!==-1&&(!activeLetter||a.dataset.letter===activeLetter);a.hidden=!show;if(show)visible++;});empty.hidden=visible!==0;}search.addEventListener('input',applyFilter);letterFilter.addEventListener('click',function(event){var button=event.target.closest('.letter-chip');if(!button)return;activeLetter=button.dataset.letter;letterFilter.querySelectorAll('.letter-chip').forEach(function(chip){chip.classList.toggle('active',chip===button);});applyFilter();});})();</script>`;
+const locationsBreadcrumbSchema = JSON.stringify({
+  '@context': 'https://schema.org',
+  '@type': 'BreadcrumbList',
+  itemListElement: [
+    { '@type': 'ListItem', position: 1, name: 'Forecast', item: 'https://www.weathertell.com/' },
+    { '@type': 'ListItem', position: 2, name: 'Locations', item: 'https://www.weathertell.com/locations/' }
+  ]
+});
+fs.mkdirSync(path.join(root, 'locations'), { recursive: true });
+fs.writeFileSync(path.join(root, 'locations', 'index.html'), `<!doctype html><html lang="en"><head><meta charset="UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1.0"><link rel="icon" type="image/png" href="../favicon.png"><link rel="apple-touch-icon" href="../apple-touch-icon.png"><meta name="theme-color" content="#0a2a5c"><title>Weather forecast by location | WeatherTell.com</title><meta name="description" content="Browse the weather forecast for major cities around the world."><link rel="canonical" href="https://www.weathertell.com/locations/"><meta property="og:type" content="website"><meta property="og:locale" content="en_GB"><meta property="og:site_name" content="WeatherTell.com"><meta property="og:title" content="Weather forecast by location | WeatherTell.com"><meta property="og:description" content="Browse the weather forecast for major cities around the world."><meta property="og:url" content="https://www.weathertell.com/locations/"><meta name="twitter:card" content="summary_large_image"><meta name="twitter:title" content="Weather forecast by location | WeatherTell.com"><meta name="twitter:description" content="Browse the weather forecast for major cities around the world."><link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin><link href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;500;600;700;800&family=Plus+Jakarta+Sans:wght@500;600;700;800&display=swap" rel="stylesheet"><link rel="stylesheet" href="../styles.css"><script type="application/ld+json">${locationsBreadcrumbSchema}</script></head><body><div class="page-shell"><header class="site-header"><a class="brand" href="../" aria-label="WeatherTell.com home"><img class="brand-logo" src="../logo.png" alt=""><span>weather<span class="brand-dot">tell</span></span></a><nav class="top-nav" aria-label="Main navigation"><a href="../">Forecast</a><a href="../blog/">Weather Explained</a><a class="active" href="./">Locations</a></nav><details class="mobile-menu"><summary aria-label="Open navigation"><span class="menu-icon" aria-hidden="true">☰</span><span>Menu</span></summary><div><a href="../">Forecast</a><a href="../blog/">Weather Explained</a><a href="./">Locations</a></div></details></header><nav class="breadcrumbs" aria-label="Breadcrumb"><a href="../">Forecast</a><span class="sep">/</span><span class="crumb-current" aria-current="page">Locations</span></nav><main><section class="location-directory"><p class="section-kicker">worldwide</p><h1>Weather forecast<br><em>by location</em></h1><p>Browse the current weather and 14-day forecast for major cities around the world.</p><div class="directory-filter"><label class="directory-search" for="directorySearch"><span class="search-icon" aria-hidden="true">⌕</span><input id="directorySearch" type="search" autocomplete="off" placeholder="Search a city, e.g. Berlin"></label><div class="letter-filter" id="letterFilter" role="group" aria-label="Filter by letter"><button type="button" class="letter-chip active" data-letter="">All</button>${letterChips}</div></div><div class="directory-links" id="directoryLinks">${links}</div><p class="directory-empty" id="directoryEmpty" hidden>No locations found for this search.</p></section></main><footer class="site-footer"><div class="footer-top"><div class="footer-brand"><a class="footer-logo" href="../"><img src="../logo.png" alt=""><span>weather<span class="brand-dot">tell</span></span></a><p>Clear weather forecasts for any place in the world, up to 14 days ahead.</p></div><nav class="footer-col" aria-label="Navigation"><h3>Navigation</h3><a href="../">Forecast</a><a href="./">Locations</a><a href="../blog/">Weather Explained</a></nav></div><div class="footer-bottom"><span>© 2026 WeatherTell.com</span><span>Data from <a href="https://open-meteo.com" rel="noopener" target="_blank">Open-Meteo</a></span></div></footer></div>${directoryScript}</body></html>`, 'utf8');
+
+const sitemapUrls = [
+  { loc: 'https://www.weathertell.com/', changefreq: 'daily', priority: '1.0' },
+  ...locations.map(([slug]) => ({ loc: `https://www.weathertell.com/weather/${slug}/`, changefreq: 'hourly', priority: '0.8' })),
+  { loc: 'https://www.weathertell.com/locations/', changefreq: 'weekly', priority: '0.7' }
+];
+const today = new Date().toISOString().slice(0, 10);
+const sitemapXml = `<?xml version="1.0" encoding="UTF-8"?>\n<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">\n${sitemapUrls.map(u => `  <url><loc>${u.loc}</loc><lastmod>${today}</lastmod><changefreq>${u.changefreq}</changefreq><priority>${u.priority}</priority></url>`).join('\n')}\n</urlset>\n`;
+fs.writeFileSync(path.join(root, 'sitemap.xml'), sitemapXml, 'utf8');
+
+console.log(`Generated ${locations.length} location pages, the locations directory, and sitemap.xml with ${sitemapUrls.length} URLs.`);

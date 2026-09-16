@@ -1,0 +1,11 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 420">
+  <rect width="1200" height="420" fill="#0a2a5c"/>
+  <circle cx="920" cy="150" r="92" fill="#fed00e"/>
+  <circle cx="920" cy="150" r="128" fill="none" stroke="#fed00e" stroke-opacity=".18" stroke-width="22"/>
+  <path d="M140 302c0-47 38-85 85-85 26 0 49 12 65 31 15-11 34-18 55-18 48 0 87 39 87 87H140Z" fill="#fbfaf6"/>
+  <path d="M710 306c0-36 29-65 65-65 20 0 37 9 50 24 12-9 26-14 42-14 36 0 66 29 66 65H710Z" fill="#dbe9fd" opacity=".85"/>
+  <path d="M115 342c120-38 240-38 360 0s240 38 360 0 240-38 360 0" fill="none" stroke="#e77b5e" stroke-width="4" opacity=".9"/>
+  <path d="M800 330l-16 38M850 330l-16 38M900 330l-16 38" stroke="#dbe9fd" stroke-width="4" stroke-linecap="round" opacity=".65"/>
+  <text x="74" y="86" fill="#fed00e" font-family="Arial, sans-serif" font-size="18" font-weight="700" letter-spacing="4">WEER UITGELEGD</text>
+  <text x="74" y="136" fill="#fbfaf6" font-family="Arial, sans-serif" font-size="42" font-weight="700">Helder vooruitkijken.</text>
+</svg>
