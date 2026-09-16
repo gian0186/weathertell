@@ -171,7 +171,7 @@ for (const location of locations) {
 }
 
 const allLocations = locations.map(([slug, city]) => [slug, city]);
-const links = allLocations.map(([slug, city]) => `<a href="weather/${slug}/" data-city="${city.toLowerCase()}" data-letter="${city[0].toLowerCase()}">${city} <span>→</span></a>`).join('');
+const links = allLocations.map(([slug, city]) => `<a href="../weather/${slug}/" data-city="${city.toLowerCase()}" data-letter="${city[0].toLowerCase()}">${city} <span>→</span></a>`).join('');
 const directoryLetters = [...new Set(allLocations.map(([, city]) => city[0].toUpperCase()))].sort();
 const letterChips = directoryLetters.map(letter => `<button type="button" class="letter-chip" data-letter="${letter.toLowerCase()}">${letter}</button>`).join('');
 const directoryScript = `<script>(function(){var search=document.getElementById('directorySearch');var letterFilter=document.getElementById('letterFilter');var links=Array.prototype.slice.call(document.querySelectorAll('#directoryLinks a'));var empty=document.getElementById('directoryEmpty');var activeLetter='';function applyFilter(){var term=search.value.trim().toLowerCase();var visible=0;links.forEach(function(a){var show=a.dataset.city.indexOf(term)!==-1&&(!activeLetter||a.dataset.letter===activeLetter);a.hidden=!show;if(show)visible++;});empty.hidden=visible!==0;}search.addEventListener('input',applyFilter);letterFilter.addEventListener('click',function(event){var button=event.target.closest('.letter-chip');if(!button)return;activeLetter=button.dataset.letter;letterFilter.querySelectorAll('.letter-chip').forEach(function(chip){chip.classList.toggle('active',chip===button);});applyFilter();});})();</script>`;
