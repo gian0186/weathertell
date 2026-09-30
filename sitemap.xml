@@ -211,6 +211,35 @@
   <url><loc>https://www.weathertell.com/climate-archive/2023/</loc><lastmod>2026-09-30</lastmod><changefreq>yearly</changefreq><priority>0.4</priority></url>
   <url><loc>https://www.weathertell.com/climate-archive/2024/</loc><lastmod>2026-09-30</lastmod><changefreq>yearly</changefreq><priority>0.4</priority></url>
   <url><loc>https://www.weathertell.com/climate-archive/2025/</loc><lastmod>2026-09-30</lastmod><changefreq>yearly</changefreq><priority>0.4</priority></url>
+  <url><loc>https://www.weathertell.com/hay-fever/</loc><lastmod>2026-09-30</lastmod><changefreq>daily</changefreq><priority>0.6</priority></url>
+  <url><loc>https://www.weathertell.com/hay-fever/amsterdam/</loc><lastmod>2026-09-30</lastmod><changefreq>daily</changefreq><priority>0.5</priority></url>
+  <url><loc>https://www.weathertell.com/hay-fever/athens/</loc><lastmod>2026-09-30</lastmod><changefreq>daily</changefreq><priority>0.5</priority></url>
+  <url><loc>https://www.weathertell.com/hay-fever/barcelona/</loc><lastmod>2026-09-30</lastmod><changefreq>daily</changefreq><priority>0.5</priority></url>
+  <url><loc>https://www.weathertell.com/hay-fever/belgrade/</loc><lastmod>2026-09-30</lastmod><changefreq>daily</changefreq><priority>0.5</priority></url>
+  <url><loc>https://www.weathertell.com/hay-fever/berlin/</loc><lastmod>2026-09-30</lastmod><changefreq>daily</changefreq><priority>0.5</priority></url>
+  <url><loc>https://www.weathertell.com/hay-fever/brussels/</loc><lastmod>2026-09-30</lastmod><changefreq>daily</changefreq><priority>0.5</priority></url>
+  <url><loc>https://www.weathertell.com/hay-fever/bucharest/</loc><lastmod>2026-09-30</lastmod><changefreq>daily</changefreq><priority>0.5</priority></url>
+  <url><loc>https://www.weathertell.com/hay-fever/budapest/</loc><lastmod>2026-09-30</lastmod><changefreq>daily</changefreq><priority>0.5</priority></url>
+  <url><loc>https://www.weathertell.com/hay-fever/copenhagen/</loc><lastmod>2026-09-30</lastmod><changefreq>daily</changefreq><priority>0.5</priority></url>
+  <url><loc>https://www.weathertell.com/hay-fever/dublin/</loc><lastmod>2026-09-30</lastmod><changefreq>daily</changefreq><priority>0.5</priority></url>
+  <url><loc>https://www.weathertell.com/hay-fever/edinburgh/</loc><lastmod>2026-09-30</lastmod><changefreq>daily</changefreq><priority>0.5</priority></url>
+  <url><loc>https://www.weathertell.com/hay-fever/helsinki/</loc><lastmod>2026-09-30</lastmod><changefreq>daily</changefreq><priority>0.5</priority></url>
+  <url><loc>https://www.weathertell.com/hay-fever/istanbul/</loc><lastmod>2026-09-30</lastmod><changefreq>daily</changefreq><priority>0.5</priority></url>
+  <url><loc>https://www.weathertell.com/hay-fever/kyiv/</loc><lastmod>2026-09-30</lastmod><changefreq>daily</changefreq><priority>0.5</priority></url>
+  <url><loc>https://www.weathertell.com/hay-fever/lisbon/</loc><lastmod>2026-09-30</lastmod><changefreq>daily</changefreq><priority>0.5</priority></url>
+  <url><loc>https://www.weathertell.com/hay-fever/london/</loc><lastmod>2026-09-30</lastmod><changefreq>daily</changefreq><priority>0.5</priority></url>
+  <url><loc>https://www.weathertell.com/hay-fever/madrid/</loc><lastmod>2026-09-30</lastmod><changefreq>daily</changefreq><priority>0.5</priority></url>
+  <url><loc>https://www.weathertell.com/hay-fever/milan/</loc><lastmod>2026-09-30</lastmod><changefreq>daily</changefreq><priority>0.5</priority></url>
+  <url><loc>https://www.weathertell.com/hay-fever/munich/</loc><lastmod>2026-09-30</lastmod><changefreq>daily</changefreq><priority>0.5</priority></url>
+  <url><loc>https://www.weathertell.com/hay-fever/oslo/</loc><lastmod>2026-09-30</lastmod><changefreq>daily</changefreq><priority>0.5</priority></url>
+  <url><loc>https://www.weathertell.com/hay-fever/paris/</loc><lastmod>2026-09-30</lastmod><changefreq>daily</changefreq><priority>0.5</priority></url>
+  <url><loc>https://www.weathertell.com/hay-fever/prague/</loc><lastmod>2026-09-30</lastmod><changefreq>daily</changefreq><priority>0.5</priority></url>
+  <url><loc>https://www.weathertell.com/hay-fever/reykjavik/</loc><lastmod>2026-09-30</lastmod><changefreq>daily</changefreq><priority>0.5</priority></url>
+  <url><loc>https://www.weathertell.com/hay-fever/rome/</loc><lastmod>2026-09-30</lastmod><changefreq>daily</changefreq><priority>0.5</priority></url>
+  <url><loc>https://www.weathertell.com/hay-fever/stockholm/</loc><lastmod>2026-09-30</lastmod><changefreq>daily</changefreq><priority>0.5</priority></url>
+  <url><loc>https://www.weathertell.com/hay-fever/vienna/</loc><lastmod>2026-09-30</lastmod><changefreq>daily</changefreq><priority>0.5</priority></url>
+  <url><loc>https://www.weathertell.com/hay-fever/warsaw/</loc><lastmod>2026-09-30</lastmod><changefreq>daily</changefreq><priority>0.5</priority></url>
+  <url><loc>https://www.weathertell.com/hay-fever/zurich/</loc><lastmod>2026-09-30</lastmod><changefreq>daily</changefreq><priority>0.5</priority></url>
   <url><loc>https://www.weathertell.com/blog/</loc><lastmod>2026-09-30</lastmod><changefreq>weekly</changefreq><priority>0.7</priority></url>
   <url><loc>https://www.weathertell.com/blog/forecast-reliability/</loc><lastmod>2026-06-05</lastmod><changefreq>monthly</changefreq><priority>0.6</priority></url>
   <url><loc>https://www.weathertell.com/blog/feels-like-temperature/</loc><lastmod>2026-07-02</lastmod><changefreq>monthly</changefreq><priority>0.6</priority></url>
