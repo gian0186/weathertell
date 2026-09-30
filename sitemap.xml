@@ -95,6 +95,8 @@
   <url><loc>https://www.weathertell.com/weather/zurich/</loc><lastmod>2026-09-30</lastmod><changefreq>hourly</changefreq><priority>0.8</priority></url>
   <url><loc>https://www.weathertell.com/locations/</loc><lastmod>2026-09-30</lastmod><changefreq>weekly</changefreq><priority>0.7</priority></url>
   <url><loc>https://www.weathertell.com/sunrise-sunset/</loc><lastmod>2026-09-30</lastmod><changefreq>weekly</changefreq><priority>0.7</priority></url>
+  <url><loc>https://www.weathertell.com/7-day-forecast/</loc><lastmod>2026-09-30</lastmod><changefreq>daily</changefreq><priority>0.8</priority></url>
+  <url><loc>https://www.weathertell.com/14-day-forecast/</loc><lastmod>2026-09-30</lastmod><changefreq>daily</changefreq><priority>0.8</priority></url>
   <url><loc>https://www.weathertell.com/glossary/</loc><lastmod>2026-09-30</lastmod><changefreq>monthly</changefreq><priority>0.6</priority></url>
   <url><loc>https://www.weathertell.com/glossary/air-quality-index/</loc><lastmod>2026-09-30</lastmod><changefreq>monthly</changefreq><priority>0.5</priority></url>
   <url><loc>https://www.weathertell.com/glossary/barometric-pressure/</loc><lastmod>2026-09-30</lastmod><changefreq>monthly</changefreq><priority>0.5</priority></url>
