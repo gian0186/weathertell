@@ -95,6 +95,29 @@
   <url><loc>https://www.weathertell.com/weather/zurich/</loc><lastmod>2026-09-30</lastmod><changefreq>hourly</changefreq><priority>0.8</priority></url>
   <url><loc>https://www.weathertell.com/locations/</loc><lastmod>2026-09-30</lastmod><changefreq>weekly</changefreq><priority>0.7</priority></url>
   <url><loc>https://www.weathertell.com/sunrise-sunset/</loc><lastmod>2026-09-30</lastmod><changefreq>weekly</changefreq><priority>0.7</priority></url>
+  <url><loc>https://www.weathertell.com/glossary/</loc><lastmod>2026-09-30</lastmod><changefreq>monthly</changefreq><priority>0.6</priority></url>
+  <url><loc>https://www.weathertell.com/glossary/air-quality-index/</loc><lastmod>2026-09-30</lastmod><changefreq>monthly</changefreq><priority>0.5</priority></url>
+  <url><loc>https://www.weathertell.com/glossary/barometric-pressure/</loc><lastmod>2026-09-30</lastmod><changefreq>monthly</changefreq><priority>0.5</priority></url>
+  <url><loc>https://www.weathertell.com/glossary/cold-front/</loc><lastmod>2026-09-30</lastmod><changefreq>monthly</changefreq><priority>0.5</priority></url>
+  <url><loc>https://www.weathertell.com/glossary/dew-point/</loc><lastmod>2026-09-30</lastmod><changefreq>monthly</changefreq><priority>0.5</priority></url>
+  <url><loc>https://www.weathertell.com/glossary/el-nino-la-nina/</loc><lastmod>2026-09-30</lastmod><changefreq>monthly</changefreq><priority>0.5</priority></url>
+  <url><loc>https://www.weathertell.com/glossary/fog/</loc><lastmod>2026-09-30</lastmod><changefreq>monthly</changefreq><priority>0.5</priority></url>
+  <url><loc>https://www.weathertell.com/glossary/frost/</loc><lastmod>2026-09-30</lastmod><changefreq>monthly</changefreq><priority>0.5</priority></url>
+  <url><loc>https://www.weathertell.com/glossary/heat-index/</loc><lastmod>2026-09-30</lastmod><changefreq>monthly</changefreq><priority>0.5</priority></url>
+  <url><loc>https://www.weathertell.com/glossary/high-pressure-system/</loc><lastmod>2026-09-30</lastmod><changefreq>monthly</changefreq><priority>0.5</priority></url>
+  <url><loc>https://www.weathertell.com/glossary/isobar/</loc><lastmod>2026-09-30</lastmod><changefreq>monthly</changefreq><priority>0.5</priority></url>
+  <url><loc>https://www.weathertell.com/glossary/jet-stream/</loc><lastmod>2026-09-30</lastmod><changefreq>monthly</changefreq><priority>0.5</priority></url>
+  <url><loc>https://www.weathertell.com/glossary/low-pressure-system/</loc><lastmod>2026-09-30</lastmod><changefreq>monthly</changefreq><priority>0.5</priority></url>
+  <url><loc>https://www.weathertell.com/glossary/monsoon/</loc><lastmod>2026-09-30</lastmod><changefreq>monthly</changefreq><priority>0.5</priority></url>
+  <url><loc>https://www.weathertell.com/glossary/occluded-front/</loc><lastmod>2026-09-30</lastmod><changefreq>monthly</changefreq><priority>0.5</priority></url>
+  <url><loc>https://www.weathertell.com/glossary/polar-vortex/</loc><lastmod>2026-09-30</lastmod><changefreq>monthly</changefreq><priority>0.5</priority></url>
+  <url><loc>https://www.weathertell.com/glossary/precipitation/</loc><lastmod>2026-09-30</lastmod><changefreq>monthly</changefreq><priority>0.5</priority></url>
+  <url><loc>https://www.weathertell.com/glossary/relative-humidity/</loc><lastmod>2026-09-30</lastmod><changefreq>monthly</changefreq><priority>0.5</priority></url>
+  <url><loc>https://www.weathertell.com/glossary/thunderstorm/</loc><lastmod>2026-09-30</lastmod><changefreq>monthly</changefreq><priority>0.5</priority></url>
+  <url><loc>https://www.weathertell.com/glossary/uv-index/</loc><lastmod>2026-09-30</lastmod><changefreq>monthly</changefreq><priority>0.5</priority></url>
+  <url><loc>https://www.weathertell.com/glossary/visibility/</loc><lastmod>2026-09-30</lastmod><changefreq>monthly</changefreq><priority>0.5</priority></url>
+  <url><loc>https://www.weathertell.com/glossary/warm-front/</loc><lastmod>2026-09-30</lastmod><changefreq>monthly</changefreq><priority>0.5</priority></url>
+  <url><loc>https://www.weathertell.com/glossary/wind-chill/</loc><lastmod>2026-09-30</lastmod><changefreq>monthly</changefreq><priority>0.5</priority></url>
   <url><loc>https://www.weathertell.com/blog/</loc><lastmod>2026-09-30</lastmod><changefreq>weekly</changefreq><priority>0.7</priority></url>
   <url><loc>https://www.weathertell.com/blog/forecast-reliability/</loc><lastmod>2026-06-05</lastmod><changefreq>monthly</changefreq><priority>0.6</priority></url>
   <url><loc>https://www.weathertell.com/blog/feels-like-temperature/</loc><lastmod>2026-07-02</lastmod><changefreq>monthly</changefreq><priority>0.6</priority></url>

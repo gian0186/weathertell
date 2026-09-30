@@ -260,6 +260,7 @@ fs.writeFileSync(path.join(root, 'blog', 'index.html'), blogIndex, 'utf8');
 
 const listDirs = dir => fs.existsSync(dir) ? fs.readdirSync(dir, { withFileTypes: true }).filter(d => d.isDirectory()).map(d => d.name).sort() : [];
 const weatherSlugs = listDirs(path.join(root, 'weather'));
+const glossarySlugs = listDirs(path.join(root, 'glossary'));
 const today = new Date().toISOString().slice(0, 10);
 const postDateBySlug = Object.fromEntries(posts.map(p => [p.slug, p.datePublished]));
 
@@ -268,6 +269,8 @@ const sitemapUrls = [
   ...weatherSlugs.map(slug => ({ loc: `https://www.weathertell.com/weather/${slug}/`, lastmod: today, changefreq: 'hourly', priority: '0.8' })),
   { loc: 'https://www.weathertell.com/locations/', lastmod: today, changefreq: 'weekly', priority: '0.7' },
   { loc: 'https://www.weathertell.com/sunrise-sunset/', lastmod: today, changefreq: 'weekly', priority: '0.7' },
+  { loc: 'https://www.weathertell.com/glossary/', lastmod: today, changefreq: 'monthly', priority: '0.6' },
+  ...glossarySlugs.map(slug => ({ loc: `https://www.weathertell.com/glossary/${slug}/`, lastmod: today, changefreq: 'monthly', priority: '0.5' })),
   { loc: 'https://www.weathertell.com/blog/', lastmod: today, changefreq: 'weekly', priority: '0.7' },
   ...posts.map(p => ({ loc: `https://www.weathertell.com/blog/${p.slug}/`, lastmod: postDateBySlug[p.slug], changefreq: 'monthly', priority: '0.6' })),
   { loc: `https://www.weathertell.com/authors/${author.slug}/`, lastmod: today, changefreq: 'monthly', priority: '0.4' }
