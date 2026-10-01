@@ -199,6 +199,66 @@ function formatMm(value) {
   return `${value.toFixed(1)} mm`;
 }
 
+function formatMmPlain(value) {
+  return `${(Number.isFinite(value) ? value : 0).toFixed(1)} mm`;
+}
+
+function formatFullDate(iso) {
+  const d = new Date(`${iso}T12:00:00`);
+  return `${fullDays[d.getDay()]} ${d.getDate()} ${shortMonths[d.getMonth()]}`;
+}
+
+function renderNarrative(data, cityName) {
+  const narrativeNow = document.querySelector('#narrativeNow');
+  if (!narrativeNow) return;
+  const current = data.current;
+  const [label] = getWeatherLabel(current.weather_code, current.is_day);
+  const humidity = safeNumber(current.relative_humidity_2m);
+  const windDir = windDirection(current.wind_direction_10m);
+  const windKmh = safeNumber(current.wind_speed_10m);
+  const todayMax = safeNumber(data.daily.temperature_2m_max[0]);
+  const todayMin = safeNumber(data.daily.temperature_2m_min[0]);
+  const todaySunHours = (data.daily.sunshine_duration ? data.daily.sunshine_duration[0] : 0) || 0;
+  const todayDayName = fullDays[new Date().getDay()];
+
+  narrativeNow.innerHTML = `Right now in ${cityName} it's ${safeNumber(current.temperature_2m)}°C with ${label.toLowerCase()}. The feels-like temperature is ${safeNumber(current.apparent_temperature)}°C, humidity is ${humidity}%, and wind is blowing from the ${windDir} at ${windKmh} km/h.<br><br>Today (${todayDayName}) will reach a high of ${todayMax}°C and a low of ${todayMin}°C, with ${formatMmPlain(data.daily.precipitation_sum ? data.daily.precipitation_sum[0] : 0)} of rain and ${(todaySunHours / 3600).toFixed(1)} hours of sunshine.`;
+
+  const tomorrowEl = document.querySelector('#narrativeTomorrow');
+  if (tomorrowEl && data.daily.time[1]) {
+    const tMax = safeNumber(data.daily.temperature_2m_max[1]);
+    const tMin = safeNumber(data.daily.temperature_2m_min[1]);
+    const tSun = ((data.daily.sunshine_duration ? data.daily.sunshine_duration[1] : 0) || 0) / 3600;
+    const tChance = safeNumber(data.daily.precipitation_probability_max[1], 0);
+    const tomorrowDayName = fullDays[(new Date().getDay() + 1) % 7];
+    tomorrowEl.innerHTML = `Tomorrow (${tomorrowDayName}), the high in ${cityName} will be ${tMax}°C and the low ${tMin}°C. ${formatMmPlain(data.daily.precipitation_sum ? data.daily.precipitation_sum[1] : 0)} of rain is expected with ${tSun.toFixed(1)} hours of sunshine. The chance of rain is ${tChance}%. This data is updated several times a day via Open-Meteo.`;
+  }
+
+  const weekEl = document.querySelector('#narrativeWeek');
+  if (weekEl) {
+    const days7Max = data.daily.temperature_2m_max.slice(0, 7).filter(Number.isFinite);
+    const days7Min = data.daily.temperature_2m_min.slice(0, 7).filter(Number.isFinite);
+    const avgMax = days7Max.length ? Math.round(days7Max.reduce((a, b) => a + b, 0) / days7Max.length) : '--';
+    const avgMin = days7Min.length ? Math.round(days7Min.reduce((a, b) => a + b, 0) / days7Min.length) : '--';
+    const precipSum7 = (data.daily.precipitation_sum || []).slice(0, 7);
+    const totalRain = precipSum7.reduce((a, b) => a + (Number.isFinite(b) ? b : 0), 0);
+    const rainDays = precipSum7.filter(v => Number.isFinite(v) && v >= 1).length;
+    const sunnyDays = (data.daily.sunshine_duration || []).slice(0, 7).filter(v => Number.isFinite(v) && v / 3600 >= 6).length;
+    weekEl.innerHTML = `Over the coming week, the average high in ${cityName} is expected to be around ${avgMax}°C and the average low around ${avgMin}°C. ${formatMmPlain(totalRain)} of rain is expected, spread across ${rainDays} day${rainDays === 1 ? '' : 's'}, with ${sunnyDays} mostly sunny day${sunnyDays === 1 ? '' : 's'}.`;
+  }
+
+  const extremesEl = document.querySelector('#narrativeExtremes');
+  if (extremesEl) {
+    const maxes = data.daily.temperature_2m_max.slice(0, FORECAST_DAYS);
+    const mins = data.daily.temperature_2m_min.slice(0, FORECAST_DAYS);
+    let warmIdx = 0, coldIdx = 0;
+    maxes.forEach((v, i) => { if (Number.isFinite(v) && (!Number.isFinite(maxes[warmIdx]) || v > maxes[warmIdx])) warmIdx = i; });
+    mins.forEach((v, i) => { if (Number.isFinite(v) && (!Number.isFinite(mins[coldIdx]) || v < mins[coldIdx])) coldIdx = i; });
+    extremesEl.innerHTML = `The warmest day in the ${FORECAST_DAYS}-day forecast for ${cityName} is ${formatFullDate(data.daily.time[warmIdx])} at ${safeNumber(maxes[warmIdx])}°C. The coldest night falls on ${formatFullDate(data.daily.time[coldIdx])} at ${safeNumber(mins[coldIdx])}°C. Click a day for hourly details.`;
+  }
+
+  document.querySelectorAll('.narrative-city-name').forEach(el => { el.textContent = cityName; });
+}
+
 function renderForecast(data) {
   const maxes = data.daily.temperature_2m_max.slice(0, FORECAST_DAYS);
   const mins = data.daily.temperature_2m_min.slice(0, FORECAST_DAYS);
@@ -274,10 +334,13 @@ function renderWeather(data) {
   windSpeed.textContent = `${windDirection(current.wind_direction_10m)} ${Math.max(1, Math.round(current.wind_speed_10m / 3.6))} bft`;
   rainChance.textContent = `${rainProbability}%`;
   updatedText.textContent = `Updated at ${formatHour(current.time)}`;
+  const daylightEl = document.querySelector('#daylightText');
+  if (daylightEl && data.daily.sunrise && data.daily.sunset) daylightEl.textContent = `${data.daily.sunrise[0].slice(11, 16)} — ${data.daily.sunset[0].slice(11, 16)}`;
   insightText.innerHTML = `${rainProbability < 30 ? 'It should stay mostly dry today.' : "An umbrella isn't a bad idea today."} The best hours to be outside are between <strong>11:00 and 16:00</strong>.`;
   renderHourly(data);
   renderRainChart(data);
   renderForecast(data);
+  renderNarrative(data, locationPage || selectedPlace.name);
 }
 
 async function loadWeather(place) {
@@ -285,7 +348,7 @@ async function loadWeather(place) {
   locationName.textContent = `${place.name}${place.admin1 ? `, ${place.admin1}` : ''}`;
   updatedText.textContent = 'Loading forecast...';
   try {
-    const params = new URLSearchParams({ latitude: place.latitude, longitude: place.longitude, timezone: 'auto', forecast_days: FORECAST_DAYS, current: 'temperature_2m,apparent_temperature,weather_code,wind_speed_10m,wind_direction_10m,is_day', hourly: 'temperature_2m,weather_code,precipitation,is_day', daily: 'weather_code,temperature_2m_max,temperature_2m_min,precipitation_probability_max,wind_speed_10m_max' });
+    const params = new URLSearchParams({ latitude: place.latitude, longitude: place.longitude, timezone: 'auto', forecast_days: FORECAST_DAYS, current: 'temperature_2m,apparent_temperature,weather_code,wind_speed_10m,wind_direction_10m,is_day,relative_humidity_2m', hourly: 'temperature_2m,weather_code,precipitation,is_day', daily: 'weather_code,temperature_2m_max,temperature_2m_min,precipitation_probability_max,wind_speed_10m_max,precipitation_sum,sunshine_duration,sunrise,sunset' });
     const response = await fetch(`https://api.open-meteo.com/v1/forecast?${params}`);
     if (!response.ok) throw new Error('Weather data unavailable');
     renderWeather(await response.json());
