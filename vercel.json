@@ -1,0 +1,9 @@
+{
+  "outputDirectory": ".",
+  "crons": [
+    {
+      "path": "/api/trigger-scheduled-publish",
+      "schedule": "5 0 * * *"
+    }
+  ]
+}
