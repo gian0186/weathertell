@@ -284,7 +284,60 @@ locations.push(['copenhagen', 'Copenhagen', 'Denmark', 55.6761, 12.5683, 'a bike
     "Brisbane's subtropical climate means warm, humid summers with frequent afternoon thunderstorms that can build quickly on hot days. The city's river and surrounding hills can create local variation in how a storm actually plays out compared with the wider regional forecast.",
     'Remember the seasons run opposite to the Northern Hemisphere: December to February is summer, hot and humid, while June to August is the mild, drier winter. Spring and autumn are generally pleasant and less humid than summer.']);
 
+// Climate by month on city pages (data/city-climate.json, via fetch-city-climate.mjs).
+const cityClimate = fs.existsSync(path.join(root, 'data', 'city-climate.json'))
+  ? JSON.parse(fs.readFileSync(path.join(root, 'data', 'city-climate.json'), 'utf8'))
+  : { plaatsen: {} };
+const monthNamesEn = ['January', 'February', 'March', 'April', 'May', 'June', 'July', 'August', 'September', 'October', 'November', 'December'];
+const toF = c => Math.round(c * 9 / 5 + 32);
+const tempEn = c => `${c.toFixed(1)}°C (${toF(c)}°F)`;
+const listEn = items => items.length < 2 ? items.join('') : `${items.slice(0, -1).join(', ')} and ${items[items.length - 1]}`;
+// Groups month indexes into consecutive runs (also across December-January), e.g. "June to September".
+const monthRunsEn = indexes => {
+  if (indexes.length === 12) return 'all year round';
+  const set = new Set(indexes);
+  const starts = indexes.filter(i => !set.has((i + 11) % 12));
+  return listEn(starts.flatMap(start => {
+    let end = start;
+    while (set.has((end + 1) % 12)) end = (end + 1) % 12;
+    if (start === end) return [monthNamesEn[start]];
+    if ((start + 1) % 12 === end) return [monthNamesEn[start], monthNamesEn[end]];
+    return [`${monthNamesEn[start]} to ${monthNamesEn[end]}`];
+  }));
+};
+const cityClimateHtml = (slug, city) => {
+  const k = cityClimate.plaatsen[slug];
+  if (!k) return '';
+  const m = k.maanden;
+  const idx = [...m.keys()];
+  const warmest = [...idx].sort((a, b) => m[b].max - m[a].max)[0];
+  const coolest = [...idx].sort((a, b) => m[a].max - m[b].max)[0];
+  const wettest = [...idx].sort((a, b) => m[b].neerslag - m[a].neerslag)[0];
+  const driest = [...idx].sort((a, b) => m[a].neerslag - m[b].neerslag)[0];
+  const hot = idx.filter(i => m[i].max >= 25);
+  const pleasant = idx.filter(i => m[i].max >= 18 && m[i].max <= 27);
+  const sea = k.zee && k.zee.every(v => v !== null) ? k.zee : null;
+  const rows = m.map((x, i) => `<tr><td>${monthNamesEn[i]}</td><td>${tempEn(x.max)}</td><td>${tempEn(x.min)}</td><td>${x.neerslag} mm (${(x.neerslag / 25.4).toFixed(1)} in)</td>${sea ? `<td>${tempEn(sea[i])}</td>` : ''}</tr>`).join('');
+  const table = `<div class="sun-table-wrap"><table class="sun-table"><thead><tr><th>Month</th><th>Avg high</th><th>Avg low</th><th>Rain</th>${sea ? '<th>Sea</th>' : ''}</tr></thead><tbody>${rows}</tbody></table></div><p class="rain-hint" style="margin-top:10px">Source: ${cityClimate.bron}, ${cityClimate.periode}${sea ? `; sea temperature: Open-Meteo Marine, ${cityClimate.zeePeriode}` : ''}. Model averages for a grid cell, not official station records.</p>`;
+  const warmSea = sea ? idx.filter(i => sea[i] >= 21) : [];
+  const seaWarmest = sea ? [...idx].sort((a, b) => sea[b] - sea[a])[0] : null;
+  const seaCoolest = sea ? [...idx].sort((a, b) => sea[a] - sea[b])[0] : null;
+  const best = [
+    `The warmest month in ${city} is ${monthNamesEn[warmest]}, with an average high of ${tempEn(m[warmest].max)}. The coolest is ${monthNamesEn[coolest]}, at ${tempEn(m[coolest].max)}. The wettest month is ${monthNamesEn[wettest]}, with about ${m[wettest].neerslag} mm (${(m[wettest].neerslag / 25.4).toFixed(1)} in) of rain.`,
+    hot.length ? `Highs of 25°C (77°F) or more are typical ${hot.length === 12 ? 'all year round' : `from ${monthRunsEn(hot)}`}.` : 'Average highs stay below 25°C (77°F) all year.',
+    pleasant.length && pleasant.length < 12 ? `For sightseeing and walking, with highs between 18 and 27°C (64 to 81°F), ${monthRunsEn(pleasant)} are the most comfortable.` : '',
+    sea ? `The sea is warmest in ${monthNamesEn[seaWarmest]}, at ${tempEn(sea[seaWarmest])}, and coolest in ${monthNamesEn[seaCoolest]}, at ${tempEn(sea[seaCoolest])}.${warmSea.length ? ` It is above 21°C (70°F), comfortable for swimming, ${warmSea.length === 12 ? 'all year round' : `from ${monthRunsEn(warmSea)}`}.` : ' It doesn\'t reach 21°C (70°F) in any month.'}` : ''
+  ].filter(Boolean).join(' ');
+  const faq = [
+    [`What is the warmest month in ${city}?`, `${monthNamesEn[warmest]}, with an average high of ${tempEn(m[warmest].max)} and an average low of ${tempEn(m[warmest].min)} (averages for ${cityClimate.periode}).`],
+    [`What is the wettest month in ${city}?`, `${monthNamesEn[wettest]}, with about ${m[wettest].neerslag} mm (${(m[wettest].neerslag / 25.4).toFixed(1)} in) of rain. The driest month is ${monthNamesEn[driest]}.`],
+    ...(sea ? [[`When can you swim in the sea in ${city}?`, warmSea.length ? `The sea is above 21°C (70°F) ${warmSea.length === 12 ? 'all year round' : `from ${monthRunsEn(warmSea)}`}, and warmest in ${monthNamesEn[seaWarmest]} at ${tempEn(sea[seaWarmest])}.` : `The sea stays below 21°C (70°F) on average; it is warmest in ${monthNamesEn[seaWarmest]}, at ${tempEn(sea[seaWarmest])}.`]] : [])
+  ];
+  return `<section class="location-copy"><p class="section-kicker">climate</p><h2>Climate in ${city} by month</h2><p>Planning a trip to ${city}? Below are the average daily high and low temperatures and the rainfall for each month${sea ? ', plus the sea temperature' : ''}. For the coming days, see the forecast above.</p>${table}<h3>Best time to visit ${city}</h3><p>${best}</p><h3>Climate FAQ</h3>${faq.map(([q, a]) => `<p><strong>${q}</strong><br>${a}</p>`).join('')}</section>`;
+};
+
 const page = ([slug, city, region, latitude, longitude, activity, weatherAdvice, seasonNote]) => {
+  const climate = cityClimateHtml(slug, city);
   const breadcrumbSchema = JSON.stringify({
     '@context': 'https://schema.org',
     '@type': 'BreadcrumbList',
@@ -301,8 +354,8 @@ const page = ([slug, city, region, latitude, longitude, activity, weatherAdvice,
   <link rel="icon" type="image/png" href="../../favicon.png">
   <link rel="apple-touch-icon" href="../../apple-touch-icon.png"><link rel="manifest" href="/manifest.json"><meta name="apple-mobile-web-app-capable" content="yes"><meta name="apple-mobile-web-app-title" content="WeatherTell"><script defer src="/pwa.js"></script><script defer src="../../analytics.js"></script>
   <meta name="theme-color" content="#0a2a5c">
-  <title>Weather in ${city} | WeatherTell.com</title>
-  <meta name="description" content="Check the current weather and 14-day forecast for ${city}, ${region}: temperature, rain and wind, updated daily.">
+  <title>Weather in ${city}${climate ? ': 14-Day Forecast & Climate by Month' : ''} | WeatherTell.com</title>
+  <meta name="description" content="${climate ? `Check the 14-day forecast for ${city} and the climate by month: average temperatures, rainfall${cityClimate.plaatsen[slug].zee ? ' and sea temperature' : ''}, plus the best time to visit.` : `Check the current weather and 14-day forecast for ${city}, ${region}: temperature, rain and wind, updated daily.`}">
   <link rel="canonical" href="https://www.weathertell.com/weather/${slug}/">
   <meta property="og:type" content="website"><meta property="og:locale" content="en_GB"><meta property="og:site_name" content="WeatherTell.com">
   <meta property="og:title" content="Weather in ${city} | WeatherTell.com">
@@ -325,7 +378,7 @@ const page = ([slug, city, region, latitude, longitude, activity, weatherAdvice,
     <section class="rain-section" aria-labelledby="rainTitle"><div class="section-heading-row"><div><p class="section-kicker">next 24 hours</p><h2 id="rainTitle">Rain forecast for ${city}</h2></div></div><div class="rain-chart-wrap"><div class="rain-chart" id="rainChart"></div><div class="rain-tooltip" id="rainTooltip" hidden></div></div><p class="rain-hint">Hover over the chart to see rainfall per hour.</p></section>
     <section class="forecast-section" id="14-day"><div class="section-heading-row"><div><p class="section-kicker">looking ahead in ${city}</p><h2>The next 14 days</h2></div><div class="legend"><span class="legend-high"></span> maximum <span class="legend-low"></span> minimum</div></div><div class="forecast-grid" id="forecastGrid"></div></section>
     <section class="location-copy"><p class="section-kicker">${city} weather</p><h2>Weather in ${city}</h2><p>See the forecast for ${city} in one clear overview. From temperature and wind to the chance of rain: plan ${activity} with up-to-date information.</p><h3>Today and the next 14 days</h3><p>The forecast for ${city} is updated daily. Check the temperature, wind and chance of rain hour by hour, and use the 14-day outlook to plan ahead and spot which days look best for being outside.</p><h3>Practical weather notes for ${city}</h3><p>${weatherAdvice}</p><h3>Seasons in ${city}</h3><p>${seasonNote}</p><h3>Frequently asked questions</h3><p><strong>How often is the forecast updated?</strong><br>The live weather data refreshes several times a day, so you're always seeing the latest forecast for ${city}.</p><p><strong>Is the 14-day forecast reliable?</strong><br>The first few days are usually the most accurate. Further ahead, the forecast mainly shows a trend rather than the exact weather at a specific hour.</p><p><strong>What should I check before heading outside?</strong><br>Look at the combination of rain, wind and feels-like temperature. A short trip can handle a passing shower, but a longer walk or bike ride benefits from a more stable stretch of weather.</p></section>
-    <section class="insight-band"><div class="insight-copy"><p class="section-kicker">today's tip</p><h2>Plan your day<br><em>around the weather.</em></h2></div><div class="insight-note"><span class="note-mark">✦</span><p id="insightText">The current forecast for ${city} is loading.</p></div></section>
+    ${climate}<section class="insight-band"><div class="insight-copy"><p class="section-kicker">today's tip</p><h2>Plan your day<br><em>around the weather.</em></h2></div><div class="insight-note"><span class="note-mark">✦</span><p id="insightText">The current forecast for ${city} is loading.</p></div></section>
   </main><footer class="site-footer"><div class="footer-top"><div class="footer-brand"><a class="footer-logo" href="../../"><img src="../../logo.png" alt=""><span>weather<span class="brand-dot">tell</span></span></a><p>Clear weather forecasts for any place in the world, up to 14 days ahead.</p></div><nav class="footer-col" aria-label="Navigation"><h3>Navigation</h3><a href="../../">Forecast</a><a href="../../7-day-forecast/">7-Day Forecast</a><a href="../../14-day-forecast/">14-Day Forecast</a><a href="../../sunrise-sunset/">Sunrise &amp; Sunset</a></nav><nav class="footer-col" aria-label="Discover"><h3>Discover</h3><a href="../../blog/">Weather Explained</a><a href="../../locations/">Locations</a><a href="../../glossary/">Glossary</a><a href="../../water-temperature/">Water Temperature</a><a href="../../snow-depth/">Snow Depth</a><a href="../../climate-archive/">Climate Archive</a><a href="../../hay-fever/">Hay Fever</a></nav><nav class="footer-col" aria-label="Popular cities"><h3>Popular cities</h3><a href="../../weather/london/">London</a><a href="../../weather/new-york/">New York</a><a href="../../weather/tokyo/">Tokyo</a><a href="../../weather/paris/">Paris</a><a href="../../weather/sydney/">Sydney</a></nav></div><div class="footer-bottom"><span>© 2026 WeatherTell.com</span><span>Data from <a href="https://open-meteo.com" rel="noopener" target="_blank">Open-Meteo</a></span><a href="#" class="cookie-settings-link">Cookie settings</a><a href="../../privacy/">Privacy Policy</a><a href="../../terms/">Terms of Use</a></div></footer></div><script src="../../app.js"></script>
 </body></html>`;
 };

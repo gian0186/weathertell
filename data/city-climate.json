@@ -1,0 +1,2221 @@
+{
+ "periode": "2015-2024",
+ "zeePeriode": "2023-2025",
+ "bron": "ERA5 reanalysis via Open-Meteo",
+ "plaatsen": {
+  "hong-kong": {
+   "name": "Hong Kong",
+   "maanden": [
+    {
+     "max": 18.6,
+     "min": 13.3,
+     "neerslag": 40
+    },
+    {
+     "max": 19.5,
+     "min": 14.1,
+     "neerslag": 47
+    },
+    {
+     "max": 22.1,
+     "min": 17.5,
+     "neerslag": 88
+    },
+    {
+     "max": 24.8,
+     "min": 20.5,
+     "neerslag": 162
+    },
+    {
+     "max": 27.2,
+     "min": 23.7,
+     "neerslag": 289
+    },
+    {
+     "max": 29,
+     "min": 25.8,
+     "neerslag": 371
+    },
+    {
+     "max": 29.8,
+     "min": 26.3,
+     "neerslag": 291
+    },
+    {
+     "max": 29.5,
+     "min": 25.9,
+     "neerslag": 392
+    },
+    {
+     "max": 29.2,
+     "min": 25.1,
+     "neerslag": 279
+    },
+    {
+     "max": 26.9,
+     "min": 22.2,
+     "neerslag": 180
+    },
+    {
+     "max": 24.2,
+     "min": 19,
+     "neerslag": 88
+    },
+    {
+     "max": 19.8,
+     "min": 13.8,
+     "neerslag": 27
+    }
+   ],
+   "zee": [
+    18.3,
+    18.7,
+    20.3,
+    23.9,
+    26.5,
+    28.4,
+    29.1,
+    28.5,
+    28.5,
+    27.7,
+    24.6,
+    21
+   ]
+  },
+  "dubai": {
+   "name": "Dubai",
+   "maanden": [
+    {
+     "max": 24.1,
+     "min": 15.2,
+     "neerslag": 23
+    },
+    {
+     "max": 25.2,
+     "min": 16.2,
+     "neerslag": 15
+    },
+    {
+     "max": 28.4,
+     "min": 18.6,
+     "neerslag": 16
+    },
+    {
+     "max": 32.5,
+     "min": 21.6,
+     "neerslag": 15
+    },
+    {
+     "max": 36.8,
+     "min": 25.1,
+     "neerslag": 2
+    },
+    {
+     "max": 39.7,
+     "min": 28.2,
+     "neerslag": 0
+    },
+    {
+     "max": 41.1,
+     "min": 30.6,
+     "neerslag": 3
+    },
+    {
+     "max": 41.1,
+     "min": 30.2,
+     "neerslag": 0
+    },
+    {
+     "max": 39.2,
+     "min": 27.8,
+     "neerslag": 1
+    },
+    {
+     "max": 35.3,
+     "min": 24.8,
+     "neerslag": 2
+    },
+    {
+     "max": 30.6,
+     "min": 21.1,
+     "neerslag": 6
+    },
+    {
+     "max": 26.4,
+     "min": 17.2,
+     "neerslag": 7
+    }
+   ],
+   "zee": [
+    22.1,
+    21.8,
+    23.7,
+    26.3,
+    30.1,
+    33.2,
+    34.5,
+    34.4,
+    33.7,
+    31.7,
+    28.3,
+    24.5
+   ]
+  },
+  "new-york": {
+   "name": "New York",
+   "maanden": [
+    {
+     "max": 4.4,
+     "min": -3.3,
+     "neerslag": 100
+    },
+    {
+     "max": 5.9,
+     "min": -3.1,
+     "neerslag": 91
+    },
+    {
+     "max": 9.7,
+     "min": 0.3,
+     "neerslag": 116
+    },
+    {
+     "max": 15.5,
+     "min": 5.8,
+     "neerslag": 108
+    },
+    {
+     "max": 21.1,
+     "min": 11.6,
+     "neerslag": 94
+    },
+    {
+     "max": 26.2,
+     "min": 16.9,
+     "neerslag": 99
+    },
+    {
+     "max": 29.5,
+     "min": 20.7,
+     "neerslag": 139
+    },
+    {
+     "max": 28.4,
+     "min": 20.1,
+     "neerslag": 115
+    },
+    {
+     "max": 24.8,
+     "min": 16.5,
+     "neerslag": 120
+    },
+    {
+     "max": 18.9,
+     "min": 10.7,
+     "neerslag": 125
+    },
+    {
+     "max": 12.3,
+     "min": 4,
+     "neerslag": 76
+    },
+    {
+     "max": 7.2,
+     "min": 0,
+     "neerslag": 115
+    }
+   ],
+   "zee": [
+    4.5,
+    4.3,
+    6.4,
+    9.9,
+    15,
+    19.5,
+    23.9,
+    23.5,
+    22.3,
+    17.7,
+    12.1,
+    6.6
+   ]
+  },
+  "seoul": {
+   "name": "Seoul",
+   "maanden": [
+    {
+     "max": 2,
+     "min": -6.6,
+     "neerslag": 18
+    },
+    {
+     "max": 5,
+     "min": -4.8,
+     "neerslag": 26
+    },
+    {
+     "max": 11.5,
+     "min": 0,
+     "neerslag": 40
+    },
+    {
+     "max": 17.7,
+     "min": 6.4,
+     "neerslag": 64
+    },
+    {
+     "max": 22.8,
+     "min": 11.7,
+     "neerslag": 106
+    },
+    {
+     "max": 26.9,
+     "min": 17.5,
+     "neerslag": 121
+    },
+    {
+     "max": 28.8,
+     "min": 22,
+     "neerslag": 310
+    },
+    {
+     "max": 29.2,
+     "min": 22.5,
+     "neerslag": 260
+    },
+    {
+     "max": 25.3,
+     "min": 17.1,
+     "neerslag": 131
+    },
+    {
+     "max": 18.6,
+     "min": 9.2,
+     "neerslag": 76
+    },
+    {
+     "max": 11.2,
+     "min": 1.9,
+     "neerslag": 59
+    },
+    {
+     "max": 3.2,
+     "min": -5.2,
+     "neerslag": 26
+    }
+   ],
+   "zee": null
+  },
+  "chicago": {
+   "name": "Chicago",
+   "maanden": [
+    {
+     "max": 0,
+     "min": -6.6,
+     "neerslag": 65
+    },
+    {
+     "max": 2,
+     "min": -6.5,
+     "neerslag": 60
+    },
+    {
+     "max": 7,
+     "min": -0.7,
+     "neerslag": 88
+    },
+    {
+     "max": 12.3,
+     "min": 4,
+     "neerslag": 101
+    },
+    {
+     "max": 18.6,
+     "min": 10.1,
+     "neerslag": 133
+    },
+    {
+     "max": 24.8,
+     "min": 16.2,
+     "neerslag": 111
+    },
+    {
+     "max": 26.6,
+     "min": 19.2,
+     "neerslag": 153
+    },
+    {
+     "max": 26.4,
+     "min": 19,
+     "neerslag": 107
+    },
+    {
+     "max": 23.7,
+     "min": 16.3,
+     "neerslag": 96
+    },
+    {
+     "max": 16.5,
+     "min": 9.2,
+     "neerslag": 123
+    },
+    {
+     "max": 9,
+     "min": 2.1,
+     "neerslag": 63
+    },
+    {
+     "max": 3.9,
+     "min": -2.6,
+     "neerslag": 66
+    }
+   ],
+   "zee": null
+  },
+  "los-angeles": {
+   "name": "Los Angeles",
+   "maanden": [
+    {
+     "max": 18.9,
+     "min": 7.9,
+     "neerslag": 90
+    },
+    {
+     "max": 20.4,
+     "min": 8.3,
+     "neerslag": 74
+    },
+    {
+     "max": 21.1,
+     "min": 9.5,
+     "neerslag": 74
+    },
+    {
+     "max": 24.3,
+     "min": 11.4,
+     "neerslag": 16
+    },
+    {
+     "max": 24.2,
+     "min": 13,
+     "neerslag": 11
+    },
+    {
+     "max": 28.3,
+     "min": 15.6,
+     "neerslag": 5
+    },
+    {
+     "max": 31.3,
+     "min": 17.6,
+     "neerslag": 3
+    },
+    {
+     "max": 32,
+     "min": 18.3,
+     "neerslag": 9
+    },
+    {
+     "max": 30.9,
+     "min": 17.7,
+     "neerslag": 11
+    },
+    {
+     "max": 28.4,
+     "min": 15.2,
+     "neerslag": 10
+    },
+    {
+     "max": 23.9,
+     "min": 10.9,
+     "neerslag": 21
+    },
+    {
+     "max": 19.4,
+     "min": 8.2,
+     "neerslag": 78
+    }
+   ],
+   "zee": [
+    14.7,
+    14.5,
+    14.3,
+    14.9,
+    16.8,
+    18.6,
+    20.3,
+    21.4,
+    21.1,
+    19,
+    17.1,
+    16.5
+   ]
+  },
+  "doha": {
+   "name": "Doha",
+   "maanden": [
+    {
+     "max": 22.5,
+     "min": 14.4,
+     "neerslag": 18
+    },
+    {
+     "max": 23.5,
+     "min": 15.2,
+     "neerslag": 11
+    },
+    {
+     "max": 27.1,
+     "min": 18.1,
+     "neerslag": 10
+    },
+    {
+     "max": 32.1,
+     "min": 22,
+     "neerslag": 8
+    },
+    {
+     "max": 37.5,
+     "min": 26.6,
+     "neerslag": 3
+    },
+    {
+     "max": 41.2,
+     "min": 29.3,
+     "neerslag": 0
+    },
+    {
+     "max": 41.5,
+     "min": 31,
+     "neerslag": 2
+    },
+    {
+     "max": 41.1,
+     "min": 30.9,
+     "neerslag": 0
+    },
+    {
+     "max": 39.1,
+     "min": 28.7,
+     "neerslag": 0
+    },
+    {
+     "max": 35.4,
+     "min": 25.7,
+     "neerslag": 2
+    },
+    {
+     "max": 29.6,
+     "min": 21.7,
+     "neerslag": 10
+    },
+    {
+     "max": 24.7,
+     "min": 16.8,
+     "neerslag": 9
+    }
+   ],
+   "zee": [
+    19.7,
+    19.6,
+    21.8,
+    25.2,
+    29.1,
+    31.6,
+    33,
+    35,
+    33.7,
+    30.8,
+    26.8,
+    22.1
+   ]
+  },
+  "auckland": {
+   "name": "Auckland",
+   "maanden": [
+    {
+     "max": 22.8,
+     "min": 17.6,
+     "neerslag": 87
+    },
+    {
+     "max": 23,
+     "min": 17.9,
+     "neerslag": 109
+    },
+    {
+     "max": 21.7,
+     "min": 16.5,
+     "neerslag": 92
+    },
+    {
+     "max": 19.5,
+     "min": 14.7,
+     "neerslag": 93
+    },
+    {
+     "max": 17.2,
+     "min": 12.5,
+     "neerslag": 95
+    },
+    {
+     "max": 15.2,
+     "min": 11,
+     "neerslag": 96
+    },
+    {
+     "max": 14.3,
+     "min": 9.7,
+     "neerslag": 117
+    },
+    {
+     "max": 14.5,
+     "min": 9.5,
+     "neerslag": 115
+    },
+    {
+     "max": 15.4,
+     "min": 10.6,
+     "neerslag": 107
+    },
+    {
+     "max": 16.9,
+     "min": 12,
+     "neerslag": 101
+    },
+    {
+     "max": 19,
+     "min": 13.8,
+     "neerslag": 107
+    },
+    {
+     "max": 21.2,
+     "min": 16.1,
+     "neerslag": 86
+    }
+   ],
+   "zee": [
+    22.5,
+    22.7,
+    21.3,
+    19.3,
+    16.7,
+    14.9,
+    13.6,
+    13,
+    14.7,
+    16.5,
+    19.4,
+    21.4
+   ]
+  },
+  "kuala-lumpur": {
+   "name": "Kuala Lumpur",
+   "maanden": [
+    {
+     "max": 30.2,
+     "min": 23.3,
+     "neerslag": 222
+    },
+    {
+     "max": 31.3,
+     "min": 23.5,
+     "neerslag": 117
+    },
+    {
+     "max": 31.5,
+     "min": 23.9,
+     "neerslag": 223
+    },
+    {
+     "max": 31.2,
+     "min": 24.2,
+     "neerslag": 288
+    },
+    {
+     "max": 30.9,
+     "min": 24.5,
+     "neerslag": 274
+    },
+    {
+     "max": 30.7,
+     "min": 24.1,
+     "neerslag": 187
+    },
+    {
+     "max": 30.8,
+     "min": 23.9,
+     "neerslag": 181
+    },
+    {
+     "max": 30.5,
+     "min": 23.8,
+     "neerslag": 227
+    },
+    {
+     "max": 30.5,
+     "min": 23.8,
+     "neerslag": 253
+    },
+    {
+     "max": 30.5,
+     "min": 23.8,
+     "neerslag": 274
+    },
+    {
+     "max": 29.8,
+     "min": 23.7,
+     "neerslag": 381
+    },
+    {
+     "max": 29.8,
+     "min": 23.6,
+     "neerslag": 313
+    }
+   ],
+   "zee": null
+  },
+  "athens": {
+   "name": "Athens",
+   "maanden": [
+    {
+     "max": 12.2,
+     "min": 5.3,
+     "neerslag": 72
+    },
+    {
+     "max": 13.8,
+     "min": 6.6,
+     "neerslag": 50
+    },
+    {
+     "max": 15.7,
+     "min": 8,
+     "neerslag": 52
+    },
+    {
+     "max": 20.4,
+     "min": 11.3,
+     "neerslag": 27
+    },
+    {
+     "max": 25,
+     "min": 15.9,
+     "neerslag": 30
+    },
+    {
+     "max": 30,
+     "min": 20.4,
+     "neerslag": 31
+    },
+    {
+     "max": 33.5,
+     "min": 23.2,
+     "neerslag": 10
+    },
+    {
+     "max": 33,
+     "min": 23,
+     "neerslag": 12
+    },
+    {
+     "max": 28.6,
+     "min": 19.6,
+     "neerslag": 30
+    },
+    {
+     "max": 23.4,
+     "min": 15.1,
+     "neerslag": 28
+    },
+    {
+     "max": 18.6,
+     "min": 11.3,
+     "neerslag": 65
+    },
+    {
+     "max": 14.1,
+     "min": 7.6,
+     "neerslag": 86
+    }
+   ],
+   "zee": [
+    16.6,
+    15.7,
+    15.9,
+    17.3,
+    19.3,
+    23.8,
+    26.8,
+    27.4,
+    26.1,
+    24,
+    21.6,
+    18.3
+   ]
+  },
+  "buenos-aires": {
+   "name": "Buenos Aires",
+   "maanden": [
+    {
+     "max": 28.3,
+     "min": 20.9,
+     "neerslag": 81
+    },
+    {
+     "max": 27.6,
+     "min": 20.2,
+     "neerslag": 76
+    },
+    {
+     "max": 25,
+     "min": 18.5,
+     "neerslag": 118
+    },
+    {
+     "max": 21.5,
+     "min": 15.3,
+     "neerslag": 108
+    },
+    {
+     "max": 17.3,
+     "min": 11.1,
+     "neerslag": 73
+    },
+    {
+     "max": 14.8,
+     "min": 8.5,
+     "neerslag": 50
+    },
+    {
+     "max": 13.9,
+     "min": 7.7,
+     "neerslag": 73
+    },
+    {
+     "max": 15.9,
+     "min": 8.9,
+     "neerslag": 61
+    },
+    {
+     "max": 17.9,
+     "min": 10.8,
+     "neerslag": 68
+    },
+    {
+     "max": 20.7,
+     "min": 13,
+     "neerslag": 83
+    },
+    {
+     "max": 24.6,
+     "min": 16.6,
+     "neerslag": 85
+    },
+    {
+     "max": 27.1,
+     "min": 19,
+     "neerslag": 84
+    }
+   ],
+   "zee": [
+    26.6,
+    26.6,
+    25.3,
+    20.2,
+    16.7,
+    13.4,
+    11.1,
+    12.3,
+    15.3,
+    19.7,
+    22.4,
+    25.2
+   ]
+  },
+  "delhi": {
+   "name": "Delhi",
+   "maanden": [
+    {
+     "max": 19.1,
+     "min": 8,
+     "neerslag": 33
+    },
+    {
+     "max": 23.7,
+     "min": 11.2,
+     "neerslag": 22
+    },
+    {
+     "max": 29.2,
+     "min": 16,
+     "neerslag": 33
+    },
+    {
+     "max": 36.2,
+     "min": 21.7,
+     "neerslag": 11
+    },
+    {
+     "max": 38.9,
+     "min": 25.4,
+     "neerslag": 35
+    },
+    {
+     "max": 38.3,
+     "min": 27.8,
+     "neerslag": 63
+    },
+    {
+     "max": 33.6,
+     "min": 26.7,
+     "neerslag": 247
+    },
+    {
+     "max": 32.5,
+     "min": 26.1,
+     "neerslag": 167
+    },
+    {
+     "max": 32.6,
+     "min": 24.7,
+     "neerslag": 120
+    },
+    {
+     "max": 32,
+     "min": 20,
+     "neerslag": 19
+    },
+    {
+     "max": 27,
+     "min": 14.8,
+     "neerslag": 6
+    },
+    {
+     "max": 21.5,
+     "min": 9.6,
+     "neerslag": 7
+    }
+   ],
+   "zee": null
+  },
+  "madrid": {
+   "name": "Madrid",
+   "maanden": [
+    {
+     "max": 10.3,
+     "min": 1.2,
+     "neerslag": 38
+    },
+    {
+     "max": 13.3,
+     "min": 2.7,
+     "neerslag": 25
+    },
+    {
+     "max": 16,
+     "min": 4.8,
+     "neerslag": 58
+    },
+    {
+     "max": 19.1,
+     "min": 7.4,
+     "neerslag": 59
+    },
+    {
+     "max": 24.4,
+     "min": 11.6,
+     "neerslag": 31
+    },
+    {
+     "max": 29.5,
+     "min": 16.4,
+     "neerslag": 21
+    },
+    {
+     "max": 34.4,
+     "min": 20.2,
+     "neerslag": 7
+    },
+    {
+     "max": 33.4,
+     "min": 19.7,
+     "neerslag": 12
+    },
+    {
+     "max": 26.8,
+     "min": 14.9,
+     "neerslag": 52
+    },
+    {
+     "max": 21.5,
+     "min": 10.9,
+     "neerslag": 66
+    },
+    {
+     "max": 14.5,
+     "min": 5.9,
+     "neerslag": 49
+    },
+    {
+     "max": 11.5,
+     "min": 3.2,
+     "neerslag": 42
+    }
+   ],
+   "zee": null
+  },
+  "oslo": {
+   "name": "Oslo",
+   "maanden": [
+    {
+     "max": -0.6,
+     "min": -5.8,
+     "neerslag": 73
+    },
+    {
+     "max": 1.1,
+     "min": -4.6,
+     "neerslag": 59
+    },
+    {
+     "max": 4.7,
+     "min": -2.6,
+     "neerslag": 58
+    },
+    {
+     "max": 10.3,
+     "min": 1.1,
+     "neerslag": 50
+    },
+    {
+     "max": 16,
+     "min": 6.6,
+     "neerslag": 78
+    },
+    {
+     "max": 20.5,
+     "min": 11.7,
+     "neerslag": 86
+    },
+    {
+     "max": 21.2,
+     "min": 13.1,
+     "neerslag": 111
+    },
+    {
+     "max": 19.8,
+     "min": 12.4,
+     "neerslag": 94
+    },
+    {
+     "max": 16,
+     "min": 9.7,
+     "neerslag": 101
+    },
+    {
+     "max": 9.6,
+     "min": 4.6,
+     "neerslag": 83
+    },
+    {
+     "max": 4.1,
+     "min": 0.3,
+     "neerslag": 80
+    },
+    {
+     "max": 0.7,
+     "min": -3.6,
+     "neerslag": 67
+    }
+   ],
+   "zee": [
+    null,
+    null,
+    null,
+    null,
+    null,
+    null,
+    null,
+    null,
+    null,
+    null,
+    null,
+    null
+   ]
+  },
+  "prague": {
+   "name": "Prague",
+   "maanden": [
+    {
+     "max": 3.8,
+     "min": -1.7,
+     "neerslag": 40
+    },
+    {
+     "max": 6.5,
+     "min": -0.8,
+     "neerslag": 40
+    },
+    {
+     "max": 10.2,
+     "min": 1,
+     "neerslag": 37
+    },
+    {
+     "max": 14.8,
+     "min": 4.4,
+     "neerslag": 40
+    },
+    {
+     "max": 19.5,
+     "min": 9.3,
+     "neerslag": 67
+    },
+    {
+     "max": 24.6,
+     "min": 14.3,
+     "neerslag": 75
+    },
+    {
+     "max": 26.1,
+     "min": 15.7,
+     "neerslag": 61
+    },
+    {
+     "max": 26,
+     "min": 15.8,
+     "neerslag": 81
+    },
+    {
+     "max": 21,
+     "min": 11.5,
+     "neerslag": 57
+    },
+    {
+     "max": 15.2,
+     "min": 7.2,
+     "neerslag": 53
+    },
+    {
+     "max": 8.4,
+     "min": 2.4,
+     "neerslag": 44
+    },
+    {
+     "max": 5.2,
+     "min": 0.1,
+     "neerslag": 46
+    }
+   ],
+   "zee": null
+  },
+  "wellington": {
+   "name": "Wellington",
+   "maanden": [
+    {
+     "max": 19.8,
+     "min": 15.3,
+     "neerslag": 40
+    },
+    {
+     "max": 19.7,
+     "min": 15.4,
+     "neerslag": 81
+    },
+    {
+     "max": 18.3,
+     "min": 14.2,
+     "neerslag": 73
+    },
+    {
+     "max": 16.6,
+     "min": 12.7,
+     "neerslag": 96
+    },
+    {
+     "max": 14.9,
+     "min": 11.3,
+     "neerslag": 97
+    },
+    {
+     "max": 13.1,
+     "min": 9.6,
+     "neerslag": 103
+    },
+    {
+     "max": 12.2,
+     "min": 8.6,
+     "neerslag": 107
+    },
+    {
+     "max": 12.2,
+     "min": 8.7,
+     "neerslag": 102
+    },
+    {
+     "max": 13,
+     "min": 9.4,
+     "neerslag": 91
+    },
+    {
+     "max": 14.5,
+     "min": 10.5,
+     "neerslag": 74
+    },
+    {
+     "max": 16.2,
+     "min": 12.2,
+     "neerslag": 86
+    },
+    {
+     "max": 18,
+     "min": 13.9,
+     "neerslag": 79
+    }
+   ],
+   "zee": [
+    17.7,
+    18.6,
+    18,
+    17.1,
+    15.8,
+    14.6,
+    13.6,
+    12.8,
+    13.4,
+    14,
+    15.3,
+    16.8
+   ]
+  },
+  "london": {
+   "name": "London",
+   "maanden": [
+    {
+     "max": 7.7,
+     "min": 1.8,
+     "neerslag": 61
+    },
+    {
+     "max": 9.2,
+     "min": 2.7,
+     "neerslag": 54
+    },
+    {
+     "max": 11,
+     "min": 3.8,
+     "neerslag": 58
+    },
+    {
+     "max": 13.8,
+     "min": 4.9,
+     "neerslag": 40
+    },
+    {
+     "max": 17.4,
+     "min": 8.5,
+     "neerslag": 57
+    },
+    {
+     "max": 20.8,
+     "min": 11.8,
+     "neerslag": 61
+    },
+    {
+     "max": 22.6,
+     "min": 14,
+     "neerslag": 60
+    },
+    {
+     "max": 22.3,
+     "min": 13.8,
+     "neerslag": 57
+    },
+    {
+     "max": 19.7,
+     "min": 11.6,
+     "neerslag": 64
+    },
+    {
+     "max": 15.5,
+     "min": 8.8,
+     "neerslag": 77
+    },
+    {
+     "max": 11,
+     "min": 5.3,
+     "neerslag": 66
+    },
+    {
+     "max": 9.3,
+     "min": 4.3,
+     "neerslag": 66
+    }
+   ],
+   "zee": null
+  },
+  "paris": {
+   "name": "Paris",
+   "maanden": [
+    {
+     "max": 7.4,
+     "min": 1.9,
+     "neerslag": 64
+    },
+    {
+     "max": 9.6,
+     "min": 2.5,
+     "neerslag": 54
+    },
+    {
+     "max": 12.3,
+     "min": 4.1,
+     "neerslag": 72
+    },
+    {
+     "max": 15.7,
+     "min": 5.7,
+     "neerslag": 51
+    },
+    {
+     "max": 19.1,
+     "min": 9.6,
+     "neerslag": 76
+    },
+    {
+     "max": 23.4,
+     "min": 13.6,
+     "neerslag": 69
+    },
+    {
+     "max": 25.5,
+     "min": 15.5,
+     "neerslag": 45
+    },
+    {
+     "max": 25.5,
+     "min": 15.4,
+     "neerslag": 66
+    },
+    {
+     "max": 21.8,
+     "min": 12.5,
+     "neerslag": 60
+    },
+    {
+     "max": 17.1,
+     "min": 9.5,
+     "neerslag": 72
+    },
+    {
+     "max": 11.3,
+     "min": 5.6,
+     "neerslag": 63
+    },
+    {
+     "max": 8.7,
+     "min": 3.6,
+     "neerslag": 76
+    }
+   ],
+   "zee": null
+  },
+  "barcelona": {
+   "name": "Barcelona",
+   "maanden": [
+    {
+     "max": 13.5,
+     "min": 4.9,
+     "neerslag": 44
+    },
+    {
+     "max": 14.8,
+     "min": 6.1,
+     "neerslag": 36
+    },
+    {
+     "max": 16.2,
+     "min": 7.9,
+     "neerslag": 46
+    },
+    {
+     "max": 17.8,
+     "min": 10,
+     "neerslag": 70
+    },
+    {
+     "max": 21.5,
+     "min": 13.8,
+     "neerslag": 47
+    },
+    {
+     "max": 25.9,
+     "min": 18.5,
+     "neerslag": 35
+    },
+    {
+     "max": 28.7,
+     "min": 21.5,
+     "neerslag": 26
+    },
+    {
+     "max": 28.6,
+     "min": 21.6,
+     "neerslag": 53
+    },
+    {
+     "max": 25.1,
+     "min": 18.2,
+     "neerslag": 91
+    },
+    {
+     "max": 21.7,
+     "min": 14.9,
+     "neerslag": 105
+    },
+    {
+     "max": 17.5,
+     "min": 9.7,
+     "neerslag": 58
+    },
+    {
+     "max": 15,
+     "min": 6.4,
+     "neerslag": 25
+    }
+   ],
+   "zee": [
+    14.2,
+    13.6,
+    14.1,
+    15.6,
+    18.5,
+    22.3,
+    25.9,
+    27.4,
+    25.4,
+    22.4,
+    18,
+    15.6
+   ]
+  },
+  "rome": {
+   "name": "Rome",
+   "maanden": [
+    {
+     "max": 12.3,
+     "min": 3.9,
+     "neerslag": 66
+    },
+    {
+     "max": 14.3,
+     "min": 5.1,
+     "neerslag": 73
+    },
+    {
+     "max": 16.3,
+     "min": 6.5,
+     "neerslag": 89
+    },
+    {
+     "max": 19.5,
+     "min": 9,
+     "neerslag": 59
+    },
+    {
+     "max": 23.3,
+     "min": 13.2,
+     "neerslag": 77
+    },
+    {
+     "max": 29.1,
+     "min": 17.7,
+     "neerslag": 34
+    },
+    {
+     "max": 33.1,
+     "min": 21.1,
+     "neerslag": 16
+    },
+    {
+     "max": 32.5,
+     "min": 21.2,
+     "neerslag": 30
+    },
+    {
+     "max": 27.1,
+     "min": 17.2,
+     "neerslag": 90
+    },
+    {
+     "max": 22.5,
+     "min": 13.5,
+     "neerslag": 105
+    },
+    {
+     "max": 17.2,
+     "min": 9.4,
+     "neerslag": 140
+    },
+    {
+     "max": 13.6,
+     "min": 5.4,
+     "neerslag": 94
+    }
+   ],
+   "zee": null
+  },
+  "tokyo": {
+   "name": "Tokyo",
+   "maanden": [
+    {
+     "max": 9,
+     "min": -0.1,
+     "neerslag": 57
+    },
+    {
+     "max": 10.3,
+     "min": 0.9,
+     "neerslag": 57
+    },
+    {
+     "max": 14.3,
+     "min": 4.7,
+     "neerslag": 139
+    },
+    {
+     "max": 18.7,
+     "min": 9.5,
+     "neerslag": 131
+    },
+    {
+     "max": 23.3,
+     "min": 14.5,
+     "neerslag": 136
+    },
+    {
+     "max": 25.9,
+     "min": 18.5,
+     "neerslag": 192
+    },
+    {
+     "max": 29.9,
+     "min": 23,
+     "neerslag": 194
+    },
+    {
+     "max": 31.3,
+     "min": 24.2,
+     "neerslag": 145
+    },
+    {
+     "max": 27.3,
+     "min": 20.7,
+     "neerslag": 215
+    },
+    {
+     "max": 21.5,
+     "min": 14.3,
+     "neerslag": 193
+    },
+    {
+     "max": 16.7,
+     "min": 8.4,
+     "neerslag": 97
+    },
+    {
+     "max": 11.4,
+     "min": 2.5,
+     "neerslag": 61
+    }
+   ],
+   "zee": [
+    10.8,
+    10.3,
+    12,
+    15.3,
+    18.6,
+    22,
+    26.6,
+    28.6,
+    27.2,
+    22.2,
+    18.4,
+    14.3
+   ]
+  },
+  "bangkok": {
+   "name": "Bangkok",
+   "maanden": [
+    {
+     "max": 31.1,
+     "min": 22.2,
+     "neerslag": 24
+    },
+    {
+     "max": 32.2,
+     "min": 23.5,
+     "neerslag": 30
+    },
+    {
+     "max": 33.3,
+     "min": 25.9,
+     "neerslag": 44
+    },
+    {
+     "max": 34.2,
+     "min": 26.9,
+     "neerslag": 84
+    },
+    {
+     "max": 33.7,
+     "min": 26.8,
+     "neerslag": 158
+    },
+    {
+     "max": 32.6,
+     "min": 26.2,
+     "neerslag": 145
+    },
+    {
+     "max": 31.6,
+     "min": 25.7,
+     "neerslag": 195
+    },
+    {
+     "max": 31.5,
+     "min": 25.5,
+     "neerslag": 187
+    },
+    {
+     "max": 31,
+     "min": 25.1,
+     "neerslag": 293
+    },
+    {
+     "max": 30.8,
+     "min": 24.4,
+     "neerslag": 241
+    },
+    {
+     "max": 31.3,
+     "min": 23.9,
+     "neerslag": 72
+    },
+    {
+     "max": 31,
+     "min": 22.5,
+     "neerslag": 19
+    }
+   ],
+   "zee": null
+  },
+  "singapore": {
+   "name": "Singapore",
+   "maanden": [
+    {
+     "max": 28.9,
+     "min": 23.7,
+     "neerslag": 271
+    },
+    {
+     "max": 29.6,
+     "min": 23.8,
+     "neerslag": 123
+    },
+    {
+     "max": 30.4,
+     "min": 24.2,
+     "neerslag": 208
+    },
+    {
+     "max": 30.1,
+     "min": 24.7,
+     "neerslag": 291
+    },
+    {
+     "max": 29.9,
+     "min": 25.3,
+     "neerslag": 313
+    },
+    {
+     "max": 29.3,
+     "min": 25.2,
+     "neerslag": 294
+    },
+    {
+     "max": 29.3,
+     "min": 25.2,
+     "neerslag": 199
+    },
+    {
+     "max": 29.2,
+     "min": 24.9,
+     "neerslag": 230
+    },
+    {
+     "max": 29.5,
+     "min": 24.8,
+     "neerslag": 211
+    },
+    {
+     "max": 29.6,
+     "min": 24.4,
+     "neerslag": 302
+    },
+    {
+     "max": 29.2,
+     "min": 24.1,
+     "neerslag": 382
+    },
+    {
+     "max": 29.2,
+     "min": 23.9,
+     "neerslag": 315
+    }
+   ],
+   "zee": [
+    28.2,
+    28.2,
+    28.7,
+    30.1,
+    30.9,
+    30.7,
+    30.2,
+    29.8,
+    29.8,
+    30,
+    30.6,
+    29.3
+   ]
+  },
+  "sydney": {
+   "name": "Sydney",
+   "maanden": [
+    {
+     "max": 26.5,
+     "min": 19.5,
+     "neerslag": 99
+    },
+    {
+     "max": 25.9,
+     "min": 19.1,
+     "neerslag": 106
+    },
+    {
+     "max": 24.7,
+     "min": 18,
+     "neerslag": 151
+    },
+    {
+     "max": 22.4,
+     "min": 14.6,
+     "neerslag": 96
+    },
+    {
+     "max": 19.5,
+     "min": 11.2,
+     "neerslag": 62
+    },
+    {
+     "max": 16.8,
+     "min": 9,
+     "neerslag": 77
+    },
+    {
+     "max": 16.8,
+     "min": 8.1,
+     "neerslag": 65
+    },
+    {
+     "max": 18.1,
+     "min": 8.7,
+     "neerslag": 49
+    },
+    {
+     "max": 20.5,
+     "min": 10.7,
+     "neerslag": 49
+    },
+    {
+     "max": 22.3,
+     "min": 13.4,
+     "neerslag": 74
+    },
+    {
+     "max": 23.6,
+     "min": 15.5,
+     "neerslag": 82
+    },
+    {
+     "max": 25.7,
+     "min": 17.7,
+     "neerslag": 66
+    }
+   ],
+   "zee": [
+    22.3,
+    23.3,
+    22.8,
+    22,
+    21,
+    19.5,
+    18,
+    18,
+    18.6,
+    19.3,
+    20,
+    21.1
+   ]
+  },
+  "lisbon": {
+   "name": "Lisbon",
+   "maanden": [
+    {
+     "max": 14.6,
+     "min": 8.8,
+     "neerslag": 55
+    },
+    {
+     "max": 15.9,
+     "min": 9.4,
+     "neerslag": 49
+    },
+    {
+     "max": 17.2,
+     "min": 10.3,
+     "neerslag": 59
+    },
+    {
+     "max": 19.4,
+     "min": 12.1,
+     "neerslag": 62
+    },
+    {
+     "max": 22.8,
+     "min": 14.5,
+     "neerslag": 38
+    },
+    {
+     "max": 24.8,
+     "min": 16.4,
+     "neerslag": 16
+    },
+    {
+     "max": 27.7,
+     "min": 18,
+     "neerslag": 3
+    },
+    {
+     "max": 28.3,
+     "min": 18.5,
+     "neerslag": 1
+    },
+    {
+     "max": 26.1,
+     "min": 17.5,
+     "neerslag": 30
+    },
+    {
+     "max": 22.9,
+     "min": 15.7,
+     "neerslag": 78
+    },
+    {
+     "max": 18,
+     "min": 12.3,
+     "neerslag": 75
+    },
+    {
+     "max": 15.8,
+     "min": 10.3,
+     "neerslag": 76
+    }
+   ],
+   "zee": [
+    15,
+    14.8,
+    15.1,
+    16.7,
+    17.6,
+    19.3,
+    19.5,
+    19.5,
+    18.5,
+    18.9,
+    17.6,
+    15.7
+   ]
+  },
+  "amsterdam": {
+   "name": "Amsterdam",
+   "maanden": [
+    {
+     "max": 6.7,
+     "min": 2.3,
+     "neerslag": 80
+    },
+    {
+     "max": 7.9,
+     "min": 2.6,
+     "neerslag": 77
+    },
+    {
+     "max": 10,
+     "min": 3.4,
+     "neerslag": 65
+    },
+    {
+     "max": 12.9,
+     "min": 5.3,
+     "neerslag": 60
+    },
+    {
+     "max": 17.1,
+     "min": 9.1,
+     "neerslag": 66
+    },
+    {
+     "max": 20.5,
+     "min": 12.8,
+     "neerslag": 74
+    },
+    {
+     "max": 21.5,
+     "min": 14.2,
+     "neerslag": 83
+    },
+    {
+     "max": 22,
+     "min": 14.6,
+     "neerslag": 78
+    },
+    {
+     "max": 19.3,
+     "min": 12.1,
+     "neerslag": 79
+    },
+    {
+     "max": 15.1,
+     "min": 9.4,
+     "neerslag": 92
+    },
+    {
+     "max": 10.2,
+     "min": 5.4,
+     "neerslag": 80
+    },
+    {
+     "max": 8,
+     "min": 3.9,
+     "neerslag": 81
+    }
+   ],
+   "zee": null
+  },
+  "istanbul": {
+   "name": "Istanbul",
+   "maanden": [
+    {
+     "max": 9,
+     "min": 3.6,
+     "neerslag": 109
+    },
+    {
+     "max": 10.6,
+     "min": 4.6,
+     "neerslag": 77
+    },
+    {
+     "max": 12.2,
+     "min": 5.4,
+     "neerslag": 77
+    },
+    {
+     "max": 16.8,
+     "min": 8.6,
+     "neerslag": 56
+    },
+    {
+     "max": 21.1,
+     "min": 13.3,
+     "neerslag": 57
+    },
+    {
+     "max": 26,
+     "min": 18.2,
+     "neerslag": 51
+    },
+    {
+     "max": 28.8,
+     "min": 20.7,
+     "neerslag": 31
+    },
+    {
+     "max": 29.1,
+     "min": 21.6,
+     "neerslag": 20
+    },
+    {
+     "max": 25.6,
+     "min": 18.2,
+     "neerslag": 48
+    },
+    {
+     "max": 20.1,
+     "min": 13.8,
+     "neerslag": 55
+    },
+    {
+     "max": 16,
+     "min": 10.1,
+     "neerslag": 84
+    },
+    {
+     "max": 11.4,
+     "min": 6.4,
+     "neerslag": 90
+    }
+   ],
+   "zee": [
+    10.3,
+    8.7,
+    9.4,
+    11.2,
+    14.7,
+    20.8,
+    24.9,
+    24.9,
+    24.1,
+    20.2,
+    16.8,
+    12.8
+   ]
+  },
+  "miami": {
+   "name": "Miami",
+   "maanden": [
+    {
+     "max": 23.8,
+     "min": 17.4,
+     "neerslag": 79
+    },
+    {
+     "max": 24.9,
+     "min": 19,
+     "neerslag": 64
+    },
+    {
+     "max": 26.4,
+     "min": 20.1,
+     "neerslag": 64
+    },
+    {
+     "max": 27.7,
+     "min": 21.8,
+     "neerslag": 84
+    },
+    {
+     "max": 28.8,
+     "min": 23.3,
+     "neerslag": 150
+    },
+    {
+     "max": 29.6,
+     "min": 24.8,
+     "neerslag": 222
+    },
+    {
+     "max": 30.8,
+     "min": 25.8,
+     "neerslag": 131
+    },
+    {
+     "max": 30.8,
+     "min": 25.9,
+     "neerslag": 162
+    },
+    {
+     "max": 30.1,
+     "min": 25.1,
+     "neerslag": 202
+    },
+    {
+     "max": 28.5,
+     "min": 23.9,
+     "neerslag": 149
+    },
+    {
+     "max": 26.7,
+     "min": 21.6,
+     "neerslag": 104
+    },
+    {
+     "max": 25.1,
+     "min": 19.6,
+     "neerslag": 94
+    }
+   ],
+   "zee": [
+    22.4,
+    23.9,
+    25.1,
+    26.2,
+    29,
+    30.2,
+    31.8,
+    31.7,
+    30.7,
+    28.2,
+    25.7,
+    23.8
+   ]
+  },
+  "toronto": {
+   "name": "Toronto",
+   "maanden": [
+    {
+     "max": -0.1,
+     "min": -7,
+     "neerslag": 68
+    },
+    {
+     "max": 0.8,
+     "min": -7.6,
+     "neerslag": 61
+    },
+    {
+     "max": 5,
+     "min": -3.1,
+     "neerslag": 67
+    },
+    {
+     "max": 10.5,
+     "min": 2,
+     "neerslag": 100
+    },
+    {
+     "max": 17.5,
+     "min": 8.5,
+     "neerslag": 68
+    },
+    {
+     "max": 22.9,
+     "min": 14.3,
+     "neerslag": 90
+    },
+    {
+     "max": 26.2,
+     "min": 17.7,
+     "neerslag": 75
+    },
+    {
+     "max": 25.6,
+     "min": 17.6,
+     "neerslag": 69
+    },
+    {
+     "max": 22.2,
+     "min": 14.5,
+     "neerslag": 59
+    },
+    {
+     "max": 15.2,
+     "min": 8.3,
+     "neerslag": 88
+    },
+    {
+     "max": 8.1,
+     "min": 1.6,
+     "neerslag": 62
+    },
+    {
+     "max": 3.2,
+     "min": -2.5,
+     "neerslag": 74
+    }
+   ],
+   "zee": null
+  },
+  "vancouver": {
+   "name": "Vancouver",
+   "maanden": [
+    {
+     "max": 6.4,
+     "min": 1.8,
+     "neerslag": 260
+    },
+    {
+     "max": 6.4,
+     "min": 1.3,
+     "neerslag": 148
+    },
+    {
+     "max": 9.2,
+     "min": 3.1,
+     "neerslag": 171
+    },
+    {
+     "max": 12,
+     "min": 5.4,
+     "neerslag": 126
+    },
+    {
+     "max": 16.4,
+     "min": 9.5,
+     "neerslag": 66
+    },
+    {
+     "max": 19.2,
+     "min": 12.4,
+     "neerslag": 68
+    },
+    {
+     "max": 22.4,
+     "min": 14.9,
+     "neerslag": 32
+    },
+    {
+     "max": 22.5,
+     "min": 15.3,
+     "neerslag": 51
+    },
+    {
+     "max": 18.2,
+     "min": 12.4,
+     "neerslag": 129
+    },
+    {
+     "max": 13.2,
+     "min": 8.2,
+     "neerslag": 225
+    },
+    {
+     "max": 8.5,
+     "min": 4.2,
+     "neerslag": 315
+    },
+    {
+     "max": 5.6,
+     "min": 1.5,
+     "neerslag": 275
+    }
+   ],
+   "zee": [
+    6.9,
+    6.7,
+    7.6,
+    9.7,
+    13.6,
+    15.9,
+    18.8,
+    19.2,
+    17.3,
+    12.9,
+    9.6,
+    7.9
+   ]
+  }
+ }
+}
