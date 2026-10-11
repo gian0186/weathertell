@@ -511,6 +511,38 @@ const posts = [
       ['When is the New Year\'s Eve 2026 forecast available?', 'About two weeks ahead, from around December 17. It becomes more reliable in the last few days before December 31.']
     ],
     related: [['../white-christmas-2026-odds/', 'Will It Snow on Christmas 2026? White Christmas Odds by City'], ['../winter-2026-27-forecast-el-nino/', 'Winter 2026-27 Forecast: What a Strong El Niño Means for the US'], ['../feels-like-temperature/', 'What Does "Feels Like" Temperature Actually Mean?']]
+  },
+  {
+    slug: 'first-snow-us-cities',
+    featuredCitySlug: 'new-york',
+    featuredCityName: 'New York',
+    category: 'Seasons',
+    time: '6 min read',
+    datePublished: '2026-10-28',
+    photoCredit: 'Photo: Jazz Guy, <a href="https://commons.wikimedia.org/wiki/File:Snow_Day,_Central_Park,_NYC_(3125914161).jpg" target="_blank" rel="noopener">Wikimedia Commons</a> (CC BY 2.0)',
+    title: 'When Does It First Snow? New York, Chicago, Boston and More',
+    description: 'When does the first snow usually fall? In 36 years of data, the typical first snow came around Oct 10 in Denver, Nov 21 in Chicago and Dec 6 in New York. Dates for 7 US cities.',
+    keyFacts: [
+      '<strong>Earliest:</strong> Denver usually sees its first snow around Oct 10, the earliest of the 7 cities.',
+      '<strong>Chicago:</strong> typical first snow around Nov 21; it came before December 1 in 25 of 36 seasons.',
+      '<strong>New York:</strong> typical first snow around Dec 6; the earliest was Oct 29, 2011.',
+      '<strong>Washington and Philadelphia:</strong> the first snow usually holds off until mid-December.',
+      '<strong>Big spread:</strong> in every city the date varies by weeks or even months from one year to the next.'
+    ],
+    lead: 'The first snowflakes of the season always make news, but when do they usually arrive? We looked at 36 winters of weather data for 7 major US cities to find the typical date of the first snow, and how early and how late it has come.',
+    sections: [
+      ['by-city', 'When does the first snow fall? 7 US cities compared', 'For each season from 1990-91 to 2025-26, we looked for the first day from September 1 with at least 0.5 cm (0.2 in) of snowfall, and took the middle (median) date as the typical first snow.</p><div class="sun-table-wrap"><table class="sun-table"><thead><tr><th>City</th><th>Typical first snow</th><th>Earliest</th><th>Latest</th><th>Before December 1</th></tr></thead><tbody><tr><td><a href="../../weather/denver/">Denver</a></td><td>Oct 10</td><td>Sep 8, 2001</td><td>Dec 3, 2025</td><td>35 of 36 seasons</td></tr><tr><td><a href="../../weather/chicago/">Chicago</a></td><td>Nov 21</td><td>Oct 20, 1992</td><td>Dec 20, 2012</td><td>25 of 36 seasons</td></tr><tr><td><a href="../../weather/boston/">Boston</a></td><td>Dec 2</td><td>Oct 18, 2009</td><td>Jan 13, 2000</td><td>18 of 36 seasons</td></tr><tr><td><a href="../../weather/new-york/">New York</a></td><td>Dec 6</td><td>Oct 29, 2011</td><td>Jan 18, 2007</td><td>12 of 36 seasons</td></tr><tr><td><a href="../../weather/seattle/">Seattle</a></td><td>Dec 8</td><td>Nov 6, 2021</td><td>Feb 3, 2019</td><td>14 of 36 seasons</td></tr><tr><td><a href="../../weather/washington-dc/">Washington, D.C.</a></td><td>Dec 15</td><td>Oct 29, 2011</td><td>Feb 1, 2023</td><td>5 of 36 seasons</td></tr><tr><td><a href="../../weather/philadelphia/">Philadelphia</a></td><td>Dec 16</td><td>Oct 29, 2011</td><td>Jan 20, 2000</td><td>8 of 36 seasons</td></tr></tbody></table></div><p class="rain-hint" style="margin-top:10px">Source: our own calculation from Open-Meteo historical weather data (ERA5), seasons 1990-91 to 2025-26. First snow: first day from September 1 with at least 0.5 cm (0.2 in) of snowfall. "Typical" is the median date. Model values for a grid cell, not official station records.</p><p>Denver is in a league of its own: at the foot of the Rocky Mountains, the first snow usually falls in October, and in our data it came before December 1 in almost every season. Chicago typically follows in the second half of November. On the East Coast, Boston and New York usually see their first snow in early December, while Washington, D.C. and Philadelphia more often wait until mid-December or later.'],
+      ['early-and-late', 'Early surprises and long waits', 'The spread from year to year is large. In New York, Philadelphia and Washington, D.C., the earliest first snow in our data fell on Oct 29, 2011, when an unusual pre-Halloween storm hit the Northeast. At the other extreme, New York had to wait until Jan 18, 2007 in one season, and Washington, D.C. until Feb 1, 2023. In Denver, the earliest first snow in our data came on Sep 8, 2001, still in summer by the calendar.'],
+      ['what-counts', 'What counts as the first snow?', 'A few flakes mixed with rain often don\'t settle and may not even be measured. We count the first day with at least 0.5 cm (0.2 in) of snowfall, roughly the first time snow could cover the grass or a car. That is a little stricter than the official "first measurable snow" of 0.1 inch (0.25 cm) used by the National Weather Service, so official records can show a slightly earlier date. Our numbers also come from a weather model for an area around each city, not from a single station, so they can differ from official station records.'],
+      ['this-winter', 'What about this winter?', 'Whether the first snow comes early or late this year depends on the timing of the first cold air outbreaks, which can\'t be predicted months ahead. The strong El Niño expected for winter 2026-27 tends to favor a milder winter across many northern areas, as we explain in our <a href="../winter-2026-27-forecast-el-nino/">winter forecast</a>, but that says little about the date of a single snowfall. The best way to know is to watch the <a href="../../14-day-forecast/">14-day forecast</a>: once nighttime lows near or below freezing show up together with precipitation, the first snow could be close. Curious about the odds of snow on December 25? Read our <a href="../white-christmas-2026-odds/">white Christmas odds</a>.']
+    ],
+    faq: [
+      ['When does it usually first snow in New York?', 'In our data for 1990-91 to 2025-26, the typical first snow in New York fell around Dec 6. The earliest was Oct 29, 2011 and the latest Jan 18, 2007.'],
+      ['When does it first snow in Chicago?', 'Typically around Nov 21. In 25 of 36 seasons, Chicago saw its first snow before December 1.'],
+      ['Which US city gets the first snow earliest?', 'Of the 7 cities in our comparison, Denver: the typical first snow comes around Oct 10, and in our data the earliest was Sep 8, 2001.'],
+      ['Does El Niño delay the first snow?', 'Not in a predictable way. A strong El Niño tends to bring a milder winter to many northern areas, but the date of the first snow depends on individual cold spells that can\'t be forecast months ahead.']
+    ],
+    related: [['../white-christmas-2026-odds/', 'Will It Snow on Christmas 2026? White Christmas Odds by City'], ['../winter-2026-27-forecast-el-nino/', 'Winter 2026-27 Forecast: What a Strong El Niño Means for the US'], ['../first-frost-london/', 'First Frost in London']]
   }
 ];
 
