@@ -251,6 +251,11 @@
     {
       "nl": "/weer/kiruna/",
       "en": "/weather/kiruna/"
+    },
+    {
+      "nl": "/blog/lapland-winter-weer-noorderlicht/",
+      "en": "/blog/lapland-winter-weather-northern-lights/",
+      "from": "2026-12-01"
     }
   ]
 }
