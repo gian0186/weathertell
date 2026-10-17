@@ -11,7 +11,10 @@ const PLACES = {
   'hong-kong': {}, dubai: {}, 'new-york': {}, seoul: { zee: false }, chicago: { zee: false }, 'los-angeles': {}, doha: {}, auckland: {}, 'kuala-lumpur': { zee: false }, athens: {},
   'buenos-aires': {}, delhi: { zee: false }, madrid: { zee: false }, oslo: {}, prague: { zee: false }, wellington: {}, london: { zee: false }, paris: { zee: false },
   barcelona: {}, rome: { zee: false }, tokyo: {}, bangkok: { zee: false }, singapore: {}, sydney: {}, lisbon: {}, amsterdam: { zee: false }, istanbul: {}, miami: {},
-  toronto: { zee: false }, vancouver: {}
+  toronto: { zee: false }, vancouver: {},
+  // Lapland (October 2026). Tromsø (coast) and Abisko (rain shadow) are left out on purpose:
+  // the model grid comes out too cold and far too wet there.
+  rovaniemi: { zee: false }, levi: { zee: false }, saariselka: { zee: false }, kiruna: { zee: false }
 };
 
 const source = fs.readFileSync(path.join(root, 'generate-locations.mjs'), 'utf8');

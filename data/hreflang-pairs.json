@@ -227,6 +227,30 @@
       "nl": "/blog/sneeuwzekerheid-oostenrijk-kerst-krokus/",
       "en": "/blog/austria-snow-at-christmas/",
       "from": "2026-11-25"
+    },
+    {
+      "nl": "/weer/rovaniemi/",
+      "en": "/weather/rovaniemi/"
+    },
+    {
+      "nl": "/weer/levi/",
+      "en": "/weather/levi/"
+    },
+    {
+      "nl": "/weer/saariselka/",
+      "en": "/weather/saariselka/"
+    },
+    {
+      "nl": "/weer/tromso/",
+      "en": "/weather/tromso/"
+    },
+    {
+      "nl": "/weer/abisko/",
+      "en": "/weather/abisko/"
+    },
+    {
+      "nl": "/weer/kiruna/",
+      "en": "/weather/kiruna/"
     }
   ]
 }

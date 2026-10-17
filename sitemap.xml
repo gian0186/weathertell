@@ -1,6 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   <url><loc>https://www.weathertell.com/</loc><lastmod>2026-10-17</lastmod><changefreq>daily</changefreq><priority>1.0</priority></url>
+  <url><loc>https://www.weathertell.com/weather/abisko/</loc><lastmod>2026-10-17</lastmod><changefreq>hourly</changefreq><priority>0.8</priority></url>
   <url><loc>https://www.weathertell.com/weather/accra/</loc><lastmod>2026-10-17</lastmod><changefreq>hourly</changefreq><priority>0.8</priority></url>
   <url><loc>https://www.weathertell.com/weather/amsterdam/</loc><lastmod>2026-10-17</lastmod><changefreq>hourly</changefreq><priority>0.8</priority></url>
   <url><loc>https://www.weathertell.com/weather/athens/</loc><lastmod>2026-10-17</lastmod><changefreq>hourly</changefreq><priority>0.8</priority></url>
@@ -42,10 +43,12 @@
   <url><loc>https://www.weathertell.com/weather/jakarta/</loc><lastmod>2026-10-17</lastmod><changefreq>hourly</changefreq><priority>0.8</priority></url>
   <url><loc>https://www.weathertell.com/weather/johannesburg/</loc><lastmod>2026-10-17</lastmod><changefreq>hourly</changefreq><priority>0.8</priority></url>
   <url><loc>https://www.weathertell.com/weather/karachi/</loc><lastmod>2026-10-17</lastmod><changefreq>hourly</changefreq><priority>0.8</priority></url>
+  <url><loc>https://www.weathertell.com/weather/kiruna/</loc><lastmod>2026-10-17</lastmod><changefreq>hourly</changefreq><priority>0.8</priority></url>
   <url><loc>https://www.weathertell.com/weather/kolkata/</loc><lastmod>2026-10-17</lastmod><changefreq>hourly</changefreq><priority>0.8</priority></url>
   <url><loc>https://www.weathertell.com/weather/kuala-lumpur/</loc><lastmod>2026-10-17</lastmod><changefreq>hourly</changefreq><priority>0.8</priority></url>
   <url><loc>https://www.weathertell.com/weather/kyiv/</loc><lastmod>2026-10-17</lastmod><changefreq>hourly</changefreq><priority>0.8</priority></url>
   <url><loc>https://www.weathertell.com/weather/lagos/</loc><lastmod>2026-10-17</lastmod><changefreq>hourly</changefreq><priority>0.8</priority></url>
+  <url><loc>https://www.weathertell.com/weather/levi/</loc><lastmod>2026-10-17</lastmod><changefreq>hourly</changefreq><priority>0.8</priority></url>
   <url><loc>https://www.weathertell.com/weather/lima/</loc><lastmod>2026-10-17</lastmod><changefreq>hourly</changefreq><priority>0.8</priority></url>
   <url><loc>https://www.weathertell.com/weather/lisbon/</loc><lastmod>2026-10-17</lastmod><changefreq>hourly</changefreq><priority>0.8</priority></url>
   <url><loc>https://www.weathertell.com/weather/london/</loc><lastmod>2026-10-17</lastmod><changefreq>hourly</changefreq><priority>0.8</priority></url>
@@ -73,6 +76,8 @@
   <url><loc>https://www.weathertell.com/weather/rio-de-janeiro/</loc><lastmod>2026-10-17</lastmod><changefreq>hourly</changefreq><priority>0.8</priority></url>
   <url><loc>https://www.weathertell.com/weather/riyadh/</loc><lastmod>2026-10-17</lastmod><changefreq>hourly</changefreq><priority>0.8</priority></url>
   <url><loc>https://www.weathertell.com/weather/rome/</loc><lastmod>2026-10-17</lastmod><changefreq>hourly</changefreq><priority>0.8</priority></url>
+  <url><loc>https://www.weathertell.com/weather/rovaniemi/</loc><lastmod>2026-10-17</lastmod><changefreq>hourly</changefreq><priority>0.8</priority></url>
+  <url><loc>https://www.weathertell.com/weather/saariselka/</loc><lastmod>2026-10-17</lastmod><changefreq>hourly</changefreq><priority>0.8</priority></url>
   <url><loc>https://www.weathertell.com/weather/san-francisco/</loc><lastmod>2026-10-17</lastmod><changefreq>hourly</changefreq><priority>0.8</priority></url>
   <url><loc>https://www.weathertell.com/weather/santiago/</loc><lastmod>2026-10-17</lastmod><changefreq>hourly</changefreq><priority>0.8</priority></url>
   <url><loc>https://www.weathertell.com/weather/sao-paulo/</loc><lastmod>2026-10-17</lastmod><changefreq>hourly</changefreq><priority>0.8</priority></url>
@@ -87,6 +92,7 @@
   <url><loc>https://www.weathertell.com/weather/tel-aviv/</loc><lastmod>2026-10-17</lastmod><changefreq>hourly</changefreq><priority>0.8</priority></url>
   <url><loc>https://www.weathertell.com/weather/tokyo/</loc><lastmod>2026-10-17</lastmod><changefreq>hourly</changefreq><priority>0.8</priority></url>
   <url><loc>https://www.weathertell.com/weather/toronto/</loc><lastmod>2026-10-17</lastmod><changefreq>hourly</changefreq><priority>0.8</priority></url>
+  <url><loc>https://www.weathertell.com/weather/tromso/</loc><lastmod>2026-10-17</lastmod><changefreq>hourly</changefreq><priority>0.8</priority></url>
   <url><loc>https://www.weathertell.com/weather/vancouver/</loc><lastmod>2026-10-17</lastmod><changefreq>hourly</changefreq><priority>0.8</priority></url>
   <url><loc>https://www.weathertell.com/weather/vienna/</loc><lastmod>2026-10-17</lastmod><changefreq>hourly</changefreq><priority>0.8</priority></url>
   <url><loc>https://www.weathertell.com/weather/warsaw/</loc><lastmod>2026-10-17</lastmod><changefreq>hourly</changefreq><priority>0.8</priority></url>
