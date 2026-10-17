@@ -1,3 +1,6 @@
+// Open-Meteo: via /api/om zodra OM_PROXY aan staat (nodig voor commercieel gebruik; zie api/om.js en om-proxy.mjs).
+var OM_PROXY = false;
+function om(url) { return OM_PROXY ? '/api/om?url=' + encodeURIComponent(url) : url; }
 const siteHeader = document.querySelector('.site-header');
 addEventListener('scroll', () => siteHeader.classList.toggle('is-stuck', scrollY > 4), { passive: true });
 
@@ -48,7 +51,7 @@ async function loadPollen(place) {
   try {
     const fields = pollenTypes.map(t => t.key).join(',');
     const params = new URLSearchParams({ latitude: place.latitude, longitude: place.longitude, timezone: 'auto', forecast_days: 5, hourly: fields });
-    const response = await fetch(`https://air-quality-api.open-meteo.com/v1/air-quality?${params}`);
+    const response = await fetch(om(`https://air-quality-api.open-meteo.com/v1/air-quality?${params}`));
     if (!response.ok) throw new Error('Pollen data unavailable');
     const data = await response.json();
     const hourly = data.hourly;
@@ -84,7 +87,7 @@ async function loadPollen(place) {
 
 async function findPlaces(query) {
   if (query.trim().length < 2) return [];
-  const response = await fetch(`https://geocoding-api.open-meteo.com/v1/search?name=${encodeURIComponent(query)}&count=5&language=en&format=json`);
+  const response = await fetch(om(`https://geocoding-api.open-meteo.com/v1/search?name=${encodeURIComponent(query)}&count=5&language=en&format=json`));
   const result = await response.json();
   return result.results || [];
 }

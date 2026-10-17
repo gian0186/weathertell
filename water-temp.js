@@ -1,4 +1,7 @@
 (function () {
+  // Open-Meteo: via /api/om zodra OM_PROXY aan staat (nodig voor commercieel gebruik; zie api/om.js en om-proxy.mjs).
+  var OM_PROXY = false;
+  function om(url) { return OM_PROXY ? '/api/om?url=' + encodeURIComponent(url) : url; }
   var cfg = window.WATERTEMP;
   if (!cfg || !cfg.items || !cfg.items.length) return;
 
@@ -13,7 +16,7 @@
     return (Math.round(t * 10) / 10) + '°C';
   }
 
-  fetch(url).then(function (r) { return r.json(); }).then(function (data) {
+  fetch(om(url)).then(function (r) { return r.json(); }).then(function (data) {
     var arr = Array.isArray(data) ? data : [data];
     var warmest = null;
     arr.forEach(function (loc, i) {

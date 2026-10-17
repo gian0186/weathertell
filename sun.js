@@ -1,3 +1,6 @@
+// Open-Meteo: via /api/om zodra OM_PROXY aan staat (nodig voor commercieel gebruik; zie api/om.js en om-proxy.mjs).
+var OM_PROXY = false;
+function om(url) { return OM_PROXY ? '/api/om?url=' + encodeURIComponent(url) : url; }
 // Low-precision solar position algorithm (Jean Meeus / NOAA-style), accurate to about a minute.
 const rad = Math.PI / 180;
 const dayMs = 1000 * 60 * 60 * 24;
@@ -96,7 +99,7 @@ async function loadSunData(place) {
   updatedTextEl.textContent = 'Loading data...';
   try {
     const params = new URLSearchParams({ latitude: place.latitude, longitude: place.longitude, timezone: 'auto', forecast_days: 14, daily: 'sunrise,sunset,daylight_duration' });
-    const response = await fetch(`https://api.open-meteo.com/v1/forecast?${params}`);
+    const response = await fetch(om(`https://api.open-meteo.com/v1/forecast?${params}`));
     if (!response.ok) throw new Error('Sun data unavailable');
     const data = await response.json();
     const { time, sunrise, sunset, daylight_duration } = data.daily;
@@ -124,7 +127,7 @@ async function loadSunData(place) {
 
 async function findPlaces(query) {
   if (query.trim().length < 2) return [];
-  const response = await fetch(`https://geocoding-api.open-meteo.com/v1/search?name=${encodeURIComponent(query)}&count=5&language=en&format=json`);
+  const response = await fetch(om(`https://geocoding-api.open-meteo.com/v1/search?name=${encodeURIComponent(query)}&count=5&language=en&format=json`));
   const result = await response.json();
   return result.results || [];
 }

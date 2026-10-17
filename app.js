@@ -1,3 +1,6 @@
+// Open-Meteo: via /api/om zodra OM_PROXY aan staat (nodig voor commercieel gebruik; zie api/om.js en om-proxy.mjs).
+var OM_PROXY = false;
+function om(url) { return OM_PROXY ? '/api/om?url=' + encodeURIComponent(url) : url; }
 const FORECAST_DAYS = Number(document.body.dataset.forecastDays) || 14;
 const siteHeader = document.querySelector('.site-header');
 addEventListener('scroll', () => siteHeader.classList.toggle('is-stuck', scrollY > 4), { passive: true });
@@ -349,7 +352,7 @@ async function loadWeather(place) {
   updatedText.textContent = 'Loading forecast...';
   try {
     const params = new URLSearchParams({ latitude: place.latitude, longitude: place.longitude, timezone: 'auto', forecast_days: FORECAST_DAYS, current: 'temperature_2m,apparent_temperature,weather_code,wind_speed_10m,wind_direction_10m,is_day,relative_humidity_2m', hourly: 'temperature_2m,weather_code,precipitation,is_day', daily: 'weather_code,temperature_2m_max,temperature_2m_min,precipitation_probability_max,wind_speed_10m_max,precipitation_sum,sunshine_duration,sunrise,sunset' });
-    const response = await fetch(`https://api.open-meteo.com/v1/forecast?${params}`);
+    const response = await fetch(om(`https://api.open-meteo.com/v1/forecast?${params}`));
     if (!response.ok) throw new Error('Weather data unavailable');
     renderWeather(await response.json());
   } catch (error) {
@@ -360,7 +363,7 @@ async function loadWeather(place) {
 
 async function findPlaces(query) {
   if (query.trim().length < 2) return [];
-  const response = await fetch(`https://geocoding-api.open-meteo.com/v1/search?name=${encodeURIComponent(query)}&count=5&language=en&format=json`);
+  const response = await fetch(om(`https://geocoding-api.open-meteo.com/v1/search?name=${encodeURIComponent(query)}&count=5&language=en&format=json`));
   const result = await response.json();
   return result.results || [];
 }
