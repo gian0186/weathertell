@@ -82,7 +82,12 @@ const sharedLon = parseFloat(sharedLocationParams.get('lon'));
 if (!locationPage && Number.isFinite(sharedLat) && Number.isFinite(sharedLon)) {
   selectedPlace = { name: 'My location', latitude: sharedLat, longitude: sharedLon };
   window.history.replaceState({}, '', window.location.pathname);
-  reverseGeocode(sharedLat, sharedLon).then(place => applyResolvedName(place, sharedLat, sharedLon));
+  // BigDataCloud's free client-side API may only be used for the device's own
+  // location. These coordinates come from the "use my location" buttons on our
+  // own pages, so only look up the place name when we arrive from one of them,
+  // not for a hand-made or forwarded ?lat=&lon= link.
+  const cameFromOwnSite = document.referrer.startsWith(window.location.origin + '/');
+  if (cameFromOwnSite) reverseGeocode(sharedLat, sharedLon).then(place => applyResolvedName(place, sharedLat, sharedLon));
 }
 
 const sharedQuery = sharedLocationParams.get('q');
