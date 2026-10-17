@@ -992,6 +992,7 @@ const sitemapUrls = [
   { loc: 'https://www.weathertell.com/climate-archive/compare/', lastmod: today, changefreq: 'monthly', priority: '0.5' },
   ...climateArchiveYearSlugs.map(slug => ({ loc: `https://www.weathertell.com/climate-archive/${slug}/`, lastmod: today, changefreq: 'yearly', priority: '0.4' })),
   { loc: 'https://www.weathertell.com/hay-fever/', lastmod: today, changefreq: 'daily', priority: '0.6' },
+  { loc: 'https://www.weathertell.com/sources/', lastmod: today, changefreq: 'monthly', priority: '0.3' },
   ...hayFeverSlugs.map(slug => ({ loc: `https://www.weathertell.com/hay-fever/${slug}/`, lastmod: today, changefreq: 'daily', priority: '0.5' })),
   { loc: 'https://www.weathertell.com/blog/', lastmod: today, changefreq: 'weekly', priority: '0.7' },
   ...posts.map(p => ({ loc: `https://www.weathertell.com/blog/${p.slug}/`, lastmod: postDateBySlug[p.slug], changefreq: 'monthly', priority: '0.6' })),
