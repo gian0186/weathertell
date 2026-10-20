@@ -40,8 +40,8 @@ const get = async url => {
     const res = await fetch(url);
     const json = await res.json();
     if (res.ok && !json.error) return json;
-    console.log(`Limiet of fout (${json.reason || res.status}), opnieuw over 5 minuten...`);
-    await new Promise(r => setTimeout(r, 300000));
+    console.log(`Limiet of fout (${json.reason || res.status}), opnieuw over 65 seconden...`);
+    await new Promise(r => setTimeout(r, 65000));
   }
   throw new Error(`Ophalen mislukt: ${url}`);
 };

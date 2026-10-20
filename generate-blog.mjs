@@ -967,6 +967,40 @@ const posts = [
       ['Is there a hosepipe ban?', 'That is up to each water company. Check your own water supplier for any current restrictions.']
     ],
     related: [['../uk-storm-names-2026-27/', 'UK storm names 2026-27'], ['../winter-2026-27-forecast-el-nino/', 'Winter 2026-27 forecast'], ['../what-is-a-heatwave/', 'What is a heatwave?']]
+  },
+  {
+    slug: 'dana-adam-spain-flooding-october-2026',
+    featuredCitySlug: 'barcelona',
+    featuredCityName: 'Barcelona',
+    category: 'News',
+    time: '4 min read',
+    datePublished: '2026-10-20',
+    pinUntil: '2026-10-23',
+    photoCredit: 'Photo: sky clearing after a storm near Castellón, diego_cue, <a href="https://commons.wikimedia.org/wiki/File:The_sun_opening_the_sky_after_the_storm_(close_to_Castellon)_-_Spain_-_panoramio.jpg" target="_blank" rel="noopener">Wikimedia Commons</a> (CC BY-SA 3.0)',
+    title: 'DANA Adam: Spain Flooding and the Weather for Half-Term',
+    description: 'The DANA Adam brought red warnings and extreme rain to Valencia, Alicante, Ibiza and Formentera, with four deaths. Here is the forecast for Benidorm, Mallorca and Ibiza for the rest of the week and October half-term.',
+    keyFacts: [
+      '<strong>What happened:</strong> from October 17 to 19, the DANA Adam brought extreme rain to Spain\'s east coast and the Balearic Islands, with red warnings for Valencia, Alicante, Ibiza and Formentera.',
+      '<strong>Impact:</strong> according to the Spanish news agency EFE, four people died, three in the Valencia region and one in Catalonia, and more than 2,000 people were evacuated.',
+      '<strong>Record rain:</strong> the Spanish weather service AEMET measured almost 430 mm of rain in six hours in Pego, Alicante.',
+      '<strong>This week:</strong> after the last showers on Tuesday, it turns dry from Wednesday, with 22 to 28°C (72 to 82°F) on the Costa Blanca and 20 to 25°C (68 to 77°F) on Mallorca and Ibiza.',
+      '<strong>Half-term (Oct 26-30):</strong> the ECMWF ensemble points to mostly dry weather with highs in the low 20s°C (around 70 to 75°F) and only a small chance of a shower.'
+    ],
+    lead: 'Just before October half-term, one of the busiest weeks of the year for British holidaymakers in Spain, the DANA Adam swept over Valencia, Alicante and the Balearic Islands. Extreme rain caused flooding and evacuations, and sadly also deaths. The good news for anyone there now or flying out soon: from Wednesday it turns dry and sunny.',
+    sections: [
+      ['what-happened', 'What happened?', 'The DANA Adam reached mainland Spain on Saturday, October 17. The Spanish weather service AEMET issued red warnings for the Valencia and Alicante region and for Ibiza and Formentera, and an orange warning for Mallorca. In the Valencia region, a red warning was in force from Sunday morning, with up to 300 mm of rain expected in 24 hours. Over the whole episode, AEMET expected 300 to 400 mm, mainly on the southern Valencia coast and around Cap de la Nau. Schools on Ibiza, Formentera and Mallorca were closed on Monday.</p><p>Records fell. According to AEMET, almost 430 mm of rain fell in six hours in Pego, in the province of Alicante, and more than 700 mm in 48 hours in Forna (Valencia). For comparison, London gets about 600 mm of rain in a whole year. According to a summary by the news agency EFE, four people died, three in the Valencia region, two of them in Oliva, and one in Catalonia. More than 2,000 people were evacuated.'],
+      ['what-is-a-dana', 'What is a DANA?', 'DANA stands for Depresión Aislada en Niveles Altos: a cut-off low high in the atmosphere, with cold air aloft. In autumn, the Mediterranean is still warm after the summer. With cold air high above warm sea, the atmosphere becomes very unstable, and huge thunderstorms can form over the coast and stay over the same place for hours. That is what makes a DANA so dangerous: not just a lot of rain, but a lot of rain in one place in a short time. In Spain it is also called a gota fría, a cold drop. The DANA of late October 2024 killed more than 220 people in the Valencia region.'],
+      ['rest-of-the-week', 'What is the weather for the rest of the week?', 'For anyone on the Costa Blanca or the Balearic Islands now, the outlook is much better. Rain is still expected on Mallorca and Ibiza on Tuesday, but from Wednesday it turns dry everywhere. In Valencia, highs for the rest of the week are 22 to 27°C (72 to 81°F), in Alicante and Benidorm 22 to 28°C (72 to 82°F), and on Mallorca and Ibiza 20 to 25°C (68 to 77°F), with plenty of sunshine.</p><p>Even after the storm, things can be disrupted for a few days: rivers and ramblas, the dry riverbeds that fill up within minutes in heavy rain, can still be high, and some roads may be closed. Follow the advice of the Spanish authorities and your tour operator or airline.'],
+      ['half-term', 'Weather for October half-term', 'Most schools in England have half-term from October 26 to 30, 2026. For that week, the 51 runs of the European ECMWF ensemble point to mostly dry weather on the Costa Blanca and the Balearic Islands, with typical highs of 21 to 24°C (70 to 75°F) in Benidorm, Valencia, Palma and Ibiza. The chance of a wet day is small, around 10 to 25%, rising a little towards the end of the week. That is normal late-October weather for the Spanish Mediterranean coast: still warm enough for the beach on sunny afternoons, with cooler evenings. The sea is still around 23°C (73°F).</p><p>Back home, the same week looks a lot wetter: see our article on the <a href="../england-drought-2026-will-rain-help/">drought in England and the rain ahead</a>, and the forecast for <a href="../../weather/london/">London</a>.'],
+      ['on-holiday', 'What to do in a weather warning on holiday', 'AEMET uses the same colours as the Met Office: yellow, amber (orange) and red. For a red warning, the Spanish government also sends an ES-Alert to every phone in the area, similar to the UK Emergency Alerts. In a warning, stay away from dry riverbeds and low-lying parts of town, do not drive through flooded streets or underpasses, and do not park in underground car parks. Read more about the colours in our article on <a href="../weather-warning-colors/">weather warning colours</a>.</p><p>Is your trip still going ahead? If in doubt, contact your tour operator or airline. The FCDO travel advice for Spain also lists any current disruption.']
+    ],
+    faq: [
+      ['What is a DANA?', 'A cut-off low with cold air high in the atmosphere. Over the warm Mediterranean in autumn, it can trigger huge thunderstorms that stay over the same place for hours.'],
+      ['What is the weather in Benidorm this week?', 'Dry and sunny from Wednesday, October 21, with highs of 22 to 28°C (72 to 82°F).'],
+      ['What is the weather in Spain for October half-term 2026?', 'For October 26 to 30, the forecast points to mostly dry weather on the Costa Blanca, Mallorca and Ibiza, with highs of 21 to 24°C (70 to 75°F) and only a small chance of a shower.'],
+      ['Can I still travel to the Costa Blanca or Mallorca?', 'The storm is over and it turns dry from Wednesday. Some roads or areas may still be closed locally; if in doubt, contact your tour operator and follow the advice of the Spanish authorities.']
+    ],
+    related: [['../weather-warning-colors/', 'Weather warning colours explained'], ['../england-drought-2026-will-rain-help/', 'Severe drought in England'], ['../where-is-it-warm-in-december/', 'Where is it warm in December?']]
   }
 ];
 
