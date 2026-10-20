@@ -14,7 +14,19 @@ const PLACES = {
   toronto: { zee: false }, vancouver: {},
   // Lapland (October 2026). Tromsø (coast) and Abisko (rain shadow) are left out on purpose:
   // the model grid comes out too cold and far too wet there.
-  rovaniemi: { zee: false }, levi: { zee: false }, saariselka: { zee: false }, kiruna: { zee: false }
+  rovaniemi: { zee: false }, levi: { zee: false }, saariselka: { zee: false }, kiruna: { zee: false },
+  // All remaining city pages (October 2026); coastal cities get a sea temperature.
+  dublin: {}, stockholm: {}, 'rio-de-janeiro': {}, lima: {}, mumbai: {}, melbourne: {}, 'cape-town': {}, edinburgh: {},
+  'san-francisco': {}, seattle: {}, jakarta: {}, perth: {}, shanghai: {}, osaka: {}, karachi: {}, havana: {}, accra: {},
+  beirut: {}, helsinki: {}, boston: {}, 'tel-aviv': {}, casablanca: {}, lagos: {}, manila: {}, reykjavik: {},
+  berlin: { zee: false }, vienna: { zee: false }, zurich: { zee: false }, 'mexico-city': { zee: false }, 'sao-paulo': { zee: false },
+  bogota: { zee: false }, cairo: { zee: false }, nairobi: { zee: false }, warsaw: { zee: false }, brussels: { zee: false },
+  montreal: { zee: false }, santiago: { zee: false }, johannesburg: { zee: false }, beijing: { zee: false }, bangalore: { zee: false },
+  kolkata: { zee: false }, dhaka: { zee: false }, tehran: { zee: false }, riyadh: { zee: false }, hanoi: { zee: false },
+  milan: { zee: false }, munich: { zee: false }, kyiv: { zee: false }, belgrade: { zee: false }, philadelphia: { zee: false },
+  denver: { zee: false }, medellin: { zee: false }, budapest: { zee: false }, bucharest: { zee: false }, 'washington-dc': { zee: false },
+  houston: { zee: false }, calgary: { zee: false }, quito: { zee: false }, 'ho-chi-minh-city': { zee: false }, taipei: { zee: false },
+  brisbane: { zee: false }
 };
 
 const source = fs.readFileSync(path.join(root, 'generate-locations.mjs'), 'utf8');

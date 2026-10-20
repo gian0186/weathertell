@@ -934,6 +934,39 @@ const posts = [
       ['Will the polar vortex bring extreme cold this winter?', 'Nobody can say yet. An SSW can only be seen one to two weeks in advance, and the resulting cold usually appears in forecasts a week to ten days ahead.']
     ],
     related: [['../winter-2026-27-forecast-el-nino/', 'Winter 2026-27 forecast: El Niño'], ['../first-snow-us-cities/', 'First snow in US cities'], ['../white-christmas-2026-odds/', 'White Christmas 2026: What Are the Odds?']]
+  },
+  {
+    slug: 'england-drought-2026-will-rain-help',
+    featuredCitySlug: 'london',
+    featuredCityName: 'London',
+    category: 'News',
+    time: '5 min read',
+    datePublished: '2026-10-20',
+    photoCredit: 'Photo: low water at Grimwith Reservoir, Yorkshire, Peter Bond, <a href="https://commons.wikimedia.org/wiki/File:Low_water_levels_at_Grimwith_Reservoir_-_geograph.org.uk_-_3753741.jpg" target="_blank" rel="noopener">Wikimedia Commons</a> (CC BY-SA 2.0)',
+    title: 'Severe Drought in England: Will This Week\'s Rain Help?',
+    description: 'Severe drought has been declared in parts of six English counties, with some reservoirs below 20%. A wet week is coming to the south, but here is why it will not end the drought on its own.',
+    keyFacts: [
+      '<strong>Declared:</strong> on October 15, 2026, severe drought was declared in parts of Cornwall, Devon, Dorset, Somerset, East Sussex and West Sussex, after the driest April to September in more than a century in southern England.',
+      '<strong>Reservoirs:</strong> Ardingly in Sussex was at 19% and Wimbleball in Somerset at 16%, where around 75% would be normal; national storage is 54%, about 21% below average for the time of year.',
+      '<strong>October so far:</strong> by mid-month the south-east and south-west had only 18% of their average October rainfall.',
+      '<strong>This week:</strong> the ECMWF ensemble gives about 70 to 90 mm of rain over ten days near the two reservoirs, roughly a normal month\'s worth.',
+      '<strong>But:</strong> dry soils soak up the first rain, so reservoirs need a wetter than normal winter to recover.'
+    ],
+    lead: 'After the driest spring and summer in more than a century in southern England, the government has declared severe drought in parts of six counties, and some reservoirs are less than a fifth full. Now the weather is turning, with a wet and windy week ahead. Will it be enough?',
+    sections: [
+      ['what-was-declared', 'What was declared?', 'On October 15, 2026, the Department for Environment, Food and Rural Affairs (Defra) declared severe drought in parts of Cornwall, Devon, Dorset, Somerset, East Sussex and West Sussex. The trigger was storage at two major reservoirs: Ardingly, which supplies South East Water customers, was 19% full, and Wimbleball, run by South West Water, 16%. At this time of year the Environment Agency would normally expect them to be around 75% full.</p><p>The wider picture is serious too. In its weekly report for October 9 to 15, the Environment Agency put national reservoir storage at 54%, about 21% below the long-term average for the time of year, with 11 reservoir groups classed as exceptionally low. Most of England is in drought, from the South West and the Thames area to East Anglia, the Midlands and Yorkshire, which moved into drought on October 9. The National Drought Group, which brings together the government, regulators and water companies, has moved to weekly meetings.'],
+      ['why', 'How did it get this bad?', 'Southern England had its driest April to September in more than a century. Rivers and reservoirs depend on rain over the whole year, and above all on the wet winter months to top them up. After a dry spring and summer, storage was already low going into autumn, and October started dry as well: by the middle of the month, the south-east and south-west had received only 18% of their average October rainfall, and England as a whole 26%.'],
+      ['rain-ahead', 'How much rain is coming?', 'The weather is turning wetter and windier this week. In the forecast of October 20, the 51 runs of the European ECMWF ensemble give a median of about 70 mm of rain over the next ten days near Ardingly in Sussex and about 90 mm near Wimbleball on Exmoor; in London it is about 55 mm. That is roughly the rain of a normal October, falling in ten days. Around the weekend of October 24 and 25 the wind will also pick up, with gales possible, especially on coasts.'],
+      ['will-it-help', 'Will it end the drought?', 'Not on its own. After months of dry weather, the ground itself is dry, and the first heavy rain mostly soaks into the soil instead of running off into rivers and reservoirs. Only when the soil is wet again does a larger share of the rain reach the rivers. The Environment Agency puts it plainly: further significant rainfall is needed to return to normal water resource conditions for many water companies. In practice that means a winter with at least average, and preferably above-average, rainfall. Groundwater in the chalk aquifers of the south, which supply much of the region\'s water, recovers even more slowly and mainly between November and March.'],
+      ['what-it-means', 'What it means for you', 'For now, the measures mainly affect water companies and businesses: daily checks of reservoir and river levels, extra water-quality monitoring and more inspections of businesses that take water from rivers and groundwater. Hosepipe bans are a decision for each water company, so check your own supplier for any restrictions. Saving water at home still helps, especially in the south-east and south-west. For the coming days, see the forecast for <a href="../../weather/london/">London</a> and the <a href="../../14-day-forecast/">14-day forecast</a> for your area, and read how the UK names storms in our <a href="../uk-storm-names-2026-27/">storm names 2026-27</a> article.']
+    ],
+    faq: [
+      ['Where is there severe drought in England?', 'In parts of Cornwall, Devon, Dorset, Somerset, East Sussex and West Sussex, declared on October 15, 2026. Much of the rest of England, from the Thames area and East Anglia to the Midlands and Yorkshire, is in drought.'],
+      ['How full are reservoirs in England?', 'National storage was about 54% in mid-October 2026, around 21% below average for the time of year. Ardingly in Sussex was at 19% and Wimbleball in Somerset at 16%, where around 75% would be normal.'],
+      ['Will the rain this week end the drought?', 'No. It will help, but dry soils absorb the first rain, so reservoirs and groundwater need a wetter than normal winter to recover.'],
+      ['Is there a hosepipe ban?', 'That is up to each water company. Check your own water supplier for any current restrictions.']
+    ],
+    related: [['../uk-storm-names-2026-27/', 'UK storm names 2026-27'], ['../winter-2026-27-forecast-el-nino/', 'Winter 2026-27 forecast'], ['../what-is-a-heatwave/', 'What is a heatwave?']]
   }
 ];
 
