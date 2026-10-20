@@ -1053,6 +1053,7 @@ const sitemapUrls = [
   { loc: 'https://www.weathertell.com/locations/', lastmod: today, changefreq: 'weekly', priority: '0.7' },
   { loc: 'https://www.weathertell.com/sunrise-sunset/', lastmod: today, changefreq: 'weekly', priority: '0.7' },
   { loc: 'https://www.weathertell.com/7-day-forecast/', lastmod: today, changefreq: 'daily', priority: '0.8' },
+  { loc: 'https://www.weathertell.com/weekend-forecast/', lastmod: today, changefreq: 'daily', priority: '0.8' },
   { loc: 'https://www.weathertell.com/14-day-forecast/', lastmod: today, changefreq: 'daily', priority: '0.8' },
   { loc: 'https://www.weathertell.com/glossary/', lastmod: today, changefreq: 'monthly', priority: '0.6' },
   ...glossarySlugs.map(slug => ({ loc: `https://www.weathertell.com/glossary/${slug}/`, lastmod: today, changefreq: 'monthly', priority: '0.5' })),

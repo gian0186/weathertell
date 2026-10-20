@@ -241,6 +241,9 @@ function renderNarrative(data, cityName) {
     tomorrowEl.innerHTML = `Tomorrow (${tomorrowDayName}), the high in ${cityName} will be ${tMax}°C and the low ${tMin}°C. ${formatMmPlain(data.daily.precipitation_sum ? data.daily.precipitation_sum[1] : 0)} of rain is expected with ${tSun.toFixed(1)} hours of sunshine. The chance of rain is ${tChance}%. This data is updated several times a day via Open-Meteo.`;
   }
 
+  const weekendEl = document.querySelector('#narrativeWeekend');
+  if (weekendEl) weekendEl.innerHTML = weekendNarrative(data, cityName);
+
   const weekEl = document.querySelector('#narrativeWeek');
   if (weekEl) {
     const days7Max = data.daily.temperature_2m_max.slice(0, 7).filter(Number.isFinite);
@@ -265,6 +268,32 @@ function renderNarrative(data, cityName) {
   }
 
   document.querySelectorAll('.narrative-city-name').forEach(el => { el.textContent = cityName; });
+}
+
+// Weekend forecast text for the weekend page (#narrativeWeekend): Saturday and Sunday of the coming weekend,
+// or, on a Sunday, today plus next weekend.
+function weekendDayText(d, i) {
+  const [label] = getWeatherLabel(d.weather_code[i], 1);
+  const sun = Math.round((d.sunshine_duration[i] || 0) / 3600);
+  const mm = d.precipitation_sum[i];
+  const mx = d.temperature_2m_max[i], mn = d.temperature_2m_min[i];
+  return `<strong>${formatFullDate(d.time[i])}:</strong> ${label.toLowerCase()}, a high of ${safeNumber(mx)}°C (${safeNumber(mx * 9 / 5 + 32)}°F) and a low of ${safeNumber(mn)}°C (${safeNumber(mn * 9 / 5 + 32)}°F). ${safeNumber(d.precipitation_probability_max[i], 0)}% chance of rain${Number.isFinite(mm) && mm >= 0.1 ? `, about ${formatMmPlain(mm)}` : ''}, wind up to ${safeNumber(d.wind_speed_10m_max[i] * 0.621)} mph and ${sun} hours of sunshine.`;
+}
+function weekendNarrative(data, cityName) {
+  const d = data.daily;
+  const dow = i => new Date(`${d.time[i]}T12:00:00`).getDay();
+  const parts = [];
+  if (dow(0) === 0) parts.push(`It is still the weekend in ${cityName} today. ${weekendDayText(d, 0)}`);
+  const sat = d.time.findIndex((t, i) => dow(i) === 6);
+  if (sat >= 0 && d.time[sat + 1]) {
+    const days = [sat, sat + 1];
+    const score = i => (d.precipitation_probability_max[i] || 0) - ((d.sunshine_duration[i] || 0) / 3600) * 5;
+    const best = score(days[0]) <= score(days[1]) ? days[0] : days[1];
+    const intro = dow(0) === 0 ? `Next weekend in ${cityName}:` : (sat === 0 ? `This weekend in ${cityName}:` : `The coming weekend in ${cityName}:`);
+    const note = sat >= 5 ? ' The weekend is still several days away, so the forecast may change.' : '';
+    parts.push(`${intro} ${days.map(i => weekendDayText(d, i)).join(' ')} The better day to be outdoors looks like ${fullDays[dow(best)]}.${note}`);
+  }
+  return parts.join('</p><p>');
 }
 
 function renderForecast(data) {
@@ -339,7 +368,7 @@ function renderWeather(data) {
   currentSymbol.innerHTML = icon;
   currentSummary.textContent = label;
   feelsLike.textContent = `${safeNumber(current.apparent_temperature)}°`;
-  windSpeed.textContent = `${windDirection(current.wind_direction_10m)} ${Math.max(1, Math.round(current.wind_speed_10m / 3.6))} bft`;
+  windSpeed.textContent = `${windDirection(current.wind_direction_10m)} ${Math.round(current.wind_speed_10m * 0.621)} mph`;
   rainChance.textContent = `${rainProbability}%`;
   updatedText.textContent = `Updated at ${formatHour(current.time)}`;
   const daylightEl = document.querySelector('#daylightText');
