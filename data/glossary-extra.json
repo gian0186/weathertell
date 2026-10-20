@@ -1,0 +1,222 @@
+{
+ "dew-point": {
+  "title": "What Is Dew Point? Meaning, Comfort Chart and Examples",
+  "description": "What is the dew point and what does it mean? A comfort chart in °F and °C, how to calculate it from temperature and humidity, and typical dew points in US cities.",
+  "sections": [
+   [
+    "How does dew point feel? Comfort chart",
+    "The dew point is the best single number for how humid it feels outside. These ranges are a widely used rule of thumb; people used to a humid climate may feel comfortable at slightly higher values.<div class=\"sun-table-wrap\"><table class=\"sun-table\"><thead><tr><th>Dew point</th><th>How it feels</th></tr></thead><tbody><tr><td>Below 10°C (50°F)</td><td>Dry and comfortable</td></tr><tr><td>10 to 16°C (50 to 60°F)</td><td>Comfortable</td></tr><tr><td>16 to 18°C (60 to 65°F)</td><td>Slightly humid, noticeable for some people</td></tr><tr><td>18 to 21°C (65 to 70°F)</td><td>Muggy and sticky</td></tr><tr><td>21 to 24°C (70 to 75°F)</td><td>Oppressive</td></tr><tr><td>24°C (75°F) and above</td><td>Extremely uncomfortable, typical of the tropics</td></tr></tbody></table></div>"
+   ],
+   [
+    "Dew point vs. relative humidity",
+    "Relative humidity tells you how close the air is to saturation at its current temperature, so it changes during the day even when the amount of moisture stays the same: it is usually highest at dawn and lowest in the afternoon. The dew point does not depend on the temperature in that way, so it is a better guide to how muggy it will feel. A summer afternoon at 32°C (90°F) and 40% relative humidity has a dew point of about 17°C (62°F) and feels noticeably humid, while a cool morning at 10°C (50°F) and 90% humidity has a dew point of only about 8°C (47°F) and feels fresh."
+   ],
+   [
+    "How to calculate the dew point",
+    "The dew point can be calculated from the temperature and the relative humidity with the Magnus formula. With the temperature T in °C and the relative humidity RH in percent, first calculate γ = ln(RH/100) + 17.62 × T / (243.12 + T); the dew point is then 243.12 × γ / (17.62 − γ). For example, at 25°C (77°F) and 60% relative humidity, γ is about 1.13 and the dew point is about 16.7°C (62°F).</p><p>For a quick estimate there is a simple rule of thumb that works well above about 50% humidity: subtract (100 − RH) / 5 from the temperature in °C. At 25°C and 60% humidity that gives 25 − 8 = 17°C, close to the exact answer."
+   ],
+   [
+    "Typical dew points in US cities and beyond",
+    "Average daily dew point in January and July, 2015-2024, and the number of July days with a dew point of 21°C (70°F) or higher.<div class=\"sun-table-wrap\"><table class=\"sun-table\"><thead><tr><th>City</th><th>January</th><th>July</th><th>July days at 70°F+</th></tr></thead><tbody><tr><td>Singapore</td><td>23.2°C (74°F)</td><td>24.2°C (76°F)</td><td>31</td></tr><tr><td>Miami</td><td>15.2°C (59°F)</td><td>23.8°C (75°F)</td><td>31</td></tr><tr><td>Houston</td><td>6.9°C (44°F)</td><td>23.8°C (75°F)</td><td>31</td></tr><tr><td>New York</td><td>-5.3°C (22°F)</td><td>19.2°C (67°F)</td><td>11</td></tr><tr><td>Chicago</td><td>-7.1°C (19°F)</td><td>18.2°C (65°F)</td><td>5</td></tr><tr><td>Los Angeles</td><td>5.3°C (42°F)</td><td>15.0°C (59°F)</td><td>0</td></tr><tr><td>Phoenix</td><td>1.4°C (35°F)</td><td>12.9°C (55°F)</td><td>3</td></tr><tr><td>London</td><td>2.6°C (37°F)</td><td>12.4°C (54°F)</td><td>0</td></tr></tbody></table></div>Source: ERA5 reanalysis via Open-Meteo; model averages for a grid cell.</p><p>In Miami and Houston almost every July day is oppressive, with a dew point above 21°C (70°F), while in Phoenix the air is much drier despite the heat. That is why 100°F feels very different in Phoenix and in Houston: in dry air, sweat evaporates easily and cools the body, in humid air it does not."
+   ],
+   [
+    "Dew, frost and fog",
+    "When the air near the ground cools down to its dew point, water vapor condenses. On grass and car windows this forms dew. If the dew point is below freezing, the moisture turns straight into ice crystals and you get frost; the dew point is then also called the frost point. When the air itself cools to its dew point, tiny droplets form in the air and you get <a href=\"../fog/\">fog</a>. The smaller the gap between the temperature and the dew point in the evening, the more likely fog is by the next morning."
+   ]
+  ],
+  "faq": [
+   [
+    "What is a good dew point?",
+    "For most people a dew point below about 16°C (60°F) feels comfortable. Above 18°C (65°F) it starts to feel muggy, and above 21°C (70°F) oppressive."
+   ],
+   [
+    "Is dew point the same as humidity?",
+    "No. Relative humidity is a percentage that changes with the temperature during the day. The dew point is a temperature that shows how much moisture is actually in the air, and is a better guide to how humid it feels."
+   ],
+   [
+    "Can the dew point be higher than the temperature?",
+    "No. The dew point can at most equal the air temperature. When they are equal, the relative humidity is 100% and the air is saturated, which often means fog, dew or rain."
+   ],
+   [
+    "What is the highest dew point ever recorded?",
+    "One of the highest dew points on record is 35°C (95°F), reported in Dhahran, Saudi Arabia, on July 8, 2003, where the heat index reached about 81°C (178°F)."
+   ]
+  ]
+ },
+ "jet-stream": {
+  "title": "What Is the Jet Stream? How It Shapes Your Weather",
+  "description": "What is the jet stream, how fast and how high does it blow, and how does it steer storms, heat waves and cold snaps? Explained with examples.",
+  "sections": [
+   [
+    "Where and how fast?",
+    "The jet stream is a narrow band of very strong wind high in the atmosphere, near the top of the troposphere, at about 9 to 12 kilometers (30,000 to 39,000 feet), around the cruising altitude of passenger jets. Wind speeds in the core are often 100 to 200 mph (160 to 320 km/h) and can be higher in winter. The jet stream blows mainly from west to east, but in a wavy, meandering pattern rather than a straight line."
+   ],
+   [
+    "Why is there a jet stream?",
+    "The jet stream forms where cold polar air meets warmer air from further south. The bigger the temperature contrast, the stronger the jet. That is why it is strongest in winter, when the difference between the frozen Arctic and the warmer south is largest, and why it shifts north in summer. There are two main jet streams in each hemisphere: the polar jet, which matters most for the weather in the US, Canada and Europe, and the subtropical jet, further south and higher up."
+   ],
+   [
+    "How the jet stream steers your weather",
+    "The jet stream acts as a steering current for weather systems. Low-pressure systems form and strengthen along it and follow its path, so where the jet stream runs, storms run. When it dips south over a region, in what forecasters call a trough, cold air pours in behind it and the weather turns unsettled. When it bulges north, in a ridge, warm air flows in and the weather is often settled. If the pattern gets stuck, the same weather can last for days or weeks: a stalled ridge can bring a <a href=\"../../blog/what-is-a-heatwave/\">heat wave</a>, a stalled trough a long run of rain or cold."
+   ],
+   [
+    "El Niño and the jet stream",
+    "During El Niño the subtropical jet stream over the Pacific is often stronger and reaches further east, steering more storms across the southern US. That is one reason El Niño winters tend to be wetter in the South and milder in the North; read more in our <a href=\"../../blog/winter-2026-27-forecast-el-nino/\">winter 2026-27 forecast</a>."
+   ],
+   [
+    "The jet stream and flights",
+    "Airlines plan routes around the jet stream. Flying east with a strong tailwind saves time and fuel, while flying west into it takes longer. That is why a flight from New York to London is usually shorter than the return flight. In February 2020, a British Airways Boeing 747 crossed from New York to London in under five hours, helped by a jet stream of more than 200 mph during Storm Ciara."
+   ]
+  ],
+  "faq": [
+   [
+    "How high is the jet stream?",
+    "About 9 to 12 kilometers (30,000 to 39,000 feet) above the ground, near the top of the troposphere."
+   ],
+   [
+    "How fast is the jet stream?",
+    "The core is often 100 to 200 mph (160 to 320 km/h), and in winter it can be even faster."
+   ],
+   [
+    "Why does the jet stream move?",
+    "It follows the boundary between cold polar air and warmer air. As that boundary shifts with the seasons and with weather systems, the jet stream moves north and south and develops large waves."
+   ]
+  ]
+ },
+ "low-pressure-system": {
+  "title": "Low-Pressure System: What It Is and What Weather It Brings",
+  "description": "What is a low-pressure system, how low does the pressure go, and why does it bring clouds, rain and wind? With typical pressure values and record lows.",
+  "sections": [
+   [
+    "How low is low?",
+    "Average sea-level pressure is 1013 hPa (29.92 inHg). A low-pressure system is simply an area where the pressure is lower than around it, so there is no fixed threshold.<div class=\"sun-table-wrap\"><table class=\"sun-table\"><thead><tr><th>Pressure at the center</th><th>Typical weather</th></tr></thead><tbody><tr><td>1000 to 1010 hPa (29.5 to 29.8 inHg)</td><td>A weak low: clouds and some rain</td></tr><tr><td>980 to 1000 hPa (28.9 to 29.5 inHg)</td><td>A normal autumn or winter storm system, with rain and strong wind</td></tr><tr><td>960 to 980 hPa (28.3 to 28.9 inHg)</td><td>A deep low: a severe storm with damaging gusts</td></tr><tr><td>Below 960 hPa (28.3 inHg)</td><td>An exceptional storm or a strong hurricane</td></tr></tbody></table></div>The lowest sea-level pressure ever measured was 870 hPa (25.69 inHg) in Typhoon Tip over the Pacific in October 1979."
+   ],
+   [
+    "Why lows bring clouds and rain",
+    "Near the ground, air flows in toward the center of a low and is forced upward. As it rises it cools, and the moisture in it condenses into clouds and rain. In the Northern Hemisphere the air spirals in counterclockwise, in the Southern Hemisphere clockwise, because of the rotation of the Earth. Most lows outside the tropics carry weather fronts with them: a <a href=\"../warm-front/\">warm front</a> with long periods of rain, followed by a <a href=\"../cold-front/\">cold front</a> with showers and a drop in temperature."
+   ],
+   [
+    "Wind and the bomb cyclone",
+    "The faster the pressure drops over a short distance, the stronger the wind. On a weather map that shows up as closely spaced <a href=\"../isobar/\">isobars</a> around the low. When the pressure at the center of a mid-latitude low drops by 24 hPa or more in 24 hours, meteorologists call it explosive cyclogenesis, better known as a bomb cyclone. Such rapidly deepening storms are common off the US East Coast and over the North Atlantic in winter."
+   ]
+  ],
+  "faq": [
+   [
+    "What weather does a low-pressure system bring?",
+    "Usually clouds, rain or snow, and wind. The deeper the low and the tighter the pressure gradient, the stronger the wind."
+   ],
+   [
+    "What pressure is considered low?",
+    "There is no fixed number: a low is lower than its surroundings. As a guide, below about 1000 hPa (29.5 inHg) usually means unsettled weather, and below 980 hPa (28.9 inHg) a real storm."
+   ],
+   [
+    "Which way does air turn around a low?",
+    "Counterclockwise in the Northern Hemisphere and clockwise in the Southern Hemisphere."
+   ]
+  ]
+ },
+ "high-pressure-system": {
+  "title": "High-Pressure System: What It Is and What Weather It Brings",
+  "description": "What is a high-pressure system and why does it usually mean dry weather? Typical pressure values, record highs, and why highs bring heat waves in summer and fog in winter.",
+  "sections": [
+   [
+    "How high is high?",
+    "Average sea-level pressure is 1013 hPa (29.92 inHg). Most high-pressure systems have a central pressure of about 1020 to 1040 hPa (30.1 to 30.7 inHg). Strong winter highs over Siberia, Canada and the northern US can go higher: the highest sea-level pressure ever measured was 1084.8 hPa (32.03 inHg) in Agata, Siberia, on December 31, 1968."
+   ],
+   [
+    "Why highs bring settled weather",
+    "In a high, air sinks from higher up and spreads out near the ground. Sinking air warms and dries out, which dissolves clouds, so highs usually bring dry weather with little wind. Around the center, the air turns clockwise in the Northern Hemisphere and counterclockwise in the Southern Hemisphere. Because the isobars are usually far apart, the wind near the center is light."
+   ],
+   [
+    "Summer heat, winter fog and cold",
+    "What a high brings depends on the season. In summer, long days of sunshine under a high can build up a heat wave, especially when the high stalls; a strong, persistent high is often called a heat dome. In winter the opposite can happen: clear, calm nights let the ground cool quickly, cold air gets trapped near the surface under warmer air above, and you can get days of frost, <a href=\"../fog/\">fog</a> or low gray cloud, while it is sunny and much milder on the mountains."
+   ],
+   [
+    "Blocking highs",
+    "Sometimes a high stalls for a week or more and pushes weather systems around it. Such a blocking high can bring a long dry spell, a heat wave or a cold snap, depending on the season and where the air is coming from. It also changes the path of the <a href=\"../jet-stream/\">jet stream</a>, which has to bend around it."
+   ]
+  ],
+  "faq": [
+   [
+    "What weather does a high-pressure system bring?",
+    "Usually dry, settled weather with little wind. In summer that often means sunshine and warmth; in winter, frost, fog or low cloud can linger under a high."
+   ],
+   [
+    "What pressure is considered high?",
+    "Above about 1020 hPa (30.1 inHg) is usually considered high pressure; strong highs reach 1040 hPa (30.7 inHg) or more."
+   ],
+   [
+    "Which way does air turn around a high?",
+    "Clockwise in the Northern Hemisphere and counterclockwise in the Southern Hemisphere."
+   ]
+  ]
+ },
+ "barometric-pressure": {
+  "title": "What Is Barometric Pressure? Normal Values and What Changes Mean",
+  "description": "What is barometric pressure, what is a normal reading in hPa, inHg and mmHg, and what does rising or falling pressure mean for the weather?",
+  "sections": [
+   [
+    "Normal barometric pressure and units",
+    "At sea level, the average air pressure is 1013.25 hPa. That same pressure can be written in several units: <div class=\"sun-table-wrap\"><table class=\"sun-table\"><thead><tr><th>Unit</th><th>Average at sea level</th></tr></thead><tbody><tr><td>Hectopascals (hPa) or millibars (mb)</td><td>1013.25</td></tr><tr><td>Inches of mercury (inHg)</td><td>29.92</td></tr><tr><td>Millimeters of mercury (mmHg)</td><td>760</td></tr><tr><td>Kilopascals (kPa)</td><td>101.3</td></tr></tbody></table></div>In everyday weather, sea-level pressure usually stays between about 980 and 1040 hPa (28.9 to 30.7 inHg)."
+   ],
+   [
+    "Station pressure vs. sea-level pressure",
+    "Air pressure drops with height: near sea level by about 1 hPa for every 8 meters (roughly 1 inHg per 1,000 feet). In Denver, at about 1,600 meters (5,280 feet), the actual air pressure is around 840 hPa. To be able to compare places, weather services convert the measured station pressure to what it would be at sea level. The pressure in a weather forecast or on a weather map is almost always this sea-level pressure; a barometer at home may show the station pressure unless it has been adjusted for your altitude."
+   ],
+   [
+    "What rising and falling pressure mean",
+    "The trend tells you more than a single reading. Falling pressure usually means a low-pressure system is approaching, with more cloud, rain and wind; a fall of more than about 3.5 hPa (0.1 inHg) in three hours is considered rapid and often signals strong wind. Rising pressure usually means a high is building and the weather is improving. Steady pressure means little change. Read more about <a href=\"../low-pressure-system/\">low-pressure systems</a> and <a href=\"../high-pressure-system/\">high-pressure systems</a>."
+   ]
+  ],
+  "faq": [
+   [
+    "What is normal barometric pressure?",
+    "About 1013 hPa, 29.92 inHg or 760 mmHg at sea level. Day-to-day values usually range from about 980 to 1040 hPa (28.9 to 30.7 inHg)."
+   ],
+   [
+    "Is high or low barometric pressure better?",
+    "High pressure usually brings dry, settled weather; low pressure usually brings clouds, rain and wind."
+   ],
+   [
+    "What does a falling barometer mean?",
+    "Usually that a low-pressure system is approaching, with worsening weather. A rapid fall, of more than about 3.5 hPa in three hours, often means strong wind is on the way."
+   ]
+  ]
+ },
+ "fog": {
+  "title": "What Is Fog? How It Forms, Types of Fog and Driving Tips",
+  "description": "What is fog, how does it form, and what is the difference between fog and mist? The main types of fog, when they occur, and tips for driving in fog.",
+  "sections": [
+   [
+    "Fog or mist?",
+    "Fog and mist are both tiny water droplets floating in the air; the difference is how far you can see. By the international definition used by weather services, it is fog when visibility is below 1 kilometer (about 0.6 miles), and mist when you can see 1 kilometer or more. Dense fog, with visibility of a few hundred meters or less, is a real hazard on the roads; the US National Weather Service issues a dense fog advisory when visibility drops to a quarter mile (about 400 meters) or less."
+   ],
+   [
+    "How fog forms",
+    "Fog forms when the air close to the ground becomes saturated: either the air cools down to its <a href=\"../dew-point/\">dew point</a>, or moisture is added until it reaches saturation. Then the water vapor condenses into tiny droplets. Fog is essentially a cloud at ground level."
+   ],
+   [
+    "The main types of fog",
+    "<div class=\"sun-table-wrap\"><table class=\"sun-table\"><thead><tr><th>Type</th><th>How it forms</th><th>Where and when</th></tr></thead><tbody><tr><td>Radiation fog</td><td>The ground cools quickly on clear, calm nights and cools the air above it</td><td>Valleys and low-lying land, especially in autumn and winter; usually clears in the morning</td></tr><tr><td>Advection fog</td><td>Warm, moist air moves over a cold surface</td><td>Coasts, such as San Francisco in summer when moist ocean air crosses cold coastal water</td></tr><tr><td>Sea fog</td><td>A form of advection fog over the sea</td><td>Coastal areas in spring and early summer, when the sea is still cold</td></tr><tr><td>Freezing fog</td><td>Fog at temperatures below freezing; droplets freeze onto surfaces</td><td>Cold winter mornings; can leave rime on trees and make roads icy</td></tr></tbody></table></div>"
+   ],
+   [
+    "Driving in fog",
+    "Slow down and leave much more space than usual, so you can stop within the distance you can see. Use low-beam headlights and fog lights if you have them; high beams reflect off the fog and make it harder to see. Switch off rear fog lights again when visibility improves, as they can dazzle other drivers. Watch out for patches of dense fog in low-lying areas, near rivers and on bridges, where conditions can change within seconds."
+   ]
+  ],
+  "faq": [
+   [
+    "What is the difference between fog and mist?",
+    "It is fog when visibility drops below 1 kilometer (about 0.6 miles), and mist when you can still see 1 kilometer or more."
+   ],
+   [
+    "Why does fog form at night?",
+    "On clear, calm nights the ground loses heat quickly and cools the air above it. When that air cools to its dew point, the moisture condenses into fog."
+   ],
+   [
+    "When does fog clear?",
+    "Radiation fog usually clears within a few hours after sunrise as the sun warms the ground. Advection fog along coasts can last much longer, sometimes all day."
+   ]
+  ]
+ }
+}
