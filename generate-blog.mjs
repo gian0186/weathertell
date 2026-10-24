@@ -365,11 +365,12 @@ const posts = [
     category: 'Storms',
     time: '5 min read',
     datePublished: '2026-10-14',
+    dateModified: '2026-10-24',
     photoCredit: 'Photo: Jeremy Segrott, <a href="https://commons.wikimedia.org/wiki/File:Stormy_seas_at_Porthcawl,_south_Wales_(24545512250).jpg" target="_blank" rel="noopener">Wikimedia Commons</a> (CC BY 2.0)',
     title: 'UK Storm Names 2026/27: The Full List, from Austen to Wende',
     description: 'The full list of UK and Irish storm names for 2026/27, from Austen and Boelo to Wende, with pronunciations, who chose each name, and when a storm gets named.',
     keyFacts: [
-      '<strong>First names:</strong> the 2026/27 season starts with Austen, followed by Boelo and Chloe.',
+      '<strong>Already used:</strong> Storm Austen hit the UK and Ireland on October 22 and 23, 2026, and <a href="../storm-boelo-scotland-october-2026/">Storm Boelo</a> followed on October 24 and 25. The next name is Chloe.',
       '<strong>Full list:</strong> 21 names, from Austen to Wende, with no names starting with Q, U, X, Y or Z.',
       '<strong>Who chooses:</strong> the Met Office, Ireland\'s Met Éireann and the Dutch KNMI pick the names together.',
       '<strong>When a storm is named:</strong> when it could cause medium or high impacts, typically when an amber or red warning is expected.',
@@ -1001,6 +1002,40 @@ const posts = [
       ['Can I still travel to the Costa Blanca or Mallorca?', 'The storm is over and it turns dry from Wednesday. Some roads or areas may still be closed locally; if in doubt, contact your tour operator and follow the advice of the Spanish authorities.']
     ],
     related: [['../weather-warning-colors/', 'Weather warning colours explained'], ['../england-drought-2026-will-rain-help/', 'Severe drought in England'], ['../where-is-it-warm-in-december/', 'Where is it warm in December?']]
+  },
+  {
+    slug: 'storm-boelo-scotland-october-2026',
+    featuredCitySlug: 'edinburgh',
+    featuredCityName: 'Edinburgh',
+    category: 'News',
+    time: '4 min read',
+    datePublished: '2026-10-24',
+    pinUntil: '2026-10-26',
+    photoCredit: 'Photo: storm seas at Ballantrae, Ayrshire, Billy McCrorie, <a href="https://commons.wikimedia.org/wiki/File:Storm_Seas,_Ballantrae_-_geograph.org.uk_-_5642188.jpg" target="_blank" rel="noopener">Wikimedia Commons</a> (CC BY-SA 2.0)',
+    title: 'Storm Boelo: Amber Warning for Scotland as Clocks Go Back',
+    description: 'Storm Boelo follows Storm Austen with an amber wind warning for most of Scotland from Saturday 9pm to Sunday 9pm, with gusts of 60 to 70 mph and up to 80 mph on exposed coasts.',
+    keyFacts: [
+      '<strong>Amber warning:</strong> the Met Office has an amber wind warning for most of mainland Scotland from 9pm Saturday, October 24, to 9pm Sunday, October 25.',
+      '<strong>Gusts:</strong> widely 60 to 70 mph, and up to 80 mph on exposed coasts and hills, with a risk to life from flying debris, falling trees and large waves.',
+      '<strong>Timing:</strong> the strongest winds reach western Scotland on Saturday evening, spread east overnight and ease from the west during Sunday.',
+      '<strong>After Austen:</strong> Storm Austen brought gusts of up to 84 mph on Friday, and about 18,000 homes in Wales and southwest England lost power.',
+      '<strong>Clocks:</strong> British Summer Time ends on Sunday at 2am, so the storm night is an hour longer.'
+    ],
+    lead: 'Barely a day after Storm Austen, the second named storm of the season is on its way. Storm Boelo brings an amber wind warning to most of Scotland from Saturday evening through Sunday, on the same night the clocks go back.',
+    sections: [
+      ['warning', 'Where is the amber warning?', 'The Met Office amber wind warning covers most of mainland Scotland and runs from 9pm on Saturday, October 24, to 9pm on Sunday, October 25. Widespread gusts of 60 to 70 mph are expected, with up to 80 mph on exposed coasts and high ground. An amber warning means there is a danger to life from flying debris, falling trees and large waves along the coast, with likely travel disruption and power cuts. A yellow wind warning also remains in place for parts of England and Wales after Storm Austen.</p><p>The strongest winds reach western Scotland first on Saturday evening, then spread east overnight and through Sunday, before easing from the west during Sunday. Trees are still in full leaf in late October, which makes them catch more wind, so branches and trees come down more easily than in a winter storm. Check your route and ferry or rail operator before you travel, and secure garden furniture, bins and trampolines.'],
+      ['forecast', 'How strong will the wind get?', 'The ECMWF ensemble run of Saturday puts the peak gusts on Sunday. In <a href="../../weather/edinburgh/">Edinburgh</a>, Glasgow, Aberdeen and Newcastle the middle of the ensemble gives gusts of around 55 to 60 mph on open ground, with the Western Isles closer to 70 mph. Model grids smooth out local peaks, so exposed headlands, bridges and hills can see more, in line with the 80 mph in the Met Office warning. Further south, <a href="../../weather/london/">London</a> sees a blustery Sunday with gusts of around 40 to 45 mph. Another windy spell is possible on Tuesday, but that is still uncertain.'],
+      ['austen', 'What did Storm Austen do?', 'Storm Austen, the first named storm of the 2026/27 season, swept across the UK and Ireland on Thursday night and Friday. Gusts reached up to 84 mph. About 18,000 homes in Wales and southwest England lost power, 138 schools in England and the Channel Islands closed or opened late, rail services in the southeast were disrupted and ferry crossings from Dover and Newhaven were cancelled. In Ireland, around 3,000 homes and businesses were without power. Austen also brought orange warnings to the Belgian coast and yellow warnings to much of the Netherlands.'],
+      ['name', 'Why is it called Boelo?', 'Boelo is the second name on the 2026/27 list that the Met Office shares with Met Éireann and the Dutch weather service KNMI, and the first Dutch name. The KNMI chose it from more than 3,000 public suggestions: it is an old, almost forgotten first name from the east of the Dutch province of Groningen. The Met Office gave the storm its name, as the UK sees the biggest impact. The next name on the list is Chloe. See the full list in our <a href="../uk-storm-names-2026-27/">UK storm names 2026/27</a> article.'],
+      ['clocks', 'The clocks go back tonight', 'British Summer Time ends at 2am on Sunday, October 25, when the clocks go back to 1am. You get an extra hour in bed, but the stormy night is an hour longer too. From Sunday, sunset in Edinburgh is around 4:50pm. Read more in our <a href="../daylight-saving-time-2026/">daylight saving time 2026</a> article, and see how weather warnings work in <a href="../weather-warning-colors/">weather warning colours explained</a>.']
+    ],
+    faq: [
+      ['Where is the amber warning for Storm Boelo?', 'Most of mainland Scotland, from 9pm on Saturday, October 24, to 9pm on Sunday, October 25, 2026.'],
+      ['How strong will Storm Boelo be?', 'The Met Office expects gusts of 60 to 70 mph widely, and up to 80 mph on exposed coasts and high ground.'],
+      ['Where does the name Boelo come from?', 'It is an old first name from the Dutch province of Groningen, chosen by the Dutch weather service KNMI. It is the first Dutch name on the 2026/27 storm list.'],
+      ['Do the clocks go back this weekend?', 'Yes. British Summer Time ends at 2am on Sunday, October 25, 2026, when the clocks go back one hour.']
+    ],
+    related: [['../uk-storm-names-2026-27/', 'UK storm names 2026/27'], ['../weather-warning-colors/', 'Weather warning colours explained'], ['../daylight-saving-time-2026/', 'Daylight saving time 2026']]
   }
 ];
 
