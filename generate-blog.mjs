@@ -1105,6 +1105,39 @@ const posts = [
       ['What is the best time of day to visit a Christmas market?', 'The late afternoon. In December it gets dark around 4 to 4:30pm in central Europe, so you see the market in daylight first and then with all the lights on.']
     ],
     related: [['../white-christmas-2026-odds/', 'White Christmas 2026: what are the odds?'], ['../where-is-it-warm-in-december/', 'Where is it warm in December?'], ['../austria-snow-at-christmas/', 'Snow in Austria at Christmas']]
+  },
+  {
+    slug: 'leonid-meteor-shower-2026',
+    featuredCitySlug: 'london',
+    featuredCityName: 'London',
+    category: 'Seasons',
+    time: '5 min read',
+    datePublished: '2026-11-01',
+    photoCredit: 'Photo: Leonid meteor, Navicore, <a href="https://commons.wikimedia.org/wiki/File:Leonid_Meteor_(cropped).jpg" target="_blank" rel="noopener">Wikimedia Commons</a> (CC BY 3.0)',
+    title: 'Leonid Meteor Shower 2026: Best Time to Watch',
+    description: 'The Leonids peak on the night of November 17 to 18, 2026. When to watch, how many meteors to expect, whether the Moon gets in the way, and what the weather usually does in mid-November.',
+    keyFacts: [
+      '<strong>Peak:</strong> the night of Tuesday, November 17, into Wednesday, November 18, 2026; the best hours are before dawn on November 18.',
+      '<strong>Rate:</strong> modest, about 10 meteors an hour under a dark sky before dawn.',
+      '<strong>Moon:</strong> a first quarter Moon sets around midnight in the UK and Europe, and around midnight to 1am on the US East Coast, leaving dark skies before dawn.',
+      '<strong>Speed:</strong> at about 71 km/s (44 miles per second), the Leonids are the fastest meteors of the year.',
+      '<strong>Source:</strong> dust from Comet Tempel-Tuttle; in 1966, 1999 and 2001 the Leonids produced meteor storms with thousands of meteors an hour.'
+    ],
+    lead: 'In the darkest stretch of the year, the Leonids streak across the sky from the constellation Leo. In 2026 the shower peaks on the night of November 17 to 18, and the Moon sets in time for the best hours. The numbers are modest, but if you get up early and catch a clear sky, you can see a handful of the fastest meteors of the year.',
+    sections: [
+      ['when', 'When to watch the Leonids in 2026', 'The Leonids are active from about November 6 to 30 each year, with the peak around November 17. The International Meteor Organization calendar puts the 2026 maximum on November 17 at about 23:49 UTC (6:49pm EST). That sounds like an evening shower, but it is not: the radiant in Leo only rises around 11pm, and the higher it climbs, the more meteors you see. In the UK and northern Europe, Leo is about 60 degrees high by 6am.</p><p>The best time is therefore the early morning of Wednesday, November 18, from about 3am until dawn twilight begins. The morning of November 17 is almost as good. The same applies in North America: watch in the hours before dawn, when Leo is high in the southeastern sky.'],
+      ['moon', 'Will the Moon get in the way?', 'Hardly. On November 17 the Moon is at first quarter, half lit, and it sets around midnight: at about 11:30pm GMT in London on November 17, and about 45 minutes after midnight a night later. In New York it sets around midnight to 1am EST. In the pre-dawn hours, when the Leonids are at their best, the sky is dark.'],
+      ['how-many', 'How many meteors will you see?', 'The Leonids are a modest shower these days. Under perfect conditions the peak rate is about 15 meteors an hour; in practice, from a dark site before dawn you can expect around 10 an hour, and only a few from a city. What they lack in numbers they make up in speed: at about 71 km/s (44 miles per second) they are the fastest meteors of the year, and bright ones can leave a glowing trail for a few seconds.</p><p>The Leonids are famous for their storms. In 1966, 1999 and 2001, the dust trail of Comet Tempel-Tuttle produced thousands of meteors an hour. No storm is expected in 2026.'],
+      ['weather', 'What about the weather?', 'Mid-November is a cloudy time of year in northwest Europe and much of the northern US. At De Bilt in the Netherlands, for example, the sky around 6am was clear or nearly clear on only about 1 in 7 mornings between November 14 and 21 in the years 1996 to 2025, and mostly overcast on 3 in 4. The odds are better in the drier western US. Check the forecast a few days ahead; we will add the cloud forecast closer to the date, and you can follow your own city in the <a href="../../14-day-forecast/">14-day forecast</a>.'],
+      ['tips', 'How to see the most Leonids', 'Find a dark spot away from city lights, give your eyes at least 20 minutes to adapt and keep your phone away. You do not need to look at Leo itself: meteors appear all over the sky, so just take in a wide area. Dress warmly, because pre-dawn temperatures in mid-November are often near freezing, and bring a reclining chair. If you are lucky with clear skies, you may also spot the aurora on a stormy night; see our <a href="../northern-lights-kp-index/">northern lights guide</a>. Missed the October shower? Read about the <a href="../orionid-meteor-shower-2026/">Orionids</a>.']
+    ],
+    faq: [
+      ['When is the Leonid meteor shower in 2026?', 'The peak is on the night of November 17 to 18, 2026. The best time to watch is before dawn on November 18.'],
+      ['How many Leonids will I see?', 'About 10 an hour from a dark site in the pre-dawn hours, and far fewer from a city.'],
+      ['Will the Moon affect the 2026 Leonids?', 'Not much. The first quarter Moon sets around midnight, leaving dark skies for the best hours before dawn.'],
+      ['What causes the Leonids?', 'Dust from Comet Tempel-Tuttle hitting the atmosphere at about 71 km/s (44 miles per second). They appear to come from the constellation Leo, hence the name.']
+    ],
+    related: [['../orionid-meteor-shower-2026/', 'Orionid meteor shower 2026'], ['../northern-lights-kp-index/', 'Northern lights and the Kp index'], ['../first-frost-london/', 'First frost in London']]
   }
 ];
 
