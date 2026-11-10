@@ -300,8 +300,8 @@ const posts = [
     datePublished: '2026-10-03',
     dateModified: '2026-11-10',
     photoCredit: 'Photo: Superbass, <a href="https://commons.wikimedia.org/wiki/File:2024-11-19-Central_Park-0669.jpg" target="_blank" rel="noopener">Wikimedia Commons</a> (CC BY-SA 4.0)',
-    title: 'Thanksgiving 2026 Weather Forecast: How Cold Will It Be? NYC and 10 More Cities',
-    description: 'How cold will it be on Thanksgiving 2026? Typical November 26 weather for New York and 10 more US cities, from Boston and Chicago to Los Angeles and Miami, plus rain, snow and parade wind odds.',
+    title: 'Thanksgiving 2026 Weather Forecast: Rain, Snow and Cold by City',
+    description: 'The Thanksgiving 2026 weather forecast for New York, Chicago and 9 more US cities: expected highs and the chance of rain or snow, updated until the day itself.',
     keyFacts: [
       '<strong>Forecast (Nov 10):</strong> a first look from the GFS ensemble points to a fairly typical Thanksgiving: about 54°F in New York with a 39% chance of rain; still uncertain this far out.',
       '<strong>Typical weather:</strong> Based on 36 years of New York data, November 26 averages a high around 11°C (51°F) and a low near 3°C (37°F).',
