@@ -297,6 +297,16 @@
     {
       "nl": "/over-ons/",
       "en": "/about/"
+    },
+    {
+      "nl": "/blog/wanneer-begint-de-winter/",
+      "en": "/blog/when-does-winter-start/",
+      "from": "2026-11-26"
+    },
+    {
+      "nl": "/blog/kortste-dag-van-het-jaar/",
+      "en": "/blog/winter-solstice-2026/",
+      "from": "2026-11-30"
     }
   ]
 }
